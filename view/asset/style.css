@@ -1,0 +1,168 @@
+.wrapper{
+    width: 100%;
+    max-width: 1273px;
+    margin: 0 auto;
+}
+.wrapper{
+
+}
+
+.header_top{
+    background-color: var(--background-color-btn);
+   
+}
+.header_top-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header_top-slogan h3 {
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: 700;
+    padding: 10px 10px;
+    margin: 0;
+}
+nav{
+    padding: 0 10px;
+    display: flex !important;
+    align-items: center !important;
+}
+nav .header_top-user{
+    color:rgb(120, 111, 111) !important;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 20px;
+   
+    column-gap: 12px;
+}
+.menu_room {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    position: relative;
+}
+.menu_room i {
+    margin-left: 6px;
+    font-size: 13px;
+    
+}
+li{
+    list-style: none !important;
+}
+.list_room-item {
+    position: relative;
+}
+.todolist_room{
+    position: absolute !important;
+    top: 34px;
+    text-align: left;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    width: 200px;
+    justify-content: left;
+    align-items: normal !important;
+  
+    background-color: white;
+    box-shadow: 0 3px 4px var(--background-color-btn);
+    border-radius: 5px;
+    z-index: 12;
+    opacity: 0;
+    pointer-events: none !important;
+    transition: 0.25s linear !important;
+}
+.todolist_room a {
+    padding: 5px 10px !important;
+    white-space: nowrap !important;
+    line-height: 20px;
+    text-decoration: none !important;
+
+   
+}
+
+.list_room-item::before{
+    content: "";
+    position: absolute !important;
+    background-color: transparent !important;
+    display: none !important;
+    width: 200px;
+    height: 20px;
+    top: 20px;
+}
+.list_room-item:hover .todolist_room{
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+.list_room-item:hover.list_room-item::before{
+    display: block !important;
+}
+.todolist_room a:hover{
+    color: var(--background-color-btn) !important;
+}
+.header_bottom-content{
+    width: 100%;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: space-between;
+}
+.header_top-user{
+   
+} 
+.header_top-user a{
+   
+}
+
+.header_bottom{
+    padding: 30px 0;
+    position: fixed;
+    box-shadow: 0 1px 9px #53efd9;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+}
+.header_bottom-left nav{
+    column-gap: 30px;
+}
+.header_bottom-left a{
+    display: flex !important;
+    color:rgb(120, 111, 111) !important;
+    font-size: 15px;
+    font-weight: 500;
+   
+  
+}
+.header_bottom-left {
+  
+}
+.logo{
+    width: 165px;
+
+}
+/* Xử lý main */
+main{
+    padding-top: 90px;
+}
+footer{ 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #549d93;
+}
+.footer{
+    display: flex !important;
+    column-gap: 159px;
+}
+
+.footer_item-text{
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.25s linear;
+}
+.footer_item-text:hover{
+    color: #0d2c28 !important;
+    text-decoration: none;
+}
