@@ -402,6 +402,7 @@ input:hover{
 }
 .room_vip-title{
     padding: 0 10px;
+    margin: 5px 0;
 }
 .room_vip-infomation{
     display: flex;
@@ -452,6 +453,7 @@ input:hover{
 .room_vip-left>.row{
     display: grid;
     grid-template-columns: 1fr 1fr !important;
+    row-gap: 24px;
 }
 .room_vip-left>.row>.col>article{
     position: relative;
