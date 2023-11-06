@@ -664,14 +664,22 @@ input:hover{
 .mu_hotel-content{
 
 }
-.mu_hotel-content img{
+.my_hotel-content img{
     object-fit: contain;
     width: 100%;
     height: 100%;
 }
-.mu_hotel-content>p{
+.my_hotel-content>p{
     text-align: justify;
     line-height: 20px;
+}
+.my_hotel-content>p:last-child{
+    text-align: justify;
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+
 }
 /* Footer */
 footer{ 
