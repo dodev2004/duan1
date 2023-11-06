@@ -497,9 +497,7 @@ input:hover{
 .room_news{
     margin-bottom:100px;
 }
-.wrapper{
 
-}
 .room_news-title{
     text-align: center !important;
     padding-top: 12px;
@@ -539,13 +537,6 @@ input:hover{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 24px;
-}
-.row{
-
-}
-.col{
-
-    
 }
 .room_news-content>.row>.col>article{
     position: relative;
@@ -617,12 +608,6 @@ input:hover{
     justify-content: space-between;
     font-size: 14px;
      color: #323c42;
-}
-.news_content-author{
-
-}
-.news_cotent-creatednews{
-
 }
 .new_content-readmore{
     padding: 8px 8px;
