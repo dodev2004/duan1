@@ -3,10 +3,12 @@ textarea{
 }
 .container{
     background-color: #f5f6f8;
-    
+    max-width: 100% !important;
 
 }
-
+.btn-primary{
+    background-color: #192A3E !important;
+}
 html{
     font-size: 100% !important;
 }
@@ -109,11 +111,12 @@ padding: 2rem;
 }
 .admin-column_right--title{
     color: #6B6B6B;
-    font-size: 3.2rem;
-    margin-bottom: 2rem;
+  
+    margin-bottom: 12px;
     font-weight: 600;
     letter-spacing: 0.07rem;
     line-height: normal;
+    font-size: 31px;
 }
 .admin-column_right--linked{
     color: #109CF1;
@@ -132,8 +135,9 @@ table{
     
 }
 .table{
-    margin-top: 1rem;
+    margin-top: 20px;
     border-radius: 2rem;
+    margin-bottom: 20px;
 }
 .table-category tr:nth-child(2n) th:nth-child(1){
     width: 10%;
@@ -152,8 +156,8 @@ table tr th{
     color: #192A3E;
     padding: 1rem 0;
     border-bottom: 1px solid #ccccccd2;
+    font-size: 14px;
     font-weight: 500;
-    font-size: 12px;
 }
 table tr:nth-child(1){
   color: #192A3E;
@@ -169,8 +173,7 @@ input[name="xoa"] ,input[name="sua"]{
 }
 input[name="them"]{
     padding: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
     color: white;
     background-color: #192A3E;
     
@@ -180,12 +183,10 @@ input[name="them"]{
 /* Them danh muc */
 form{
     position: relative;
-    margin: 5rem auto;
-  
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    overflow: hidden;
-    background: white;
+ 
+    
 }
 .form{
     display: flex;
