@@ -1,0 +1,8 @@
+:root{
+    --background-color-btn:#3cbaa8;
+    --primay-font : 'Poppins', sans-serif;;
+    
+}
+.btn-primary{
+    background-color: #192A3E !important;
+}
