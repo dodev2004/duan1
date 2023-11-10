@@ -8,9 +8,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../public/reset.css">
     <link rel="stylesheet" href="../public/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -49,10 +50,17 @@
                                         <li class="admin-component_item">
                                             <a href="./index.php?act=lkdm">Danh mục</a>
                                         </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=lkkh">Khách hàng</a>
+                                        <li class="admin-component_item admin-component_todolist">
+                                            <a href="./index.php?act=lkkh">Đặt phòng
+                                                <i class="fa-solid fa-caret-right"></i>
+                                            </a>
+                                            <section class="todolist">
+                                                <a href="">Xác nhận đặt phòng</a>
+                                                <a href="">Xác nhận thanh toán</a>
+                                                <a href="">Lịch sử đặt phòng</a>
+                                            </section>
                                         </li>
-
+                                        
                                         <li class="admin-component_item">
                                             <a href="./index.php?act=lkgiohang">Giỏ hàng</a>
                                         </li>
@@ -159,6 +167,36 @@
                                     window.location.href = `./index.php?act=rmAlldm&id=${pramator}`;
                                 }
 
+                            }
+                            // todolist : 
+                            // Sử dụng kiến thức dom 
+                            {
+                                const todolist = document.querySelector(".admin-component_todolist a");
+                                const heightNot = todolist.offsetHeight;
+                                const left = document.querySelector(".admin-component_todolist>a>i");
+                                console.log("height : ", heightNot);
+                                const todolistElement  = document.querySelector(".admin-component_todolist")
+                                const height = todolistElement.offsetHeight
+                                todolistElement.style.height  = `${heightNot}px`
+                                console.log([todolistElement.style])
+                                todolist.addEventListener("click",handleTodolist)
+                                function handleTodolist(e){
+                                    e.preventDefault();
+                                    let checked = todolistElement.className.includes("active");
+                                    if(!checked){
+                                        todolistElement.style.height = `${height}px`;
+                                        todolistElement.classList.add("active");
+                                        left.style.transform  = "rotate(93deg)";
+                                    }
+                                    else {
+                                        todolistElement.style.height = `${heightNot}px`;
+                                        todolistElement.classList.remove("active");
+                                        left.style.transform  = "";
+                                    }
+                        
+                                   
+
+                                }
                             }
 
 

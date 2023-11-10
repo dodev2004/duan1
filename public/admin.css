@@ -53,6 +53,9 @@ body{
     height: 100%;
     object-fit: cover;
 }
+i{
+    font-family: "Font Awesome 6 Free" !important;
+}
 .admin-personal_detail{
     display: flex;
     flex-direction: column;
@@ -81,6 +84,22 @@ line-height: normal;
    
     transition: 0.25s;
 
+}
+.admin-component_todolist{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.admin-component_todolist>a{
+    position: relative;
+}
+.admin-component_todolist>a>i{
+    margin-left: 100px;
+    transition: 0.25s;
+}
+.admin-component_todolist>.todolist{
+    display: flex;
+    flex-direction: column;
 }
 .admin-component_item a{
     text-decoration: none;
