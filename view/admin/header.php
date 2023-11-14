@@ -33,7 +33,7 @@
                                 </section>
                                 <section class="admin-personal_detail">
                                     <p class="detail_name">
-                                        <?php echo $_SESSION["user"]["name"] ?>
+                                      
                                     </p>
                                     <p class="detail_locator">Quản trị trang web</p>
                                 </section>
@@ -42,16 +42,18 @@
                                 <nav class="admin-component">
                                     <ul class="admin-component_list">
                                         <li class="admin-component_item">
-                                            <a href="./index.php">Trang Chủ</a>
+                                            <a href="./admin.php">Trang Chủ</a>
                                         </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=lksp&page=1&per_page=10">Sản phẩm</a>
+                                        
+                                        <li class="admin-component_item ">
+                                            <a href="?act=lk&page=loaiphong">Loại phòng</a>
                                         </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=lkdm">Danh mục</a>
+                                        <li class="admin-component_item ">
+                                            <a href="?act=lk&page=phong">Phòng</a>
                                         </li>
+                                        
                                         <li class="admin-component_item admin-component_todolist">
-                                            <a href="./index.php?act=lkkh">Đặt phòng
+                                            <a href="=?act=lkkh">Đặt phòng
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </a>
                                             <section class="todolist">
@@ -82,60 +84,3 @@
                         </section>
 
                     </section>
-                    <section class="admin-column_right">
-                        <h2 class="admin-column_right--title">Danh Mục</h2>
-                        <span class="admin-column_right--linked"><b>Danh Mục</b> - Danh sách loại dang mục</span>
-                        <div class="table table-category">
-                            <a href="./index.php?act=themdm"><input style="margin-bottom: 2rem;" type="button"
-                                    name="them" value="Thêm danh mục sản phẩm"></a>
-                            <table>
-                                <tr>
-                                    <th></th>
-                                    <th>Mã Loại</th>
-                                    <th>Tên Loại</th>
-                                    <th>Hành Động</th>
-                                </tr>
-                                <tr>
-                                    <th><input type="checkbox" name="check_ml"></th>
-                                    <th class="id">1</th>
-                                    <th>Phòng Vip</th>
-                                    <th>
-                                        <a href="./index.php?act=suadm&id=<?php echo $list[" id_danhmuc"]?><input
-                                                type="button" name="sua" value="Sửa"></a>
-                                        <a class="remove" href="./index.php?act=lkdm"><input type="button" name="xoa"
-                                                value="Xóa"></a>
-                                    </th>
-                                </tr>
-
-
-
-                            </table>
-
-                        </div>
-                        <input style="margin-bottom: 2rem;" type="button" class="check_all" name="them"
-                            value="Tích toàn bộ">
-                        <input style="margin-bottom: 2rem;" type="button" name="them" class="checked_remove"
-                            value="Bỏ toàn bộ đã tích">
-                        <a class="removeAll" href="./index.php?act=rmall"><input style="margin-bottom: 2rem;"
-                                type="button" name="them" value="Xóa toàn bộ đã tích"></a>
-                        <script>
-                          
-
-
-                        </script>
-                    </section>
-                </section>
-            </section>
-        </section>
-    </div>
-    
-    <footer>
-
-    </footer>
-    <script src="../asset/js/form.js"></script>
-</body>
-
-</html>
-</body>
-
-</html>

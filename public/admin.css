@@ -94,8 +94,10 @@ line-height: normal;
     position: relative;
 }
 .admin-component_todolist>a>i{
-    margin-left: 100px;
+ 
     transition: 0.25s;
+    position: absolute;
+  right: 0;
 }
 .admin-component_todolist>.todolist{
     display: flex;
