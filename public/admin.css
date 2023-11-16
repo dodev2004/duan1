@@ -94,8 +94,10 @@ line-height: normal;
     position: relative;
 }
 .admin-component_todolist>a>i{
-    margin-left: 100px;
+ 
     transition: 0.25s;
+    position: absolute;
+  right: 0;
 }
 .admin-component_todolist>.todolist{
     display: flex;
@@ -427,4 +429,19 @@ form h1{
 .logout{
     position: absolute;
     bottom: 28px;
+}
+.room_input-avatar{
+    width: 300px;
+    height: 150px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    flex-direction: column;
+    
+}
+.form-group_avatar{
+    display: flex;
+    flex-direction: column;
 }
