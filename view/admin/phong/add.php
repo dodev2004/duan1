@@ -1,90 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../public/reset.css">
-    <link rel="stylesheet" href="../public/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-    <script type="text/javascript" src="../ckfinder/ckfinder.js"></script>
-
-</head>
-
-<body style="background-color: #f5f6f8;">
-    <div class="container">
-        <section class="admin">
-            <section class="admin-content">
-                <section class="admin-row">
-                    <section class="admin-colum_left">
-                        <section class="column-left_content">
-                            <h3 class="admin-name">
-                                WellCome Dasbord
-                            </h3>
-                            <section class="admin-personal">
-                                <section class="admin-personal_img">
-                                    <img src="./img/th.jfif" alt="">
-                                </section>
-                                <section class="admin-personal_detail">
-                                    <p class="detail_name">
-                                        <?php echo $_SESSION["user"]["name"] ?>
-                                    </p>
-                                    <p class="detail_locator">Quản trị trang web</p>
-                                </section>
-                            </section>
-                            <section>
-                                <nav class="admin-component">
-                                    <ul class="admin-component_list">
-                                        <li class="admin-component_item">
-                                            <a href="./index.php">Trang Chủ</a>
-                                        </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=lksp&page=1&per_page=10">Sản phẩm</a>
-                                        </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=lkdm">Danh mục</a>
-                                        </li>
-                                        <li class="admin-component_item admin-component_todolist">
-                                            <a href="./index.php?act=lkkh">Đặt phòng
-                                                <i class="fa-solid fa-caret-right"></i>
-                                            </a>
-                                            <section class="todolist">
-                                                <a href="">Xác nhận đặt phòng</a>
-                                                <a href="">Xác nhận thanh toán</a>
-                                                <a href="">Lịch sử đặt phòng</a>
-                                            </section>
-                                        </li>
-
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=lkgiohang">Giỏ hàng</a>
-                                        </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=bl">Bình luận</a>
-                                        </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=thongke">Thống kê</a>
-                                        </li>
-                                        <li class="admin-component_item">
-                                            <a href="../index.php">Vào website</a>
-                                        </li>
-
-                                    </ul>
-
-                                </nav>
-                            </section>
-                            <a class="logout" href="./index.php?act=dangxuat">Đăng xuất</a>
-                        </section>
-
-                    </section>
-                    <section class="admin-column_right">
+<section class="admin-column_right">
                         <h2 class="admin-column_right--title">Danh Mục</h2>
                         <span class="admin-column_right--linked"><b>Danh Mục</b> - Danh sách loại dang mục</span>
                         <div class="table table-category">
@@ -94,38 +8,38 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label for="room_name">Tên phòng</label>
-                                        <input type="text" class="form-control" id="room_name" placeholder="Tên phòng">
+                                        <input type="text" class="form-control" id="room_name" name="ten_Phong" placeholder="Tên phòng">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="room_type">Loại phòng</label>
-                                        <select id="room_type" class="form-control">
+                                        <select id="room_type" name="id_loaiPhong" class="form-control">
                                             <option selected>Choose...</option>
                                             <option>Loại 1</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="room_area">Diện tích</label>
-                                        <input type="text" class="form-control" id="room_area" placeholder="Diện tích">
+                                        <input type="text" name="dientich" class="form-control" id="room_area" placeholder="Diện tích">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="room_price">Giá phòng</label>
                                         <input type="text" class="form-control" id="room_price"
-                                            placeholder="Giá phòng">
+                                            placeholder="Giá phòng" name="gia">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="room_quantity">Số lượng phòng</label>
                                         <input type="text" class="form-control" id="room_quantity"
-                                            placeholder="Số lượng phòng">
+                                            placeholder="Số lượng phòng" name="sl_Phong">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="room_quantity-parent">Số lượng ngưới lớn</label>
                                         <input type="text" class="form-control" id="room_quantity-parent"
-                                            placeholder="Số lượng phòng">
+                                            placeholder="Số lượng người lớn" name="slNguoiLon">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="room_quantity-parent">Số lượng trẻ em</label>
-                                        <input type="text" class="form-control" id="room_quantity-parent"
-                                            placeholder="Số lượng phòng">
+                                        <label for="room_quantity-son">Số lượng trẻ em</label>
+                                        <input type="text" class="form-control" id="room_quantity-son"
+                                            placeholder="Số lượng trẻ em" name="slTreEm">
                                     </div>
                                     <div class="form-group form-group_avatar col-md-12">
                                         <label for="">Avatar</label>
@@ -133,7 +47,7 @@
                                             <i class="fas fa-cloud-upload-alt"></i>
                                             <span>Upload to preview image</span>
                                         </label>
-                                        <input type="file" hidden class="form-control" id="room_avatar" placeholder="">
+                                        <input name="avatar" type="file" hidden class="form-control" id="room_avatar" placeholder="">
                                     </div>
                                     <div class="form-group form-group_slider col-md-12">
                                         <label for="">Slider</label>
@@ -145,7 +59,7 @@
                                         <div class="form-row form_show-image">
                                               
                                             </div>
-                                        <input type="file" hidden class="form-control" id="room_input-slider"
+                                        <input name="slider" type="file" hidden class="form-control" id="room_input-slider"
                                         multiple="multiple" placeholder="">
                                     </div>
                                     <div class="form-group">
@@ -176,10 +90,6 @@
                                         <label for="room_introduction">Mô tả</label>
                                         <textarea name="" id="description" cols="30" rows="10"></textarea>
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="room_introduction">Mô tả</label>
-                                        <textarea name="" id="extention" cols="30" rows="10"></textarea>
-                                    </div>
                                    
                                 </div>
 
@@ -188,7 +98,6 @@
                         </div>
                         
                         <script type="text/javascript">
-                            
                             function ckeditorID(id){
                                 ClassicEditor.create(document.querySelector(`#${id}`), {
                                 ckfinder: {
@@ -275,18 +184,5 @@
 
                             }
                             ckeditorID("description");
-                            ckeditorID("extention");
                         </script>
                     </section>
-                </section>
-            </section>
-        </section>
-    </div>
-    <script src="../puplic/js/form.js"></script>
-    <script src="../public/js/admin/main.js"></script>
-</body>
-
-</html>
-</body>
-
-</html>
