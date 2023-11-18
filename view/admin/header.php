@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="../public/reset.css">
     <link rel="stylesheet" href="../public/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <script src="../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+    <script type="text/javascript" src="../ckfinder/ckfinder.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
 </head>
 
 <body style="background-color: #f5f6f8;">
@@ -50,6 +49,9 @@
                                         </li>
                                         <li class="admin-component_item ">
                                             <a href="?act=lk&page=phong">Phòng</a>
+                                        </li>
+                                        <li class="admin-component_item ">
+                                            <a href="?act=lk&page=dichvu">Dịch vụ</a>
                                         </li>
                                         
                                         <li class="admin-component_item admin-component_todolist">

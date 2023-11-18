@@ -1,3 +1,4 @@
+
 const checkall = document.querySelector(".check_all");
 if(checkall){
     const removeAll = document.querySelector(".removeAll");
@@ -11,7 +12,8 @@ if (elementas) {
             const id = remove.parentElement.parentElement.querySelector(".id").textContent.trim();
             let resuilt = confirm("Bạn chắc chắn muốn xóa chứ");
             if (resuilt == true) {
-                window.location.href = `./index.php?act=xoadm&id=${id}`;
+
+                window.location.href = `?act=delete&page=loaiphong&id=${id}`;
             }
         }
     })
@@ -43,8 +45,14 @@ removeAll.onclick = function (e) {
         }
 
     })
+    
     if (pramator.length > 0) {
-        window.location.href = `./index.php?act=rmAlldm&id=${pramator}`;
+       alert("Xoá thành công");
+        window.location.href = `?act=rmAlldm&page=loaiphong&id=${pramator}`;
+        
+    }
+    else {
+        alert("Vui lòng lựa chọn ");
     }
 
 }
@@ -81,4 +89,39 @@ removeAll.onclick = function (e) {
         }
     })
    
+}
+const formaddRoom = document.querySelector("#form-addroom")
+if(formaddRoom){
+    UploadAvatar("#room_avatar");
+    UploadSlider("#room_input-slider")
+}
+// Xử lý avatar
+function UploadAvatar(id){
+    const avatar = formaddRoom.querySelector(id);
+    avatar.addEventListener("change",handleLoadImage);
+    function handleLoadImage(e){
+     const loadAvatar = e.target.parentElement.querySelector(".room_input-avatar")
+     const  file = e.target.files[0]
+     const url  =  URL.createObjectURL(file);
+     loadAvatar.innerHTML = `<img src="${url}"/>`;
+ }
+}
+function UploadSlider(id){
+    const slider = document.querySelector(id);
+    slider.addEventListener("change",handleLoadImage);
+    function handleLoadImage(e){
+        const  loadSlider = e.target.parentElement.querySelector(".form_show-image")
+        const files =Array.from(e.target.files);
+        files.forEach(function(file){
+            const url  =  URL.createObjectURL(file);
+            const img  = document.createElement("img");
+            img.classList.add("form_slide");
+            const div = document.createElement("div");
+            div.classList.add("col-md-3");
+            img.src = url;
+            div.appendChild(img);
+          
+            loadSlider.appendChild(div)
+        })
+    }
 }
