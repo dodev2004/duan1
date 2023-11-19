@@ -1,3 +1,4 @@
+/* Style của Thắng */
 main .banner_room {
   max-width: 1273px;
   margin: 0 auto;
@@ -144,4 +145,74 @@ main .banner_room img {
 .form_booking button[type="submit"]:hover {
   background-color: #fff;
   color: #cd9a2b;
+}
+
+/* QUẢN LÝ PHÒNG ĐẶT */
+.backgr {
+  background-color: #f8f8f8;
+}
+.manage__room {
+  width: 100%;
+  max-width: 1273px;
+  margin: 5px auto;
+}
+.room_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  margin-bottom: 50px;
+}
+.room__item {
+  border: 1px solid;
+  padding: 20px;
+  box-shadow: 5px 10px 8px #888888;
+  background-color: #fff;
+}
+.room__item a {
+  text-decoration: none;
+}
+.room__item .btn_order-success,
+.room__item .btn_cancel,
+.btn_cancel-confirm,
+.btn_pay,
+.btn_ratings,
+.btn_order {
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  padding: 5px 15px;
+  display: block;
+  border-radius: 5px;
+  opacity: 1;
+}
+.room__item .btn_order-success:hover,
+.room__item .btn_cancel:hover,
+.btn_cancel-confirm:hover,
+.btn_pay:hover,
+.btn_ratings:hover,
+.btn_order:hover {
+  opacity: 0.5;
+}
+.room__item .btn_order-success {
+  background-color: #cd9a2b;
+  margin: 10px 0;
+}
+.room__item .btn_cancel,
+.btn_cancel-confirm {
+  background-color: red;
+}
+.btn_pay {
+  background-color: rgb(5, 153, 7);
+  margin: 10px 0;
+}
+.btn_ratings {
+  background-color: #000;
+}
+.btn_order {
+  background-color: rgb(46, 46, 225);
+}
+/* ĐĂNG NHẬP */
+.form__login {
+  margin: 50px auto;
+  width: 500px;
 }
