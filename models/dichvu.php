@@ -1,6 +1,6 @@
 <?php 
     function db_dv_insert($name,$image){
-        $sql  = "INSERT INTO dichvu(name,icon) values(?,?)";
+        $sql  = "INSERT INTO dichvu(ten_dichVu,icon) values(?,?)";
         pdo_execute($sql,$name,$image);
     }
     function db_dv_select(){
@@ -24,7 +24,16 @@
         }
     }
     function db_dv_update($id,$image,$name){
-        $sql = "UPDATE dichvu SET name = ?, icon =? where id = ?";
-        pdo_execute($sql,$name,$image,$id);
+        $sql = "";
+        if($image){
+            $sql = "UPDATE dichvu SET ten_dichVu = ?, icon =? where id = ?";
+            pdo_execute($sql,$name,$image,$id);
+        }
+        else {
+            $sql = "UPDATE dichvu SET ten_dichVu = ? where id = ?";
+            pdo_execute($sql,$name,$id);
+        }
+       
+        
     }
 ?>

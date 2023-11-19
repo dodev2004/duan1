@@ -3,8 +3,6 @@
         const form = document.querySelector(id);
         if(form){
          const inputs = Array.from(form.querySelectorAll("input[type=text]"));
-         inputs.shift();
-         
          inputs.forEach(input =>{
              const parentElement = input.parentElement;
               const erorMessage = parentElement.querySelector(".valid-feedback")

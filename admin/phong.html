@@ -143,8 +143,11 @@
                                             <span>Upload to preview image</span>
                                         </label>
                                         <div class="form-row form_show-image">
-                                              
-                                            </div>
+                                              <div class="col-md-3">
+                                                <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" class="form_slider" alt="">
+                                                <a class="image_remove" href="">Xóa</a>
+                                              </div>
+                                        </div>
                                         <input type="file" hidden class="form-control" id="room_input-slider"
                                         multiple="multiple" placeholder="">
                                     </div>
@@ -284,6 +287,9 @@
     </div>
     <script src="../puplic/js/form.js"></script>
     <script src="../public/js/admin/main.js"></script>
+    <script>
+         uploadImgag("#form-addroom","#room_avatar","#room_input-slider");
+    </script>
 </body>
 
 </html>
