@@ -1,3 +1,4 @@
+
 <?php 
     function db_dv_insert($name,$image){
         $sql  = "INSERT INTO dichvu(ten_dichVu,icon) values(?,?)";
@@ -37,3 +38,4 @@
         
     }
 ?>
+
