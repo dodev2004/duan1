@@ -16,7 +16,7 @@
 
                                 ?>
                                 <tr>
-                                    <th><input type="checkbox" name="check_ml" value="<?=$rt["id_LoaiPhong"]?>"></th>
+                                    <th><input data-page="loaiphong" type="checkbox" name="check_ml" value="<?=$rt["id_LoaiPhong"]?>"></th>
                                     <th class="id"><?=$rt["id_LoaiPhong"]?></th>
                                     <th><?=$rt["ten_LoaiPhong"]?></th>
                                     <th>
