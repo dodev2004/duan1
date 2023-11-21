@@ -1,7 +1,7 @@
 <?php
 session_start();
 ob_start();
-
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 if(!(isset($_SESSION["user"]))){
     header("Location: ../view/admin/login/index.php");
     var_dump($_SESSION["user"]);
@@ -164,9 +164,9 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                     
                     db_phong_delete_dv($room_service,$id);
                 }
-                // echo "<script language='javascript'>alert('Sửa thành công')
-                // window.location.href = '?act=lk&page=phong&currentPage=1'</script>
-                // "; 
+                echo "<script language='javascript'>alert('Sửa thành công')
+                window.location.href = '?act=lk&page=phong&currentPage=1'</script>
+                "; 
                 }
                 include "../view/admin/phong/edit.php";
             } else if ($act == "removeSlider") {
@@ -175,7 +175,11 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                 $images =db_phong_select_all_images_by_id($id);
                 foreach($images as $image){
                     if($image["id"] == $idImage){
-                        unlink("../public/image/slider/".$image["Image"]);
+                        $checked = db_anhphong_image_exists($image["Image"],$id);
+                        if(!(is_array($checked))){
+                            unlink("../public/image/slider/".$image["Image"]);
+                        }
+                       
                     }
                 }
                 db_phong_delete_image($idImage);
@@ -222,11 +226,59 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
             break;
         case "thanhvien" :
             if($act == "lk"){
-                $users = nguoidung_select_all_Pagin($_GET["currentPage"]); 
+                $id  = $_SESSION["user"]["id"];
+                $users = nguoidung_select_all_Pagin($_GET["currentPage"],$id); 
                 $count = count($users);
                 $paggin = ceil(count(nguoidung_select_all())/4);
-                
                 include "../view/admin/thanhvien/lk.php";
+            }
+            else if($act == "them"){
+                $eror = "";
+                if(isset($_POST["add"])){
+                    $name = $_POST["name"];
+                    $username = $_POST["username"];
+                    $password = $_POST["password"];
+                    $checkuser =nguoidung_id_select_by_user_name($username);
+
+                    if(is_array($checkuser)){
+                        $eror  = "Tài khoản đã được sử dụng ";
+                      }
+                      else {
+                        nguoidung_insert($name,$username,"",md5($password),date('Y/m/d',time()),date('Y/m/d',time()));
+                        echo "<script language=javascript>alert('Đăng ký thành công') window.location.href = '?act=lk&page=thanhvien&currentPage=1</script>
+                           '
+                        ";
+                        ;
+                      }
+                }
+                include "../view/admin/thanhvien/add.php";
+            }
+            else if($act == "edit") {
+                $id = $_GET["id"];
+               $user = nguoidung_select_by_id($id);
+               extract($user);
+               if(isset($_POST["edit"])){
+                    $name = $_POST["name"];
+                    $user_name = $_POST["username"];
+                    $password = $_POST["password"];
+                    nguoidung_update_admin($id,$name,$user_name,md5($password),date('Y/m/d',time()));
+                    echo "<script language='javascript'>alert('Sửa thành công')
+                    window.location.href = '?act=lk&page=thanhvien&currentPage=1'</script>
+                    "; 
+               }
+                include "../view/admin/thanhvien/edit.php";
+            }
+            else if($act =="delete"){
+                nguoidung_delete($_GET["id"]);
+                echo "<script language='javascript'>
+                window.location.href = '?act=lk&page=thanhvien&currentPage=1'</script>";
+            }
+            else if ($act == "rmAll") {
+                $id = $_GET["id"];
+                $ids = explode(",", $id);
+                nguoidung_delete($ids);
+                header("Location:admin.php?act=lk&page=thanhvien");
+           
             }
             break;
        case "dangxuat":

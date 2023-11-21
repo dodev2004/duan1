@@ -1,11 +1,15 @@
 <?php
 function nguoidung_insert( $ho_ten,$username,$email,$mat_khau,$ngaytao,$ngaysua){
-    $sql = "INSERT INTO nguoidung(name,user_name,email, password,ngaytao,ngaysua) VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO nguoidung(name,user_name,email, password,ngaytao,ngaysua) VALUES (?,?,?,?,?,?) ";
     pdo_execute($sql, $ho_ten,$username,$email,$mat_khau,$ngaytao,$ngaysua);
 }
 function nguoidung_update($ma_kh,$user,  $name, $email,$phone){
     $sql = "UPDATE nguoidung SET user_name=?,name=?,email=?,sdt=? WHERE id=?";
     pdo_execute($sql, $user, $name, $email,$phone, $ma_kh);
+}
+function nguoidung_update_admin($id,$name,$user_name,$password,$ngaysua){
+    $sql = "UPDATE nguoidung SET name=?,user_name=?,password=?,ngaysua=? WHERE id=?";
+    pdo_execute($sql, $name, $user_name, $password,$ngaysua, $id);
 }
 function nguoidung_select_all(){
     if(isset($_POST["seach"])){
@@ -30,27 +34,20 @@ function nguoidung_select_all(){
     }
     return pdo_query($sql);
 }
-function nguoidung_select_all_Pagin($currentPage){
+function nguoidung_select_all_Pagin($currentPage,$id){
     $offset = ($currentPage - 1)*4;
     if(isset($_POST["seach"])){
-        $seach_name = !empty($_POST["seach_name"]) ? $_POST["seach_name"]: "";
-        $id_user = !empty($_POST["seach_iduser"]) ? $_POST["seach_iduser"] : "";
+        $seach_name = !empty($_POST["seach_username"]) ? $_POST["seach_username"]: "";
       
-        if(trim( $seach_name) == "" && trim($id_user)==""){
-            $sql = "SELECT * FROM thanhvien order by id desc  limit 4 offset $offset";
-        }
-        else if(trim( $seach_name) != "" && trim($id_user)==""){
-            $sql = "SELECT * FROM thanhvien where name like '%". $seach_name."%' order by id desc limit 4 offset $offset" ; 
-        }
-        else if(trim( $seach_name) == "" && trim($id_user) !=""){
-            $sql = "SELECT * FROM thanhvien where id  = $id_user order by id desc limit 4 offset $offset";
+        if(trim( $seach_name) == ""){
+            $sql = "SELECT * FROM nguoidung where id != $id order by id desc  limit 4 offset $offset";
         }
         else {
-            $sql = "SELECT * FROM thanhvien where id =  $id_user AND " . "name like '%" .  $seach_name ."%' order by id desc limit 4 offset $offset";
+            $sql = "SELECT * FROM nguoidung   where id != $id and user_name like '%". $seach_name."%' order by id desc limit 4 offset $offset" ; 
         }
     }
     else {
-        $sql = "SELECT * FROM nguoidung order by id desc limit 4 offset $offset";
+        $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
     }
     return pdo_query($sql);
 }
@@ -65,7 +62,6 @@ function nguoidung_delete($ma_kh){
         pdo_execute($sql, $ma_kh);
     }
 }
-
 function nguoidung_select_by_id($ma_kh){
     $sql = "SELECT * FROM nguoidung WHERE id=?";
     return pdo_query_one($sql, $ma_kh);
@@ -121,5 +117,16 @@ function thanhvien_get_paging($pagin){
         echo "<a  href=?act=lk&page=thanhvien&currentPage=". $pagin .">Last</a>";
     }
 
+}
+function reverseMD5($hash) {
+    $url = "https://md5.gromweb.com/?md5=" . $hash;
+    $response = file_get_contents($url);
+
+    if (strpos($response, "No hash found") !== false) {
+        return "Không tìm thấy giá trị MD5.";
+    } else {
+        preg_match('/<em class="long-content string">(.*?)<\/em>/s', $response, $matches);
+        return $matches[1];
+    }
 }
 ?>

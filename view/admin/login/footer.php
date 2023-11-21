@@ -1,3 +1,4 @@
-<script src="../../asset/js/form.js"></script>
+<script src="../../../public/js/form.js"></script>  
+
 </body>
 </html>

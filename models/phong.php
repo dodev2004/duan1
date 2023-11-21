@@ -74,6 +74,10 @@
        }
        
     }
+    function db_anhphong_image_exists($image,$id){
+        $sql = "SELECT * from anhphong where Image = ? and id_Phong  != ?";
+        return pdo_query_one($sql,$image,$id);
+    }
     function db_phong_delete_dv($ids,$id_Phong){
         if(is_array($ids)){
             $sql = "DELETE FROM dichvuphong where id_dichVu";
@@ -97,11 +101,15 @@
  
     }
     function db_phong_delete_image($id){
-        $sql= "delete from anhphong where id = ?";
+        $sql= "delete from anhphong where id  = ?";
         pdo_execute($sql,$id);
     }
     function db_phong_select_all_images_by_id($id){
         $sql = "select * from anhphong where id_Phong = ?";
+        return pdo_query($sql,$id);
+    }
+    function db_phong_select_images_by_id($id){
+        $sql = "select * from anhphong where id = ?";
         return pdo_query($sql,$id);
     }
     function db_phong_insert_dichvu_phong($tienNghi,$id_Phong){

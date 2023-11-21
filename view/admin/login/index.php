@@ -16,11 +16,12 @@ session_start();
                   $checkuser =nguoidung_id_select_by_user_name($username);
                 
                   if(is_array($checkuser)){
-                    $eror  = "Tài khoản đã được sử dụng ";
+                    $eror  = "Tài khoản đã được sử dụng";
+                 
                   }
                   else {
                     echo "<script language=javascript>alert('Đăng ký thành công')</script>";
-                    nguoidung_insert($name,$username,"",md5($password),time(),time());
+                    nguoidung_insert($name,$username,"",md5($password),date('Y/m/d',time()),date('Y/m/d',time()));
                     header("Location: index.php");
                   }
                 }

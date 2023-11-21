@@ -3,7 +3,7 @@
     <span class="admin-column_right--linked"><b>Phòng</b> - Danh sách phòng</span>
     <div class="table table-category">
         <a href="?act=them&page=phong"><input style="margin-bottom: 2rem;" type="button" name="them" value="Thêm Phòng"></a>
-        <form style="margin: 0;" class="form_1" action="?act=lk&page=phong" method="post">
+        <form style="margin: 0;" class="form_1" action="?act=lk&page=phong&currentPage=1" method="post">
             <section style="padding-right:8px;" class="form_group">
                 <input type="text" name="seach_Tenphong" placeholder="Tìm kiếm sản phẩm" value="<?php echo !empty($_POST["seach_phong"]) ? $_POST["seach_phong"] : "" ?>">
             </section>
@@ -53,7 +53,7 @@
                     <th>8.000.000 đ</th>
                     <th><?=$sl_Phong?></th>
                    
-                    <th> <a href="?act=edit&page=phong&id=<?php echo $id ?>"><input type="button" name="sua" value="Sửa"></a></th>
+                    <th> <a href="?act=edit&page=phong&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
                     <th>
                     <a href="?page=phong&act=edit&id=<?php echo $id?>"><input type="button" name="sua" value="Sửa"/></a>
                                         <a class="remove" href=""><input type="button" name="xoa"
@@ -65,7 +65,7 @@
 
         </table>
         <section class="pagin">
-        <?php  thanhvien_get_paging($paggin)?>
+        <?php  get_paging($paggin)?>
         </section>
     </div>
     <input style="margin-bottom: 2rem;" type="button" class="check_all" name="them" value="Tích toàn bộ">
