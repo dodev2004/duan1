@@ -57,16 +57,15 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
             $lps = db_lp_Select_all();
             if ($act == "lk") {
                 $rooms = db_phong_select_all_Pagin($_GET["currentPage"]);
-             
                 $count = count($rooms);
-                $paggin = ceil(count(db_phong_select_all())/4);
-               
+                $paggin = ceil(count(db_phong_select_all()) / 4);
+
 
 
                 include "../view/admin/phong/lk.php";
             } else if ($act == "them") {
-                
-                if(isset($_POST["add"])){
+
+                if (isset($_POST["add"])) {
                     $name = $_POST["ten_Phong"];
                     $id_LoaiPhong = $_POST["id_LoaiPhong"];
                     $dientich = $_POST["dientich"];
@@ -79,21 +78,23 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                     $gioiThieuChung = $_POST["introduction_room"];
                     $mota = $_POST["description"];
                     $room_service = $_POST["room_service"];
-                    if($avatar){
-                        move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/".$avatar);
+                    if ($avatar) {
+                        move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/" . $avatar);
                     }
                     $id = db_phong_insert($name,$id_LoaiPhong,$dientich,$gia,$sl_Phong,$slNguoiLon,$slTreEm,$avatar,$gioiThieuChung,$mota);
                     if(!empty($files[0])){
                         foreach($files as $index => $file){
                             move_uploaded_file($_FILES["slider"]["tmp_name"][$index], "../public/image/slider/".$file);
                         }
-                        db_phong_insert_images($files,$id);
+                        db_phong_insert_images($files, $id);
                     }
+
                     db_phong_insert_dichvu_phong($room_service,$id);
                    
                     echo "<script language='javascript'>alert('Thêm thành công')
                     window.location.href = '?act=lk&page=phong&currentPage=1'</script>
                     ";
+
                 }
                 include "../view/admin/phong/add.php";
             } else if ($act == "delete") {
@@ -109,7 +110,7 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                 $room = db_phong_select_by_id($id);
                 $services = db_phong_select_id_dichvu($id);
                 $images = db_phong_select_all_images_by_id($id);
-                if(isset($_POST["edit"])){
+                if (isset($_POST["edit"])) {
                     $name = $_POST["ten_Phong"];
                     $id_LoaiPhong = $_POST["id_LoaiPhong"];
                     $dientich = $_POST["dientich"];
@@ -121,6 +122,7 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                     $files = $_FILES["slider"]["name"];
                     $gioiThieuChung = $_POST["introduction_room"];
                     $mota = $_POST["description"];
+
                     $room_service = !empty($_POST["room_service"][0]) ? $_POST["room_service"] :Null;
                     if($avatar){
                         move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/".$avatar); ;
@@ -167,8 +169,7 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                 // "; 
                 }
                 include "../view/admin/phong/edit.php";
-            }   
-            else if($act == "removeSlider"){
+            } else if ($act == "removeSlider") {
                 $id = $_GET["id"];
                 $idImage = $_GET["idImage"];
                 $images =db_phong_select_all_images_by_id($id);
@@ -178,29 +179,27 @@ if (isset($_GET["act"]) && isset($_GET["page"])  && $_GET["act"]) {
                     }
                 }
                 db_phong_delete_image($idImage);
-                header("Location:?act=edit&page=phong&id=".$id);
-            }
-            else {
+                header("Location:?act=edit&page=phong&id=" . $id);
+            } else {
             }
             break;
         case "tiennghi":
             if ($act == "them") {
-                if(isset($_POST["add"])){
+                if (isset($_POST["add"])) {
                     $name = $_POST["ten_TienNghi"];
                     $image = $_FILES["room_service"]["name"];
-                    move_uploaded_file($_FILES["room_service"]["tmp_name"],"../public/image/tiennghi/".$image);
-                    db_dv_insert($name,$image);
+                    move_uploaded_file($_FILES["room_service"]["tmp_name"], "../public/image/tiennghi/" . $image);
+                    db_dv_insert($name, $image);
                     echo "<script language='javascript'>alert('Thêm thành công')
                         window.location.href = '?act=lk&page=tiennghi'</script>";
-                   
                 }
                 include "../view/admin/dichvu/add.php";
             } else if ($act == "sua") {
                 $id = $_GET["id"];
-                if(isset($_POST["edit"])){
+                if (isset($_POST["edit"])) {
                     $name = $_POST["ten_TienNghi"];
-                    $image = !empty($_FILES["room_service"]["name"]) ? $_FILES["room_service"]["name"] :null;
-                    db_dv_update($id,$image,$name);
+                    $image = !empty($_FILES["room_service"]["name"]) ? $_FILES["room_service"]["name"] : null;
+                    db_dv_update($id, $image, $name);
                     echo "<script language='javascript'>alert('Sửa thành công')
                     window.location.href = '?act=lk&page=tiennghi'</script>";
                 }
