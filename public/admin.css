@@ -175,7 +175,7 @@ table tr:nth-child(1){
 input[name="xoa"] ,input[name="sua"]{
     color: white;
     background-color: #192A3E;
-    width: 5rem;
+    padding: 3px 10px;
     border-radius: 0.4rem;
     margin-left: 0.5rem;
     cursor: pointer;
@@ -462,6 +462,9 @@ form h1{
     display: flex;
     flex-wrap: wrap;
     column-gap: 100px;
+}
+.service_list>.service_list-item>label{
+    margin-left: 12px;
 }
 .form_group{
     margin-bottom: 14px !important;

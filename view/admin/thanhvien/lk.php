@@ -1,11 +1,11 @@
 <section class="admin-column_right">
-    <h2 class="admin-column_right--title">Phòng</h2>
-    <span class="admin-column_right--linked"><b>Phòng</b> - Danh sách phòng</span>
+    <h2 class="admin-column_right--title">Thành viên</h2>
+    <span class="admin-column_right--linked"><b>Thành viên</b> - Danh sách thành viên</span>
     <div class="table table-category">
-        <a href="?act=them&page=phong"><input style="margin-bottom: 2rem;" type="button" name="them" value="Thêm Phòng"></a>
+        <a href="?act=them&page=thanhvien"><input style="margin-bottom: 2rem;" type="button" name="them" value="Thêm thành viên"></a>
         <form style="margin: 0;" class="form_1" action="?act=lk&page=phong" method="post">
             <section style="padding-right:8px;" class="form_group">
-                <input type="text" name="seach_Tenphong" placeholder="Tìm kiếm sản phẩm" value="<?php echo !empty($_POST["seach_phong"]) ? $_POST["seach_phong"] : "" ?>">
+                <input type="text" name="seach_Tenphong" placeholder="Tìm kiếm tên người dùng" value="<?php echo !empty($_POST["seach_phong"]) ? $_POST["seach_phong"] : "" ?>">
             </section>
             <select name="seach_idLoaiPhong" id="">
                 <option value="">Tất cả</option>
@@ -28,32 +28,25 @@
         <table>
             <tr>
                 <th></th>
-                <th>Tên Phòng</th>
-                <th>Diện Tích</th>
-                <th>Khách Hàng</th>
-                <th>Giá</th>
-                <th>Số Lượng</th>
-                <th>Trạng Thái</th>
+                <th>Tên đăng nhập</th>
+                <th>Họ tên</th>
+                <th>Ngày cập nhật</th>
+                <th>Ngày tạo</th>
+                <th>Phân quyền</th>
                 <th>Hành Động</th>
             </tr>
-            <?php foreach ($rooms as $room) :
-                extract($room);
+            <?php foreach ($users as $user) :
+                extract($user);
             ?>
                 <tr>
                     <th><input data-page="phong" type="checkbox" value="<?= $id ?>" name="check_ml"></th>
-                    <th class="id"><?= $ten_Phong ?></th>
-                    <th class="id"><?= $dientich ?>m<sup>2</sup></th>
-                    <th>
-                        <section>
-                            Số lượng người lớn : <strong><?= $slNguoiLon ?></strong>
-                            <br>
-                            Số lượng trẻ em : <strong><?= $slTreEm ?></strong>
-                        </section>
-                    </th>
-                    <th>8.000.000 đ</th>
-                    <th><?=$sl_Phong?></th>
+                    <th class="id"><?= $user_name ?></th>
+                    <th class="id"><?= $name?></th>
+                    <th><?=$ngaysua?></th>
+                    <th><?=$ngaytao?></th>
+                    
                    
-                    <th> <a href="?act=edit&page=phong&id=<?php echo $id ?>"><input type="button" name="sua" value="Sửa"></a></th>
+                    <th> <a href="?act=edit&page=thanhvien&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
                     <th>
                     <a href="?page=phong&act=edit&id=<?php echo $id?>"><input type="button" name="sua" value="Sửa"/></a>
                                         <a class="remove" href=""><input type="button" name="xoa"
@@ -65,7 +58,7 @@
 
         </table>
         <section class="pagin">
-        <?php  thanhvien_get_paging($paggin)?>
+        <?php  get_paging($paggin)?>
         </section>
     </div>
     <input style="margin-bottom: 2rem;" type="button" class="check_all" name="them" value="Tích toàn bộ">

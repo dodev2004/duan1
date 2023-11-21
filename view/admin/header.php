@@ -71,6 +71,9 @@
                                         <li class="admin-component_item">
                                             <a href="./index.php?act=bl">Bình luận</a>
                                         </li>
+                                        <li class="admin-component_item ">
+                                            <a href="?act=lk&page=thanhvien&currentPage=1">Thành viên</a>
+                                        </li>
                                         <li class="admin-component_item">
                                             <a href="./index.php?act=thongke">Thống kê</a>
                                         </li>
@@ -82,7 +85,7 @@
 
                                 </nav>
                             </section>
-                            <a class="logout" href="./index.php?act=dangxuat">Đăng xuất</a>
+                            <a class="logout" href="?act=lk&page=dangxuat">Đăng xuất</a>
                         </section>
 
                     </section>

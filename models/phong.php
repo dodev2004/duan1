@@ -4,6 +4,17 @@
       return pdo_execute($sql,$name,$loaiphong,$avatar,$slNguoiLon,$slTreEm,$dientich,$slp,$giaphong,$introduction,$description);
         
     }
+    function db_phong_update($name,$loaiphong,$dientich,$giaphong,$slp,$slNguoiLon,$slTreEm,$avatar,$introduction,$description,$id){
+        if($avatar){
+            $sql = "UPDATE phong set ten_Phong = ?, id_loaiPhong =?, avatar = ?, slNguoiLon = ?,slTreEm = ?,dientich= ?,sl_Phong= ?,gia= ?,mota_chung = ?, mota_chinh =? where id = ?";
+            pdo_execute($sql,$name,$loaiphong,$avatar,$slNguoiLon,$slTreEm,$dientich,$slp,$giaphong,$introduction,$description,$id);
+        }
+        else {
+            $sql = "UPDATE phong set ten_Phong = ?, id_loaiPhong =?, slNguoiLon = ?,slTreEm = ?,dientich= ?,sl_Phong= ?,gia= ?,mota_chung = ?, mota_chinh =? where id = ?";
+            pdo_execute($sql,$name,$loaiphong,$slNguoiLon,$slTreEm,$dientich,$slp,$giaphong,$introduction,$description,$id);
+        }
+        
+    }
     function db_phong_select_all(){
         if(isset($_POST["seach"])){
             $seach_Tenphong = !empty($_POST["seach_Tenphong"]) ? $_POST["seach_Tenphong"]: "";
@@ -51,10 +62,7 @@
         }
         return pdo_query($sql);
     }
-    function db_phong_update($name,$loaiphong,$dientich,$giaphong,$slp,$slNguoiLon,$slTreEm,$avatar,$introduction,$description){
-        $sql = "update phong set ten_Phong = ?, id_loaiPhong =?, avatar = ?, slNguoiLon = ?,slTreEm = ?,dientich= ?,slPhong= ?,gia= ?,mota_chung = ?, mota_chinhg =? where id = ?";
-        pdo_execute($sql,$name,$loaiphong,$avatar,$slNguoiLon,$slTreEm,$dientich,$slp,$giaphong,$introduction,$description);
-    }
+   
     function db_phong_select_by_id($id){
         $sql = "select * from phong where id = ?";
         return pdo_query_one($sql,$id);
@@ -65,6 +73,28 @@
         pdo_execute($sql,$image,$id_Phong);
        }
        
+    }
+    function db_phong_delete_dv($ids,$id_Phong){
+        if(is_array($ids)){
+            $sql = "DELETE FROM dichvuphong where id_dichVu";
+           foreach($ids as $index => $id){
+            if($index == 0){
+                $sql = $sql . " !=$id ";
+            }
+            else {
+                $sql = $sql . " and id_dichVu != $id ";
+            }
+           }
+           $sql = $sql . " and id_Phong = " . $id_Phong;
+          
+        }
+      
+        else {
+            $sql = "DELETE FROM dichvuphong where id_Phong = " . $id_Phong;
+            
+        }
+      pdo_execute($sql);
+ 
     }
     function db_phong_delete_image($id){
         $sql= "delete from anhphong where id = ?";
@@ -85,8 +115,18 @@
         return pdo_query($sql,$id);
     }
     function db_phong_delete($id){
-        $sql = "delete from phong where id = ?";
-        pdo_execute($sql,$id);
+        if(is_array($id)){
+            foreach($id as $rm){
+                $sql = "delete from phong where id = ?";
+                pdo_execute($sql,$rm);
+            }
+        }
+        else {
+            $sql = "delete from phong where id = ?";
+                pdo_execute($sql,$id);
+        }
+      
+       
     }
     function get_paging($pagin){
         $current = $_GET["currentPage"];
