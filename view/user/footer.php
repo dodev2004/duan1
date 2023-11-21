@@ -33,3 +33,10 @@
     </div>
 
 </footer>
+<script src="../public/js/form.js"></script>
+<script>
+    validationForm("#usersigup");
+</script>
+</body>
+
+</html>

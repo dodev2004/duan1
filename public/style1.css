@@ -216,3 +216,14 @@ main .banner_room img {
   margin: 150px auto;
   width: 500px;
 }
+.form__login-sigup {
+  float: right;
+  margin-top: 15px;
+  text-decoration: none;
+}
+.color_black {
+  color: #000;
+}
+.icon_user {
+  font-size: 20px !important;
+}
