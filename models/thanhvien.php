@@ -31,10 +31,12 @@ function nguoidung_select_all()
             $sql = "SELECT * FROM phong where id_user =  $id_user AND " . "name like '%" .  $seach_name . "%' order by id desc";
         }
     } else {
+
         $sql = "SELECT * FROM phong order by id desc";
     }
     return pdo_query($sql);
 }
+
 function nguoidung_select_all_Pagin($currentPage, $id)
 {
     $offset = ($currentPage - 1) * 4;
@@ -56,6 +58,7 @@ function nguoidung_select_all_Pagin($currentPage, $id)
     }
     return pdo_query($sql);
 }
+
 function nguoidung_delete($ma_kh)
 {
     $sql = "DELETE FROM nguoidung  WHERE id=?";
@@ -98,7 +101,6 @@ function nguoidung_select_by_role($vai_tro)
     $sql = "SELECT * FROM nguoidung WHERE vai_tro=?";
     return pdo_query($sql, $vai_tro);
 }
-
 function nguoidung_change_password($ma_kh, $mat_khau_moi)
 {
     $sql = "UPDATE nguoidung SET password=? WHERE id=?";

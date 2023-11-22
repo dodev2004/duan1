@@ -87,12 +87,16 @@
                                         </label>
                                        
                                         <div class="form-row form_show-image">
+                                          
                                         <?php foreach($images as $image): ?>
+                                            <?php if($image["Image"]) {?>
                                               <div class="col-md-3">
                                                 <img src="../public/image/slider/<?php echo $image["Image"] ?>" class="form_slider" alt="">
                                                 <a class="image_remove" href="?act=removeSlider&page=phong&idImage=<?php echo $image["id"]?>&id=<?=$id?>">Xóa</a>
                                               </div>
+                                              <?php } ?>
                                               <?php endforeach ?>
+                                          
                                         </div>
                                        
                                         <input name="slider[]" type="file" hidden class="form-control" id="room_input-slider"
@@ -131,7 +135,7 @@
                                    
                                 </div>
 
-                                <button type="submit" name="add" class="btn btn-primary">Thêm Phòng</button>
+                                <button type="submit" name="edit" class="btn btn-primary">Thêm Phòng</button>
                             </form>
                         </div>
                         
