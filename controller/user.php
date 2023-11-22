@@ -57,7 +57,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/dangky.php";
             break;
         case 'dangxuat':
-            dangxuat();
+            dangxuat();     
             header("location: user.php");
             // include "../view/user/dangnhap.php";
 
