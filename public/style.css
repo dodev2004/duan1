@@ -288,9 +288,24 @@ input:hover {
 
 .room>.wrapper>.row {
   display: grid;
+  padding: 0 !important;
+  margin: 0 !important;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 24px;
   row-gap: 17px;
+}
+.room>.wrapper>.row>.col{
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.row-vip {
+  display: grid;
+  grid-template-columns: 5fr 7fr !important;
+  column-gap: 12px;
+}
+.row-vip>.col-5{
+  width: 100%;
+  max-width: 100%;
 }
 .room > .wrapper > .row > .col > article {
   position: relative;
@@ -300,6 +315,7 @@ input:hover {
   text-align: center;
   border-radius: 2px;
   overflow: hidden !important;
+  
 }
 
 .room .wrapper .row .col article .room_name {
@@ -429,9 +445,9 @@ input:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 12px;
-  margin-bottom: 10px;
-  padding: 0 10px;
+  margin-top: 8px;
+  margin-bottom: 3px;
+  padding: 0 10px
 }
 
 .room_vip-service > section > span > img {
@@ -441,6 +457,25 @@ input:hover {
 .room_vip-title {
   padding: 0 10px;
   margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: unset;
+  max-height: 22px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+  transition: 0.25s linear;
+  color: #323c42 !important;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .room_vip-infomation {
@@ -473,17 +508,31 @@ input:hover {
 .room_content > .row > .col-5 > article > form {
   padding: 0 10px;
   margin-top: 12px;
+ 
 }
-
-.room_content > .row > .col-5 > article > form > input[type="submit"] {
+.room_content > .row-vip > .col-5 > article {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgb(149 129 129 / 50%);
+  margin-bottom: 20px;
+  
+  border-radius: 2px;
+  overflow: hidden
+}
+.room_content > .row-vip > .col-5 > article > form > input[type="submit"] {
   background-color: #fff;
   color: #c40025;
   border: 1px solid #c40025;
   padding: 5px 10px;
   text-transform: capitalize;
   cursor: pointer;
+  transition: 0.25s linear;
+  margin: 10px 10px;
 }
-
+.room_content > .row-vip > .col-5 > article > form > input[type="submit"]:hover {
+  background-color: #c40025;
+  color: white
+}
 .room_content > .row > .col-5 > article > form > input[type="submit"]:hover {
   color: white;
   background-color: #c40025;
@@ -496,12 +545,15 @@ input:hover {
 .room_vip-left > .row {
   display: grid;
   grid-template-columns: 1fr 1fr !important;
+ row-gap: 24px
 }
 
-.room_vip-left > .row > .col > article {
-  position: relative;
+.room_vip-left>.row{
+  margin:0 !important;
 }
-
+.room_vip-left>.row>.col{
+  padding: 0 !important;
+}
 .room_vip-left > .row > .col > article > .room_vip-infomation {
   position: absolute;
   bottom: 20px;
@@ -521,6 +573,7 @@ input:hover {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
   color: white;
   text-decoration: none;
 }

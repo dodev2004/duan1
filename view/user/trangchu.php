@@ -1,459 +1,459 @@
 <main>
-    <div class="wrapper">
-        <section class="banner">
-            <img src="/public/image/banner/1920x350.png" alt="">
-        </section>
-        <section class="seach_room">
-            <h4>Tìm phòng</h4>
-            <form class="form_seach-room" action="" method="post">
-                <div class="form_group">
-                    <label for="">Ngày nhận phòng</label>
-                    <input type="date" name="create_room" class="create_room">
-                    <p class="message_eror"></p>
-                </div>
-                <div class="form_group">
-                    <label for="">Ngày trả phòng</label>
-                    <input type="date" name="end_room" class="end_room">
-                    <p class="message_eror"></p>
-                </div>
-                <div class="form_group">
-                    <label for="">Số lượng người lớn</label>
-                    <select name="" id="">
-                        <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                        <option value="1">4</option>
-                        <option value="1">5</option>
-                        <option value="1">6</option>
-                        <option value="1">7</option>
-                    </select>
-                    <p class="message_eror"></p>
-                </div>
-                <div class="form_group">
-                    <label for="">Số lượng trẻ em</label>
-                    <select name="" id="" <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                        <option value="1">4</option>
-                        <option value="1">5</option>
-                        <option value="1">6</option>
-                        <option value="1">7</option>
-                    </select>
-                    <p class="message_eror"></p>
-                </div>
-                <input type="submit" name="seach" value="Tìm kiếm">
-
-            </form>
-        </section>
-        <section class="home_introduction">
-            <section class="home_introduction-left">
-                <img src="/public/image/banner/cong-viec-le-tan-ca-chieu.webp" alt="">
-            </section>
-            <section class="home_introduction-right">
-                <h3>Viet Hotel</h3>
-
-                <span>Giới thiệu về chúng tôi</span>
-
-                <p>Là khách sạn 5 sao đẳng cấp quốc tế, tọa lạc tại giao điểm của bốn quận chính, nơi được xem như
-                    trái tim và trung tâm của TP. Hồ Chí Minh. Với hệ thống phòng tiêu chuẩn và phòng hạng sang
-                    thiết kế đẹp mắt và trang nhã được chú trọng tới từng chi tiết sẽ đem lại sự tiện nghi và thoải
-                    mái tối đa cho quý khách dù là thời gian nghỉ ngơi thư giãn hay trong chuyến công tác...</p>
-
-            </section>
-        </section>
-    </div>
-    <section class="room">
         <div class="wrapper">
-            <h2 class="room_title">Phòng</h2>
-            <span></span>
-            <div class="row">
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
+            <section class="banner">
+                <img src="../public/image/banner/1920x350.png" alt="">
+            </section>
+            <section class="seach_room">
+                <h4>Tìm phòng</h4>
+                <form class="form_seach-room" action="" method="post">
+                    <div class="form_group">
+                        <label for="">Ngày nhận phòng</label>
+                        <input type="date" name="create_room" class="create_room">
+                        <p class="message_eror"></p>
+                    </div>
+                    <div class="form_group">
+                        <label for="">Ngày trả phòng</label>
+                        <input type="date" name="end_room" class="end_room">
+                        <p class="message_eror"></p>
+                    </div>
+                    <div class="form_group">
+                        <label for="">Số lượng người lớn</label>
+                        <select name="" id="">
+                            <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                            <option value="1">4</option>
+                            <option value="1">5</option>
+                            <option value="1">6</option>
+                            <option value="1">7</option>
+                        </select>
+                        <p class="message_eror"></p>
+                    </div>
+                    <div class="form_group">
+                        <label for="">Số lượng trẻ em</label>
+                        <select name="" id="" <option value="1">1</option>
+                            <option value="1">2</option>
+                            <option value="1">3</option>
+                            <option value="1">4</option>
+                            <option value="1">5</option>
+                            <option value="1">6</option>
+                            <option value="1">7</option>
+                        </select>
+                        <p class="message_eror"></p>
+                    </div>
+                    <input type="submit" name="seach" value="Tìm kiếm">
 
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
+                </form>
+            </section>
+            <section class="home_introduction">
+                <section class="home_introduction-left">
+                    <img src="../public/image/banner/cong-viec-le-tan-ca-chieu.webp" alt="">
+                </section>
+                <section class="home_introduction-right">
+                    <h3>Viet Hotel</h3>
 
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
+                    <span>Giới thiệu về chúng tôi</span>
 
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
+                    <p>Là khách sạn 5 sao đẳng cấp quốc tế, tọa lạc tại giao điểm của bốn quận chính, nơi được xem như
+                        trái tim và trung tâm của TP. Hồ Chí Minh. Với hệ thống phòng tiêu chuẩn và phòng hạng sang
+                        thiết kế đẹp mắt và trang nhã được chú trọng tới từng chi tiết sẽ đem lại sự tiện nghi và thoải
+                        mái tối đa cho quý khách dù là thời gian nghỉ ngơi thư giãn hay trong chuyến công tác...</p>
 
-                    </article>
-                </div>
-
-
-            </div>
-            <h2 class="room_title">Phòng đôi</h2>
-            <span></span>
-            <div class="row">
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="/public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-
-
-            </div>
-
+                </section>
+            </section>
         </div>
-
-    </section>
-    <section class="room room_vip">
-        <section class="wrapper">
-            <h2 class="room_title">Phòng Vip</h2>
-            <section class="room_content">
+        <section class="room">
+            <div class="wrapper">
+                <h2 class="room_title">Phòng</h2>
+                <span></span>
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col">
                         <article>
-                            <div class="room_vip-img"
-                                style="background: url(/public/image/anh1a6283d038ec94b4abbca2d4e02.webp);"></div>
-                            <h2 class="room_vip-title">Phòng đơn vip </h2>
-                            <section class="room_vip-service">
-                                <section class="room_vip-infomation">
-                                    <span class="room_vip-guess">
-                                        <img src="/public/image/tag-user.svg" alt="">
-                                        <span class="room_guest">02 khách</span>
-                                    </span>
-                                    <span class="room_vip-area">
-                                        <img src="/public/image/tag-meters.svg" alt="">
-                                        <span class="room_area">25m<sup>2</sup></span>
-                                    </span>
-                                </section>
-                                <section class="room_service">
-                                    <img src="/public/image/Không có tiêu đề.png" alt="">
-                                    <img src="/public/image/tag_icon_4.svg" alt="">
-                                    <img src="/public/image/tag_icon_5.svg" alt="">
-                                </section>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
                             </section>
-                            <span class="room_vip-description">Với tiêu chí ngày càng nâng cao và đáp ứng mọi nhu
-                                cầu của khách hàng chúng tôi cung cấp thêm loại phòng đơ... </span>
-                            <form action="">
-                                <input type="submit" type="submit" value="Đặt phòng">
-                            </form>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
                         </article>
                     </div>
-                    <div class="col-5">
-                        <section class="room_vip-left">
-                            <div class="row">
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="/public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
 
-                                        </section>
-                                    </article>
-                                </div>
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="/public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
-
-                                        </section>
-                                    </article>
-                                </div>
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="/public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
-
-                                        </section>
-                                    </article>
-                                </div>
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="/public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price">3.000.000₫/Đêm</a>
-
-                                        </section>
-                                    </article>
-                                </div>
-                            </div>
-
-
+                        </article>
                     </div>
-            </section>
-            </div>
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
+                        </article>
+                    </div>
+
+
+                </div>
+                <h2 class="room_title">Phòng đôi</h2>
+                <span></span>
+                <div class="row">
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article>
+                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="../public/image/Không có tiêu đề.png" alt="">
+                                <img src="../public/image/tag_icon_4.svg" alt="">
+                                <img src="../public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area">25m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price">500.000₫/đêm</span>
+                                <form class="room_buy-form" action="" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
+
+                        </article>
+                    </div>
+
+
+                </div>
 
             </div>
+
         </section>
-    </section>
-    </section>
-    <section class="room_news">
-        <section class="wrapper">
-            <h2 class="room_news-title">Tin tức </h2>
-            <section class="room_news-content">
-                <div class="row">
-                    <div class="col">
-                        <article>
-                            <a class="news_avatar" href=""><img
-                                    src="/public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp"
-                                    alt=""></a>
-                            <section class="news_content">
-                                <a href="" class="news_content-title">
-                                    <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
-                                </a>
-                                <span class="news_content-description">
-                                    Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
-                                    là những xu hướng mới nhiều khách...
-                                </span>
-                                <section class="news_content-origin">
-                                    <span class="news_content-author">By Bean hotel</span>
-                                    <span class="news_cotent-creatednews">6/12/2022</span>
+        <section class="room room_vip">
+            <section class="wrapper">
+                <h2 class="room_title">Phòng Vip</h2>
+                <section class="room_content">
+                    <div class="row-vip">
+                        <div class="col-5">
+                            <article>
+                                <div class="room_vip-img"
+                                    style="background: url(../public/image/anh1a6283d038ec94b4abbca2d4e02.webp);"></div>
+                                <h2 class="room_vip-title">Phòng đơn vip </h2>
+                                <section class="room_vip-service">
+                                    <section class="room_vip-infomation">
+                                        <span class="room_vip-guess">
+                                            <img src="../public/image/tag-user.svg" alt="">
+                                            <span class="room_guest">02 khách</span>
+                                        </span>
+                                        <span class="room_vip-area">
+                                            <img src="../public/image/tag-meters.svg" alt="">
+                                            <span class="room_area">25m<sup>2</sup></span>
+                                        </span>
+                                    </section>
+                                    <section class="room_service">
+                                        <img src="../public/image/Không có tiêu đề.png" alt="">
+                                        <img src="../public/image/tag_icon_4.svg" alt="">
+                                        <img src="../public/image/tag_icon_5.svg" alt="">
+                                    </section>
                                 </section>
-                                <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
-                            </section>
-                        </article>
-                    </div>
-                    <div class="col">
-                        <article>
-                            <a class="news_avatar" href=""><img
-                                    src="/public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp"
-                                    alt=""></a>
-                            <section class="news_content">
-                                <a href="" class="news_content-title">
-                                    <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
-                                </a>
-                                <span class="news_content-description">
-                                    Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
-                                    là những xu hướng mới nhiều khách...
-                                </span>
-                                <section class="news_content-origin">
-                                    <span class="news_content-author">By Bean hotel</span>
-                                    <span class="news_cotent-creatednews">6/12/2022</span>
-                                </section>
-                                <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
-                            </section>
-                        </article>
-                    </div>
-                    <div class="col">
-                        <article>
-                            <a class="news_avatar" href=""><img
-                                    src="/public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp"
-                                    alt=""></a>
-                            <section class="news_content">
-                                <a href="" class="news_content-title">
-                                    <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
-                                </a>
-                                <span class="news_content-description">
-                                    Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
-                                    là những xu hướng mới nhiều khách...
-                                </span>
-                                <section class="news_content-origin">
-                                    <span class="news_content-author">By Bean hotel</span>
-                                    <span class="news_cotent-creatednews">6/12/2022</span>
-                                </section>
-                                <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
-                            </section>
-                        </article>
-                    </div>
+                                <span class="room_vip-description">Với tiêu chí ngày càng nâng cao và đáp ứng mọi nhu
+                                    cầu của khách hàng chúng tôi cung cấp thêm loại phòng đơ... </span>
+                                <form action="">
+                                    <input type="submit" type="submit" value="Đặt phòng">
+                                </form>
+                            </article>
+                        </div>
+                        <div class="col-5">
+                            <section class="room_vip-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <article>
+                                            <a href="">
+                                                <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
+                                            </a>
+                                            <section class="room_vip-infomation">
+                                                <a href="#" class="room_vip-name">
+                                                    Phòng đơn vip
+                                                </a>
+                                                <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
+
+                                            </section>
+                                        </article>
+                                    </div>
+                                    <div class="col">
+                                        <article>
+                                            <a href="">
+                                                <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
+                                            </a>
+                                            <section class="room_vip-infomation">
+                                                <a href="#" class="room_vip-name">
+                                                    Phòng đơn vip
+                                                </a>
+                                                <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
+
+                                            </section>
+                                        </article>
+                                    </div>
+                                    <div class="col">
+                                        <article>
+                                            <a href="">
+                                                <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
+                                            </a>
+                                            <section class="room_vip-infomation">
+                                                <a href="#" class="room_vip-name">
+                                                    Phòng đơn vip
+                                                </a>
+                                                <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
+
+                                            </section>
+                                        </article>
+                                    </div>
+                                    <div class="col">
+                                        <article>
+                                            <a href="">
+                                                <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
+                                            </a>
+                                            <section class="room_vip-infomation">
+                                                <a href="#" class="room_vip-name">
+                                                    Phòng đơn vip
+                                                </a>
+                                                <a href="" class="room_vip-price">3.000.000₫/Đêm</a>
+
+                                            </section>
+                                        </article>
+                                    </div>
+                                </div>
+
+
+                        </div>
+                </section>
+                </div>
+
                 </div>
             </section>
         </section>
-    </section>
-</main>
+        </section>
+        <section class="room_news">
+            <section class="wrapper">
+                <h2 class="room_news-title">Tin tức </h2>
+                <section class="room_news-content">
+                    <div class="row">
+                        <div class="col">
+                            <article>
+                                <a class="news_avatar" href=""><img
+                                        src="../public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp"
+                                        alt=""></a>
+                                <section class="news_content">
+                                    <a href="" class="news_content-title">
+                                        <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
+                                    </a>
+                                    <span class="news_content-description">
+                                        Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
+                                        là những xu hướng mới nhiều khách...
+                                    </span>
+                                    <section class="news_content-origin">
+                                        <span class="news_content-author">By Bean hotel</span>
+                                        <span class="news_cotent-creatednews">6/12/2022</span>
+                                    </section>
+                                    <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
+                                </section>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article>
+                                <a class="news_avatar" href=""><img
+                                        src="../public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp"
+                                        alt=""></a>
+                                <section class="news_content">
+                                    <a href="" class="news_content-title">
+                                        <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
+                                    </a>
+                                    <span class="news_content-description">
+                                        Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
+                                        là những xu hướng mới nhiều khách...
+                                    </span>
+                                    <section class="news_content-origin">
+                                        <span class="news_content-author">By Bean hotel</span>
+                                        <span class="news_cotent-creatednews">6/12/2022</span>
+                                    </section>
+                                    <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
+                                </section>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article>
+                                <a class="news_avatar" href=""><img
+                                        src="../public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp"
+                                        alt=""></a>
+                                <section class="news_content">
+                                    <a href="" class="news_content-title">
+                                        <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
+                                    </a>
+                                    <span class="news_content-description">
+                                        Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
+                                        là những xu hướng mới nhiều khách...
+                                    </span>
+                                    <section class="news_content-origin">
+                                        <span class="news_content-author">By Bean hotel</span>
+                                        <span class="news_cotent-creatednews">6/12/2022</span>
+                                    </section>
+                                    <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
+                                </section>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
