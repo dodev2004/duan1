@@ -1,5 +1,7 @@
 /* Style của Thắng */
-main .banner_room {
+main .banner_room,
+.profile_user,
+.change-password {
   max-width: 1273px;
   margin: 0 auto;
 }
@@ -226,4 +228,34 @@ main .banner_room img {
 }
 .icon_user {
   font-size: 20px !important;
+}
+
+/* TAI KHOAN */
+.profile_user {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 30px;
+  margin-top: 50px;
+}
+.profile_user-right .avatar_user {
+  /* background-color: #6c707e; */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: url("image/people.webp");
+  margin-bottom: 10px;
+}
+.profile_user-right form {
+  margin-left: 30px;
+}
+.flex-user {
+  display: flex;
+  justify-content: space-between;
+}
+.profile_user-left {
+  border-right: 1px solid #000000;
+  margin-left: 54px;
+}
+.profile_user-left ul {
+  line-height: 2;
 }

@@ -51,13 +51,6 @@
                         </nav>
                     </section>
                     <nav>
-                        <!-- <li class="list_room-item">
-                            Tài khoản
-                            <nav class="todolist_room">
-                                <a class="user_infomation-list" href="">Phòng đơn</a><a class="user_infomation-list"
-                                    href="">Phòng khách</a><a class="user_infomation-list" href="">Phòng Vip</a>
-                            </nav>
-                        </li> -->
                         <nav class="user_box">
                             <?php if (!isset($_SESSION["user"])) { ?>
                                 <a href="?act=dangnhap" class="header_top-user">
@@ -65,7 +58,7 @@
                                 </a>
                             <?php } else { ?>
                                 <li class="list_room-item">
-                                    <a class="menu_room color_black" href=""> <i class="fa-solid fa-user icon_user"></i></a>
+                                    <a class="menu_room color_black" href="?act=taikhoan"> <i class="fa-solid fa-user icon_user"></i></a>
                                     <nav class="todolist_room">
                                         <a href="?act=dangxuat">Đăng xuất</a>
                                     </nav>

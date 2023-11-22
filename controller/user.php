@@ -27,7 +27,6 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $checked = nguoidung_signin($user, $password);
                 if (is_array($checked)) {
                     $_SESSION["user"] = $checked;
-
                     header("Location: user.php");
                 } else {
                     $eror["password"] = "Thông tin đăng nhập sai";
@@ -56,8 +55,14 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/dangky.php";
             break;
+        case 'taikhoan':
+            include "../view/user/taikhoan.php";
+            break;
+        case 'doimatkhau':
+            include "../view/user/doimatkhau.php";
+            break;
         case 'dangxuat':
-            dangxuat();     
+            dangxuat();
             header("location: user.php");
             // include "../view/user/dangnhap.php";
 
