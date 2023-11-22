@@ -286,13 +286,12 @@ input:hover {
   object-fit: contain;
 }
 
-.room .wrapper .row {
+.room>.wrapper>.row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 24px;
   row-gap: 17px;
 }
-
 .room > .wrapper > .row > .col > article {
   position: relative;
   background-color: #fff;
