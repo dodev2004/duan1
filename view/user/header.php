@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="../public/style1.css">
+    <link rel="stylesheet" href="../public/style1.css">
     <link rel="stylesheet" href="../public/style.css">
 
 
@@ -52,13 +52,16 @@
                             <li> <a href="">Dịch vụ</a></li>
                             <li> <a href="">Thư viện ảnh</a></li>
                             <li><a href="">Liên hệ</a></li>
-
                         </nav>
                     </section>
                     <nav>
-                        <a href="?act=dangnhap" class="header_top-user">
-                            Đăng nhập
-                        </a>
+                        <li class="list_room-item">
+                            Tài khoản
+                            <nav class="todolist_room">
+                                <a class="user_infomation-list" href="">Phòng đơn</a><a class="user_infomation-list"
+                                    href="">Phòng khách</a><a class="user_infomation-list" href="">Phòng Vip</a>
+                            </nav>
+                        </li>
                     </nav>
                 </section>
 

@@ -52,7 +52,9 @@ nav .header_top-user {
   margin-left: 6px;
   font-size: 13px;
 }
-
+.user_infomation-list{
+   color: #2e988a !important;
+}
 li {
   list-style: none !important;
 }
@@ -116,6 +118,7 @@ li {
   margin: 0 auto !important;
   display: flex !important;
   justify-content: space-between;
+  padding: 0 12px !important;
 }
 
 .header_bottom {
