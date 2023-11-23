@@ -9,8 +9,13 @@
                 <li><a href="#">Địa chỉ</a></li>
             </ul>
         </div>
+        <?php
+        if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
+            extract(($_SESSION['user']));
+        }
+        ?>
         <div class="profile_user-right">
-            <form>
+            <form action="?act=taikhoan" method="post" enctype="multipart/form-data">
                 <div class="flex-user">
                     <div>
                         <h4>Thông tin tài khoản</h4>
@@ -22,22 +27,22 @@
                     </div>
                 </div>
                 <div class="mb-3">Tên đăng nhập
-                    <input style="width: 200px;" class="form-control" type="text" value="Tên đăng nhập"
-                        aria-label="Disabled input example" disabled readonly>
+                    <input style="width: 200px;" class="form-control" type="text" value="<?php echo $user_name ?>" aria-label="Disabled input example" disabled readonly>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Tên</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $name ?>" name="name-user">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?php echo $email ?>" name="email-user">
                 </div>
-                <!-- <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div> -->
-                <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">SĐT</label>
+                    <input type="text" class="form-control" value="<?php echo $sdt ?>" name="sdt-user">
+                </div>
+
+                <button type="submit" name="capnhat" class="btn btn-primary">Cập Nhật</button>
             </form>
 
         </div>

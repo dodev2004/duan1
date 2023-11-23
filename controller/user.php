@@ -56,6 +56,11 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/dangky.php";
             break;
         case 'taikhoan':
+            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+                $name = $_POST['name-user'];
+                $pass = $_POST['pass-user'];
+                $sdt = $_POST['sdt-user'];
+            }
             include "../view/user/taikhoan.php";
             break;
         case 'doimatkhau':
