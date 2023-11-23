@@ -56,10 +56,14 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/dangky.php";
             break;
         case 'taikhoan':
-            if (isset($_POST['capnhat']) && $_POST['capnhat']) {
+            $profile_user = nguoidung_select_by_id_user($_SESSION['user']["id"]);
+            if (isset($_POST['capnhat'])) {
+                $id = $_POST['id-user'];
                 $name = $_POST['name-user'];
-                $pass = $_POST['pass-user'];
+                $email = $_POST['email-user'];
                 $sdt = $_POST['sdt-user'];
+                nguoidung_update_user($id, $name, $email, $sdt);
+                header("Location: ?act=taikhoan");
             }
             include "../view/user/taikhoan.php";
             break;

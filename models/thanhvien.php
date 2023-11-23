@@ -10,6 +10,11 @@ function nguoidung_update($ma_kh, $user,  $name, $email, $phone)
     $sql = "UPDATE nguoidung SET user_name=?,name=?,email=?,sdt=? WHERE id=?";
     pdo_execute($sql, $user, $name, $email, $phone, $ma_kh);
 }
+function nguoidung_update_user($ma_kh,  $name, $email, $phone)
+{
+    $sql = "UPDATE nguoidung SET name=?,email=?,sdt=? WHERE id=?";
+    pdo_execute($sql, $name, $email, $phone, $ma_kh);
+}
 function nguoidung_update_admin($id, $name, $user_name, $password, $ngaysua)
 {
     $sql = "UPDATE nguoidung SET name=?,user_name=?,password=?,ngaysua=? WHERE id=?";
@@ -76,6 +81,7 @@ function nguoidung_select_by_id($ma_kh)
     $sql = "SELECT * FROM nguoidung WHERE id=?";
     return pdo_query_one($sql, $ma_kh);
 }
+
 function nguoidung_id_select_by_user_name($user_name)
 {
     $sql = "SELECT id FROM nguoidung WHERE user_name=?";
@@ -148,4 +154,9 @@ function dangxuat()
     if (isset($_SESSION['user'])) {
         unset($_SESSION['user']);
     }
+}
+function nguoidung_select_by_id_user($ma_kh)
+{
+    $sql = "SELECT * FROM nguoidung WHERE id=?";
+    return pdo_query_one($sql, $ma_kh);
 }

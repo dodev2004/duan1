@@ -10,9 +10,7 @@
             </ul>
         </div>
         <?php
-        if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
-            extract(($_SESSION['user']));
-        }
+        extract($profile_user);
         ?>
         <div class="profile_user-right">
             <form action="?act=taikhoan" method="post" enctype="multipart/form-data">
@@ -28,6 +26,9 @@
                 </div>
                 <div class="mb-3">Tên đăng nhập
                     <input style="width: 200px;" class="form-control" type="text" value="<?php echo $user_name ?>" aria-label="Disabled input example" disabled readonly>
+                </div>
+                <div>
+                    <input type="hidden" name="id-user" value="<?php echo $id ?>">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Tên</label>
