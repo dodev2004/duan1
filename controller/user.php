@@ -61,6 +61,12 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
         case 'doimatkhau':
             include "../view/user/doimatkhau.php";
             break;
+        case 'thuvienanh':
+            include "../view/user/thuvienanh.php";
+            break;
+        case 'phong':
+            include "../view/user/phong.php";
+            break;
         case 'dangxuat':
             dangxuat();
             header("location: user.php");

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="../public/style1.css">
     <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="/style.css">
+
 
 
 
@@ -32,12 +34,12 @@
                             <li>
                                 <a class="logo" href="">Logo</a>
                             </li>
-                            <li> <a href="">Trang chủ</a></li>
+                            <li> <a href="../controller/user.php">Trang chủ</a></li>
                             <li>
                                 <a href="">Về chúng tôi</a>
                             </li>
                             <li class="list_room-item">
-                                <a class="menu_room" href="">Phòng <i class="fa-solid fa-angle-down"></i>
+                                <a class="menu_room" href="?act=phong">Phòng <i class="fa-solid fa-angle-down"></i>
 
                                 </a>
                                 <nav class="todolist_room">
@@ -46,7 +48,7 @@
                             </li>
                             <li> <a href="">Ẩm thực</a></li>
                             <li> <a href="">Dịch vụ</a></li>
-                            <li> <a href="">Thư viện ảnh</a></li>
+                            <li> <a href="?act=thuvienanh">Thư viện ảnh</a></li>
                             <li><a href="">Liên hệ</a></li>
                         </nav>
                     </section>
