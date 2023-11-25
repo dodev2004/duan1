@@ -10,10 +10,10 @@ function nguoidung_update($ma_kh, $user,  $name, $email, $phone)
     $sql = "UPDATE nguoidung SET user_name=?,name=?,email=?,sdt=? WHERE id=?";
     pdo_execute($sql, $user, $name, $email, $phone, $ma_kh);
 }
-function nguoidung_update_user($ma_kh,  $name, $email, $phone)
+function nguoidung_update_user($ma_kh,  $name, $email, $address, $phone)
 {
-    $sql = "UPDATE nguoidung SET name=?,email=?,sdt=? WHERE id=?";
-    pdo_execute($sql, $name, $email, $phone, $ma_kh);
+    $sql = "UPDATE nguoidung SET name=?,email=?,diachi=?,sdt=? WHERE id=?";
+    pdo_execute($sql, $name, $email, $address, $phone, $ma_kh);
 }
 function nguoidung_update_admin($id, $name, $user_name, $password, $ngaysua)
 {
@@ -110,7 +110,7 @@ function nguoidung_select_by_role($vai_tro)
 function nguoidung_change_password($ma_kh, $mat_khau_moi)
 {
     $sql = "UPDATE nguoidung SET password=? WHERE id=?";
-    pdo_execute($sql, $mat_khau_moi, $ma_kh);
+    pdo_execute($sql, $ma_kh, $mat_khau_moi);
 }
 function thanhvien_get_paging($pagin)
 {
@@ -160,3 +160,13 @@ function nguoidung_select_by_id_user($ma_kh)
     $sql = "SELECT * FROM nguoidung WHERE id=?";
     return pdo_query_one($sql, $ma_kh);
 }
+function nguoidung_update_password($ma_kh, $password)
+{
+    $sql = "UPDATE nguoidung SET password='" . $password . "' WHERE id='" . $ma_kh . "'";
+    pdo_execute($sql);
+}
+// function nguoidung_update_password($ma_kh, $password)
+// {
+//     $sql = "UPDATE nguoidung SET password = ? WHERE id = ?";
+//     pdo_execute($sql);
+// }

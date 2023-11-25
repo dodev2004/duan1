@@ -61,13 +61,41 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $id = $_POST['id-user'];
                 $name = $_POST['name-user'];
                 $email = $_POST['email-user'];
+                $address = $_POST['address-user'];
                 $sdt = $_POST['sdt-user'];
-                nguoidung_update_user($id, $name, $email, $sdt);
+                nguoidung_update_user($id, $name, $email, $address, $sdt);
                 header("Location: ?act=taikhoan");
             }
             include "../view/user/taikhoan.php";
             break;
         case 'doimatkhau':
+            $pass_user = $_SESSION['user']["password"];
+            // var_dump(md5(2222));
+            // die();
+            $eror = [
+                "matkhau" => "",
+                "matkhaucu" => "",
+                "matkhaumoi" => ""
+            ];
+            if (isset($_POST['doimatkhau'])) {
+                $id = $_POST['id-user'];
+                $matkhaucu = md5($_POST['matkhaucu']);
+                $matkhaumoi1 = $_POST['matkhaumoi1'];
+                $matkhaumoi2 = $_POST['matkhaumoi2'];
+                if ($matkhaucu == $pass_user) {
+
+                    if ($matkhaumoi1 == $matkhaumoi2) {
+
+                        $matkhaumoi = md5($matkhaumoi1);
+                        nguoidung_update_password($id, $matkhaumoi);
+                        $eror["matkhau"] = "Đổi mật khẩu thành công";
+                    } else {
+                        $eror["matkhaumoi"] = "Mật khẩu mới không trùng khớp";
+                    }
+                } else {
+                    $eror["matkhaucu"] = "Mật khẩu cũ không chính xác";
+                }
+            }
             include "../view/user/doimatkhau.php";
             break;
         case 'thuvienanh':

@@ -259,3 +259,10 @@ main .banner_room img {
 .profile_user-left ul {
   line-height: 2;
 }
+/* Thông báo lỗi form đổi mật khẩu */
+.err-sussces {
+  color: green;
+}
+.err-failed {
+  color: red;
+}
