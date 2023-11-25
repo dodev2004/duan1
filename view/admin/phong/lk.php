@@ -33,14 +33,23 @@
                 <th>Khách Hàng</th>
                 <th>Giá</th>
                 <th>Số Lượng</th>
+                <?php if(checkPrivileges("act=status&page=phong&id=0")){ ?>
                 <th>Trạng Thái</th>
+                <?php } ?>
+                <?php if(checkPrivileges("act=edit&page=phong&id=0") || checkPrivileges("act=delete&page=phong&id=0")){ ?>
                 <th>Hành Động</th>
+                <?php }?>
             </tr>
-            <?php foreach ($rooms as $room) :
+            <?php foreach ($rooms as $index => $room) :
                 extract($room);
             ?>
                 <tr>
+                    <?php if(checkPrivileges("act=delete&page=phong&id=0")){ ?>
                     <th><input data-page="phong" type="checkbox" value="<?= $id ?>" name="check_ml"></th>
+                    <?php }
+                    else {
+                        echo "<th>$index</th>";
+                    }?>
                     <th class="id"><?= $ten_Phong ?></th>
                     <th class="id"><?= $dientich ?>m<sup>2</sup></th>
                     <th>
@@ -52,12 +61,17 @@
                     </th>
                     <th>8.000.000 đ</th>
                     <th><?=$sl_Phong?></th>
-                   
-                    <th> <a href="?act=edit&page=phong&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
+                    <?php if(checkPrivileges("act=status&page=phong&id=". $id)){ ?>
+                    <th> <a href="?act=status&page=phong&id=<?php echo $id ?>"><input type="button" name="sua" value="Hoạt động"></a></th>
+                    <?php } ?>
                     <th>
-                    <a href="?page=phong&act=edit&id=<?php echo $id?>"><input type="button" name="sua" value="Sửa"/></a>
-                                        <a class="remove" href=""><input type="button" name="xoa"
+                        <?php  if(checkPrivileges("act=edit&page=phong&id=" . $id)){?>
+                    <a href="?act=edit&page=phong&id=<?php echo $id?>"><input type="button" name="sua" value="Sửa"/></a>
+                    <?php } ?>
+                    <?php if(checkPrivileges("act=delete&page=phong&id=". $id)){ ?>
+                        <a class="remove" href="?act=delete&page=phong&id=<?php echo $id?>"><input type="button" name="xoa"
                                                 value="Xóa"></a>
+                    <?php }?>
                     </th>
                 </tr>
 
@@ -68,9 +82,11 @@
         <?php  get_paging($paggin)?>
         </section>
     </div>
+    <?php if(checkPrivileges("act=delete&page=phong&id=0")) {?>
     <input style="margin-bottom: 2rem;" type="button" class="check_all" name="them" value="Tích toàn bộ">
     <input style="margin-bottom: 2rem;" type="button" name="them" class="checked_remove" value="Bỏ toàn bộ đã tích">
     <a class="removeAll" href="./index.php?act=rmall"><input style="margin-bottom: 2rem;" type="button" name="them" value="Xóa toàn bộ đã tích"></a>
+    <?php }?>
     <script>
 
 

@@ -33,10 +33,10 @@
                     <th><?=$ngaysua?></th>
                     
                    
-                    <th> <a href="?act=edit&page=thanhvien&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
+                    <th> <a href="?act=privilege&page=thanhvien&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
                     <th>
                     <a href="?page=thanhvien&act=edit&id=<?php echo $id?>"><input type="button" name="sua" value="Sửa"/></a>
-                                        <a class="remove" href=""><input type="button" name="xoa"
+                    <a class="remove" href="?page=thanhvien&act=delete&id=<?php echo $id?>"><input type="button" name="xoa"
                                                 value="Xóa"></a>
                     </th>
                 </tr>

@@ -92,33 +92,43 @@
                                     name="them" value="Thêm danh mục sản phẩm"></a>
                             <form id="form-addroom">
                                 <div class="form-row">
-        
                                     <div class="form-group">
                                         <label for="">Loại phòng</label>
                                         <br>
-                                        <div class="service_list">
-                                            <div class="service_list-item">
+                                        <div class="privilege_service">
+                                            <div class="privilege_service-item">
                                                 <input type="checkbox">
                                                 <label for="">Thêm loại phòng</label>
                                             </div>
-                                            <div class="service_list-item">
+                                            <div class="privilege_service-item">
                                                 <input type="checkbox">
                                                 <label for="">Xóa loại phòng</label>
                                             </div>
-                                            <div class="service_list-item">
+                                            <div class="privilege_service-item">
                                                 <input type="checkbox">
                                                 <label for="">Sửa loại phòng</label>
                                             </div>
                                         </div>
                                         
-                                    </div>            
+                                    </div>    
+                                            
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Sign in</button>
+                                <button type="submit" class="btn btn-primary">Lưu quyền</button>
                             </form>
                         </div>
+                        
 </body>
-
+<script>
+    const privilege = document.querySelector(".privilege_service");
+    if(privilege){
+       
+        const inputs = privilege.querySelectorAll("input");
+      inputs.forEach(input => {
+        
+      })
+    }
+</script>
 </html>
 </body>
 

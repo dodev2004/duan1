@@ -92,7 +92,7 @@
                                             <?php foreach($room_services as $room_service): ?>
                                              <div class="service_list-item">
                                                 <input type="checkbox" value="<?=$room_service["id"]?>" name="room_service[]">
-                                                <label for=""><?php echo $room_service["name"] ?></label>
+                                                <label for=""><?php echo $room_service["ten_dichVu"] ?></label>
                                             </div>
                                             <?php endforeach ?>
                                         </div>
