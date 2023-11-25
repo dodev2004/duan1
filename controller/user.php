@@ -36,21 +36,23 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/dangnhap.php";
             break;
         case 'dangky':
-            $eror = "";
+            $eror = [
+                "email" => "",
+                "user_name" => "",
+            ];
             if (isset($_POST['dangky'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $countemail = db_column_user_exist($email, 'email');
-                var_dump($email);
-                var_dump($countemail);
-                if ($countemail) {
-                    $eror  = "Email đã được sử dụng ";
-                } else {
+                $countname = db_column_user_exist($username, 'user_name');
+                $eror["email"] = $countemail ? "Email đã tồn tại" : "";
+                $eror["user_name"] = $countname ? "Tài khoản đã tồn tại" : "";
+                if($eror["email"] == "" && $eror["user_name"] == "") {
                     echo "<script language=javascript>alert('Đăng ký thành công')</script>";
-                    nguoidung_insert($name, $username, $email, $password, date('Y/m/d', time()), date('Y/m/d', time()));
-                    header("Location: user.php?act=dangnhap");
+                    // nguoidung_insert($name, $username, $email, $password, date('Y/m/d', time()), date('Y/m/d', time()));
+                    // header("Location: user.php?act=dangnhap");
                 }
             }
             include "../view/user/dangky.php";

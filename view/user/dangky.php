@@ -3,19 +3,22 @@
     <form id="usersigup" action="?act=dangky" method="POST">
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Họ Và Tên</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
-            <div class="valid-feedback"> </div>
+            <input type="text" class="form-control" value="<?= $_POST['name'] ?>" id="exampleInputEmail1"
+                aria-describedby="emailHelp" name="name">
+            <div class="valid-feedback"></div>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Tài Khoản</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username">
-            <div class="valid-feedback"> </div>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username"
+                value="<?= $_POST['username'] ?>">
+            <p class="error_message"><?php echo $eror["user_name"] ?></p>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+            <input type="email" class="form-control" id="exampleInputEmail1" value="<?= $_POST['email'] ?>"
+                aria-describedby="emailHelp" name="email" required>
             <div class="valid-feedback"> </div>
-            <p class="error_message"><?php echo $eror ?></p>
+            <p class="error_message"><?php echo $eror["email"] ?></p>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Mật Khẩu</label>
