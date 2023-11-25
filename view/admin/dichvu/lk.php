@@ -1,19 +1,29 @@
 <section class="admin-column_right">
                         <h2 class="admin-column_right--title">Tiện nghi</h2>                        <span class="admin-column_right--linked"><b>Phòng</b> - Danh sách phòng</span>
                         <div class="table table-category">
+                            <?php if(checkPrivileges("act=them&page=tiennghi")){ ?>
+                            
                             <a href="?act=them&page=tiennghi"><input style="margin-bottom: 2rem;" type="button"
                                     name="them" value="Thêm tiện nghi"></a>
+                            <?php }?>
                             <table>
                             <!-- "act=them&page=tiennghi",
             "act=sua&page=tiennghi&id=",
             "act=delete&page=tiennghi&id=", -->
                                 <tr>
                                  
+                                <?php if(checkPrivileges("act=delete&page=tiennghi&id=0")){ ?>
                                     <th></th>
+                                <?php } 
+                                else {
+                                    echo "<th>STT</th>";
+                                }?>
 
                                     <th>Ảnh</th>
                                     <th>Tên tiện nghi</th>
+                                    <?php if(checkPrivileges("act=delete&page=tiennghi&id=0") || checkPrivileges("ct=sua&page=tiennghi&id=0")){ ?>
                                     <th>Hành Động</th>
+                                    <?php }?>
                                 </tr>
                                 <?php foreach($sevices as $index => $service):
                                     extract($service);
