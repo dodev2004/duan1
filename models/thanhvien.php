@@ -165,8 +165,3 @@ function nguoidung_update_password($ma_kh, $password)
     $sql = "UPDATE nguoidung SET password='" . $password . "' WHERE id='" . $ma_kh . "'";
     pdo_execute($sql);
 }
-// function nguoidung_update_password($ma_kh, $password)
-// {
-//     $sql = "UPDATE nguoidung SET password = ? WHERE id = ?";
-//     pdo_execute($sql);
-// }
