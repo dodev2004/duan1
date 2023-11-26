@@ -18,7 +18,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+.item_tag_info{
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
 .header_top-slogan h3 {
   color: white !important;
   font-size: 13px !important;

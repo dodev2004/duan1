@@ -19,7 +19,7 @@ main .banner_room img {
   flex: 3;
 }
 .room_content_main_right {
-  flex: 1;
+  flex: 1.5;
 }
 .tag_info_room {
   display: grid;
@@ -27,14 +27,22 @@ main .banner_room img {
   border-bottom: 1px solid #cd9a2b;
   margin-bottom: 20px;
   padding: 10px;
+  row-gap: 12px;
 }
 .product-summary {
   padding: 2px 10px;
 }
 .product-summary p {
-  line-height: 1.5;
-  font-size: 19px;
+  line-height: 1.6;
+  font-size: 16px;
+  margin: 0;
+  padding: 0 10px;
+  text-align: justify;
 }
+.room_services_content{
+  margin-top: 20px;
+}
+
 .room_services_content .title_services,
 .product_tab_title .product_tab_title_item,
 .productRelate_title {
@@ -54,16 +62,21 @@ main .banner_room img {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding: 3px 10px;
+  
 }
-.box_services .item_services {
+.box_services>.item_services {
   display: flex;
   padding: 10px 0;
+  column-gap: 12px;
+  align-items: center;
 }
-.box_services .item_services img {
-  width: 30%;
-  height: 50px;
+.box_services>.item_services img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
 }
-.box_services .item_services span {
+.box_services>.item_services span {
   font-size: 20px;
   padding-top: 10px;
 }
