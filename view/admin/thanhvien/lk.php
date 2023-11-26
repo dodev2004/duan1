@@ -54,7 +54,7 @@
                     <?php if(checkPrivileges("act=privilege&page=thanhvien&id=".$id)){ ?>
                     <th> <a href="?act=privilege&page=thanhvien&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
                     <?php }?>
-                    <?php if(checkPrivileges("page=thanhvien&act=delete&id=0") || checkPrivileges("page=thanhvien&act=edit&id=0")) {?>
+                    <?php if(checkPrivileges("page=thanhvien&act=delete&id=1") || checkPrivileges("page=thanhvien&act=edit&id=0")) {?>
                     <th>
                     <?php if(checkPrivileges("page=thanhvien&act=edit&id=". $id)){ ?>
                     <a href="?page=thanhvien&act=edit&id=<?php echo $id?>"><input type="button" name="sua" value="Sửa"/></a>

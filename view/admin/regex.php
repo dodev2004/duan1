@@ -36,11 +36,13 @@
         foreach($privileges as $privilege){
             array_push($newprivileges,$privilege["url_match"]);
         }
-
+     
         array_push($newprivileges,"page=dangxuat$","admin.php$");
        
         $privileges_item = implode("|",$newprivileges);
-        preg_match('/'.$privileges_item.'/', $url, $matches, PREG_OFFSET_CAPTURE);
+        preg_match('/'.'act=delete&page=phong&id=\d+|act=rmAll&page=phong&id=$'.'/', 'act=delete&page=phong&id=12', $matches, PREG_OFFSET_CAPTURE);
         return !empty($matches);
+        
+       
     }
 ?>
