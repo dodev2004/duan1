@@ -263,6 +263,7 @@ main .banner_room img {
 .err-sussces {
   color: green;
 }
-.err-failed {
+.err-failed,
+.error_message {
   color: red;
 }

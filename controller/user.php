@@ -40,6 +40,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 "email" => "",
                 "user_name" => "",
             ];
+
             if (isset($_POST['dangky'])) {
                 $name = $_POST['name'];
                 $email = $_POST['email'];
@@ -49,10 +50,10 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $countname = db_column_user_exist($username, 'user_name');
                 $eror["email"] = $countemail ? "Email đã tồn tại" : "";
                 $eror["user_name"] = $countname ? "Tài khoản đã tồn tại" : "";
-                if($eror["email"] == "" && $eror["user_name"] == "") {
+                if ($eror["email"] == "" && $eror["user_name"] == "") {
                     echo "<script language=javascript>alert('Đăng ký thành công')</script>";
-                    // nguoidung_insert($name, $username, $email, $password, date('Y/m/d', time()), date('Y/m/d', time()));
-                    // header("Location: user.php?act=dangnhap");
+                    nguoidung_insert($name, $username, $email, $password, date('Y/m/d', time()), date('Y/m/d', time()));
+                    header("Location: user.php?act=dangnhap");
                 }
             }
             include "../view/user/dangky.php";
@@ -102,6 +103,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             break;
         case 'thuvienanh':
             include "../view/user/thuvienanh.php";
+            break;
+        case 'quanlyphongdat':
+            include "../view/user/quanlyphongdat.php";
             break;
         case 'phong':
             include "../view/user/phong.php";
