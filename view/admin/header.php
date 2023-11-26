@@ -43,40 +43,55 @@
                                         <li class="admin-component_item">
                                             <a href="./admin.php">Trang Chủ</a>
                                         </li>
-                                        
+                                        <?php if(checkPrivileges("act=lk&page=loaiphong")){ ?>
                                         <li class="admin-component_item ">
                                             <a href="?act=lk&page=loaiphong">Loại phòng</a>
                                         </li>
+                                        <?php } ?>
+                                        <?php if(checkPrivileges("act=lk&page=phong&currentPage=1")){ ?>
                                         <li class="admin-component_item ">
                                             <a href="?act=lk&page=phong&currentPage=1">Phòng</a>
                                         </li>
+                                        <?php } ?>
+                                        <?php if(checkPrivileges("act=lk&page=tiennghi")){ ?>
                                         <li class="admin-component_item ">
                                             <a href="?act=lk&page=tiennghi">Dịch vụ</a>
                                         </li>
-                                        
+                                        <?php } ?>
+                                        <?php if(checkPrivileges("act=xndp&page=datphong") ||checkPrivileges("act=xntt&page=datphong") || checkPrivileges("act=history&page=datphong") ){ ?>
                                         <li class="admin-component_item admin-component_todolist">
-                                            <a href="=?act=lkkh">Đặt phòng
+                                            <a href="?page=datphong">Đặt phòng
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </a>
                                             <section class="todolist">
-                                                <a href="">Xác nhận đặt phòng</a>
-                                                <a href="">Xác nhận thanh toán</a>
-                                                <a href="">Lịch sử đặt phòng</a>
+                                                <?php if(checkPrivileges("act=xndp&page=datphong")){ ?>
+                                                <a href="?act=xndp&page=datphong">Xác nhận đặt phòng</a>
+                                                <?php } ?>
+                                                <?php if(checkPrivileges("act=xntt&page=datphong")){ ?>
+                                                <a href="?act=xntt&page=datphong">Xác nhận thanh toán</a>
+                                                <?php } ?>
+                                                <?php if(checkPrivileges("act=history&page=datphong")){ ?>
+                                                <a href="?act=history&page=datphong">Lịch sử đặt phòng</a>
+                                                <?php }?>
                                             </section>
                                         </li>
-                                        
+                                        <?php } ?>
+                                        <?php if(checkPrivileges("act=lk&page=bl&currentPage=1")){ ?>
                                         <li class="admin-component_item">
-                                            <a href="./index.php?act=lkgiohang">Giỏ hàng</a>
+                                            <a href="?act=lk&page=bl&currentPage=1">Đánh giá</a>
                                         </li>
-                                        <li class="admin-component_item">
-                                            <a href="./index.php?act=bl">Bình luận</a>
-                                        </li>
+                                        <?php }?>
+                                        <?php if(checkPrivileges("act=lk&page=thanhvien&currentPage=1")){ ?>
                                         <li class="admin-component_item ">
                                             <a href="?act=lk&page=thanhvien&currentPage=1">Thành viên</a>
                                         </li>
+                                        <?php }?>
+                                        <?php if(checkPrivileges("page=thongke")){ ?>
                                         <li class="admin-component_item">
-                                            <a href="./index.php?act=thongke">Thống kê</a>
+                                            <a href="?page=thongke">Thống kê</a>
                                         </li>
+                                        <?php } ?>
+    
                                         <li class="admin-component_item">
                                             <a href="../index.php">Vào website</a>
                                         </li>
@@ -85,7 +100,9 @@
 
                                 </nav>
                             </section>
-                            <a class="logout" href="?act=lk&page=dangxuat">Đăng xuất</a>
+                            <?php if(checkPrivileges("page=dangxuat")){ ?>
+                            <a class="logout" href="?page=dangxuat">Đăng xuất</a>
+                            <?php }?>
                         </section>
 
                     </section>

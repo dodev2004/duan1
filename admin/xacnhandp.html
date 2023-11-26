@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,10 +12,8 @@
     <link rel="stylesheet" href="../public/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="../node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
-    <script type="text/javascript" src="../ckfinder/ckfinder.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 </head>
 
@@ -62,7 +60,7 @@
                                                 <a href="">Lịch sử đặt phòng</a>
                                             </section>
                                         </li>
-
+                                        
                                         <li class="admin-component_item">
                                             <a href="./index.php?act=lkgiohang">Giỏ hàng</a>
                                         </li>
@@ -88,48 +86,63 @@
                         <h2 class="admin-column_right--title">Danh Mục</h2>
                         <span class="admin-column_right--linked"><b>Danh Mục</b> - Danh sách loại dang mục</span>
                         <div class="table table-category">
-                            <a href="./index.php?act=themdm"><input style="margin-bottom: 2rem;" type="button"
-                                    name="them" value="Thêm danh mục sản phẩm"></a>
-                            <form id="form-addroom">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="">Loại phòng</label>
-                                        <br>
-                                        <div class="privilege_service">
-                                            <div class="privilege_service-item">
-                                                <input type="checkbox">
-                                                <label for="">Thêm loại phòng</label>
-                                            </div>
-                                            <div class="privilege_service-item">
-                                                <input type="checkbox">
-                                                <label for="">Xóa loại phòng</label>
-                                            </div>
-                                            <div class="privilege_service-item">
-                                                <input type="checkbox">
-                                                <label for="">Sửa loại phòng</label>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>    
-                                            
-                                </div>
+                      
+                            <table>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Thông tin khách hàng</th>
+                                    <th>Phòng</th>
+                                    <th>Thông tin phòng</th>
+                                    <th>Hành động</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>
+                                        <p class="id_room"><strong>ID Đặt phòng</strong>: ORD_012313</p>
+                                        <p class=""><strong>Họ và tên :</strong> <span>Buì Ngọc Đô</span></p>
+                                        <p><strong>Số điện thoại</strong> : 0336846519</p>
+                                    </th>
+                                    <th>
+                                        <p class="id_room"><strong>Tên phòng </strong>: <span>Phòng đơn</span></p>
+                                        <p class=""><strong>Gía</strong> : <span>50000 VNĐ</span></p>
+                                        <p><strong>Tổng</strong> : <span>50000 VNĐ</span></p>
+                                    </th>
+                                    <th>
+                                        <p class="id_room"><strong>Ngày vào </strong>: <span>Phòng đơn</span></p>
+                                        <p class=""><strong>Ngày trả :</strong><span>50000 VNĐ</span></p>
+                                        <p><strong>Thời gian :</strong> <span>5 ngày</span></p>
+                                    </th>
+                                       
+                                    <th style="text-align: inherit;">
+                                        <a  href=""><input style="margin-bottom: 20px;"
+                                            type="button" name="sua" value="Xác nhận đặt phòng"></a>
+                                            <br>
+                                    <a  href="./index.php?act=lkdm"><input type="button" name="xoa"
+                                            value="Hủy đặt phòng"></a>
+                                    </th>
 
-                                <button type="submit" class="btn btn-primary">Lưu quyền</button>
-                            </form>
+                                   
+                                </tr>
+
+
+
+                            </table>
+
                         </div>
-                        
-</body>
-<script>
-    const privilege = document.querySelector(".privilege_service");
-    if(privilege){
-       
-        const inputs = privilege.querySelectorAll("input");
-      inputs.forEach(input => {
-        
-      })
-    }
-</script>
-</html>
+                     
+                    </section>
+                </section>
+            </section>
+        </section>
+    </div>
+    
+    <footer>
+
+    </footer>
+    <script src="../public/"></script>
 </body>
 
 </html>
+</body>
+
+</html> 

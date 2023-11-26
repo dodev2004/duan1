@@ -457,13 +457,23 @@ form h1{
     flex-direction: column;
 }
 .service_list{
-    margin-top: 12px;
-    margin-bottom: 12px;
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-bottom: 5x;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 100px;
+    row-gap: 50px;
+
 }
-.service_list>.service_list-item>label{
+.privilege_service{
+    margin-top: 5px;
+    margin-bottom: 5x;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 50px;
+}
+.privilege_service>.privilege_service-item>label{
     margin-left: 12px;
 }
 .form_group{

@@ -3,8 +3,8 @@
                         <span class="admin-column_right--linked"><b>Tiện nghi</b> - Sửa tiện nghi</span>
                         <div class="table table-category">
                             <?php extract($service) ?>
-                            <a href="./index.php?act=themdm"><input style="margin-bottom: 2rem;" type="button"
-                                    name="them" value="Thêm tiện nghi"></a>
+                            <a href="?act=lk&page=tiennghi"><input style="margin-bottom: 2rem;" type="button"
+                                    name="them" value="Liệt kê tiện nghi"></a>
                             <form id="form-room_service" action="?act=sua&page=tiennghi&id=<?=$id?>" method="POST" enctype="multipart/form-data">
                                 <div class="form-row">
                                     <div class="form-group col-md-12">
@@ -23,7 +23,7 @@
                                     </div>
 
                                 </div>
-                                <button type="submit" name="edit" class="btn btn-primary">Thêm tiện nghi</button>
+                                <button type="submit" name="edit" class="btn btn-primary">Sửa tiện nghi</button>
                             </form>
                         </div>
                     </section>
