@@ -121,39 +121,50 @@
                 <div class="price_booking">
                     <span>500.000₫/Đêm</span>
                 </div>
-                <form action="">
+                <form id="form-book" action="" method="post">
+                    <input type="text" name="id_Phong" value="" hidden>
                     <div class="form_booking">
                         <div class="item_booking">
                             <label for="">Họ và tên</label>
-                            <input type="text">
+                            <input type="text" name="book_name">
                         </div>
                         <div class="item_booking">
                             <label for="">Số điện thoại</label>
-                            <input type="text">
+                            <input type="text" name="sdt">
                         </div>
                     </div>
                     <div class="form_booking">
                         <div class="item_booking">
                             <label for="">Ngày nhận</label>
-                            <input type="date">
+                            <input type="date" name="check_in">
+                            <p class="eror_messsage"></p>
                         </div>
                         <div class="item_booking">
                             <label for="">Ngày trả</label>
-                            <input type="date">
+                            <input type="date" name="check_out">
+                            <p class="eror_messsage"></p>
                         </div>
                     </div>
                     <div class="form_booking">
                         <div class="item_booking">
                             <label for="">Người lớn</label>
-                            <input type="text" placeholder="2">
+                            <input type="text" name="sl_NguoiLon" placeholder="2">
                         </div>
                         <div class="item_booking">
                             <label for="">Trẻ em</label>
-                            <input type="text" placeholder="1">
+                            <input type="text" name="sl_tre_em" placeholder="1">
                         </div>
                     </div>
+                    <div class="notification">
+                        <p>Trạng thái phòng : <span>Có thể đặt</span></p>
+                        <p>Số ngày đặt : <span>6 ngày</span></p>
+                        <p>Tổng số tiền phải trả : 480000 vnd</p>
+                    </div>
+                    <div class="notification_eror">
+                        <p>Xin lỗi quý khách thời gian đặt của quý khách đã tồn tại !</p>
+                    </div>
                     <div class="form_booking">
-                        <button type="button">Tạm tính</button>
+
                         <button type="submit">Đặt phòng</button>
                     </div>
                 </form>
@@ -324,9 +335,7 @@
 
     </footer>
     <script src="style.js"></script>
-    <script>
-        
-    </script>
+   
 </body>
 
 </html>

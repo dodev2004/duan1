@@ -69,7 +69,7 @@
                 <div class="row">
                     <div class="col">
                         <article>
-                            <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
+                            <a href="../view/user/phongchitiet.php"> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
                             <a href="" class="room_name">
                                 <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
                             </a>
