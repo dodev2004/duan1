@@ -123,6 +123,12 @@ main .banner_room img {
   grid-gap: 20px;
   margin-top: 10px;
 }
+#form-book >.notification{
+  display: none ;
+}
+#form-book >.notification_eror{
+  display: none ;
+}
 .item_booking label {
   display: inline-block !important;
   font-weight: 400;
@@ -137,6 +143,10 @@ main .banner_room img {
   width: 100%;
   border-radius: 5px;
   height: 32px;
+}
+.item_booking .eror_messsage{
+  margin: 5px 0 0 0 ;
+  color: #cd9a2b;
 }
 .form_booking button {
   width: 100%;
