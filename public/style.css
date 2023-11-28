@@ -684,11 +684,6 @@ input:hover {
 
 
 /* my hotel */
-
-.wrapper {}
-
-.my_hotel {}
-
 .my_hotel-task {
     padding: 10px 0;
     margin-top: 10px;
@@ -715,21 +710,16 @@ input:hover {
     color: #c40025;
 }
 
-.my_hotel {}
 
 .my_hotel-title {
     text-transform: uppercase;
     font-size: 18px;
 }
-
-.mu_hotel-content {}
-
 .mu_hotel-content img {
     object-fit: contain;
     width: 100%;
     height: 100%;
 }
-
 .mu_hotel-content>p {
     text-align: justify;
     line-height: 20px;

@@ -336,6 +336,7 @@ if (isset($_GET["act"]) || isset($_GET["page"]) ) {
             break;
         case "datphong": 
             if($act == "xndp"){
+                
                 include "../view/admin/phongdat/xacnhandp.php";
             }
             else if($act == "xntt"){
