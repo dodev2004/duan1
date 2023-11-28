@@ -316,6 +316,13 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 include "../view/admin/thanhvien/privilege.php";
             }
             break;
+        case "datphong":
+            if ($act == "xndp") {
+                include "../view/admin/phongdat/xacnhandp.php";
+            } else if ($act == "xntt") {
+                include "../view/admin/phongdat/xacnhantt.php";
+            }
+            break;
         case "dangxuat":
             unset($_SESSION["user"]);
             echo "<script language=javascript>
