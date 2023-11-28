@@ -5,6 +5,7 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 include "../models/pdo.php";
 include "../models/datphong.php";
 include "../models/loaiphong.php";
+
 $dsdm = db_lp_Select_all();
 include "../models/phong.php";
 include "../models/dichvu.php";
@@ -104,30 +105,29 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/doimatkhau.php";
             break;
-        case "phongchitiet" : 
+        case "phongchitiet":
             $id = $_GET["id"];
             $rs = book_select_by_id_Phong($id);
             $books = json_encode($rs);
             include "../view/user/phongchitiet.php";
             break;
         case "billcomfirm":
-            if(isset($_POST["bill"])){
-              $id_Phong = $_POST["id_Phong"];
-              $price = $_POST["price"];
-              $name = $_POST["book_name"];
-              $sdt  = $_POST["sdt"];
-              $checkin = $_POST["check_in"];
-              $checkout = $_POST["check_out"];
-              $slNguoiLon = $_POST["sl_NguoiLon"];
-              $sltreEm = $_POST["sl_tre_em"];
-              $total_price = $_POST["total_price"];
-              $id_user = $_SESSION["user"]["id"];
-             $id = book_insert($id_user,$name,$sdt,$id_Phong,$slNguoiLon,$sltreEm,$checkin,$checkout,$total_price);
-             $bill = book_select_by_id($id);
-             $room = db_phong_select_by_id($bill["id_Phong"]);
-            }    
-        
-           
+            if (isset($_POST["bill"])) {
+                $id_Phong = $_POST["id_Phong"];
+                $price = $_POST["price"];
+                $name = $_POST["book_name"];
+                $sdt  = $_POST["sdt"];
+                $checkin = $_POST["check_in"];
+                $checkout = $_POST["check_out"];
+                $slNguoiLon = $_POST["sl_NguoiLon"];
+                $sltreEm = $_POST["sl_tre_em"];
+                $total_price = $_POST["total_price"];
+                $id_user = $_SESSION["user"]["id"];
+                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+                $bill = book_select_by_id($id);
+                $room = db_phong_select_by_id($bill["id_Phong"]);
+            }
+
             include "../view/user/billcomfirm.php";
             break;
         case 'thuvienanh':
@@ -147,7 +147,6 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
 
             break;
         default:
-       
     }
 } else {
     include "../view/user/trangchu.php";
