@@ -30,7 +30,8 @@ $jsonArray = json_encode($rs);
     inputCheckOut.onblur = function(){
         var timeCheckin = new Date(inputCheckIn.value).getTime();
         var timeCheckout = new Date(inputCheckOut.value).getTime();
-       
+      
+        
     
 }
     // Kiểm tra xem dữ liệu đã được chuyển thành công hay không
