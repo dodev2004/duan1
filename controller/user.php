@@ -130,6 +130,37 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
 
             include "../view/user/billcomfirm.php";
             break;
+        case 'quenmk':
+            $eror = "";
+            if (isset($_POST["submit"])) {
+
+                $email = $_POST["email"];
+                if (db_column_user_exist($email, 'email')) {
+                    $ids = db_user_id_select_by_email($email);
+
+                    header("Location:?act=mkmoi&id=" . $ids["id"]);
+                } else {
+                    $eror = "Email không tồn tại";
+                }
+            }
+            include "../view/user/quenmatkhau.php";
+            break;
+        case "mkmoi":
+            $eror = "";
+            if (isset($_POST["submit"])) {
+                // var_dump(md5(3333));
+                // die();
+                $password = $_POST["password"];
+                $matkhaumoi = md5($password);
+                $id = $_GET["id"];
+                // var_dump(md5( $matkhaumoi));
+                // die();
+                db_user_change_password($id, $matkhaumoi);
+                echo "<script language=javascript>alert('Thay đổi thành công')</script>";
+                header("Location:?act=mkmoi");
+            }
+            include "../view/user/matkhaumoi.php";
+            break;
         case 'thuvienanh':
             include "../view/user/thuvienanh.php";
             break;
