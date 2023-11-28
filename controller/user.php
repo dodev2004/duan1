@@ -4,10 +4,12 @@ ob_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 include "../models/pdo.php";
 include "../models/loaiphong.php";
+$dsdm = db_lp_Select_all();
 include "../models/phong.php";
 include "../models/dichvu.php";
 include "../models/thanhvien.php";
 include "../view/user/header.php";
+include "../global.php";
 // include "../view/user/phongchitiet.php";
 // include "../view/user/dangnhap.php";
 // include "../view/user/quanlyphong.php";
@@ -108,6 +110,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/quanlyphongdat.php";
             break;
         case 'phong':
+            $dsphong = db_phong_select_all();
             include "../view/user/phong.php";
             break;
         case 'dangxuat':

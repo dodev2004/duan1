@@ -18,7 +18,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.item_tag_info{
+.item_tag_info {
   display: flex;
   align-items: center;
   column-gap: 12px;
@@ -56,8 +56,8 @@ nav .header_top-user {
   margin-left: 6px;
   font-size: 13px;
 }
-.user_infomation-list{
-   color: #2e988a !important;
+.user_infomation-list {
+  color: #2e988a !important;
 }
 li {
   list-style: none !important;
@@ -290,7 +290,7 @@ input:hover {
   object-fit: contain;
 }
 
-.room>.wrapper>.row {
+.room > .wrapper > .row {
   display: grid;
   padding: 0 !important;
   margin: 0 !important;
@@ -298,7 +298,7 @@ input:hover {
   column-gap: 24px;
   row-gap: 17px;
 }
-.room>.wrapper>.row>.col{
+.room > .wrapper > .row > .col {
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -307,7 +307,7 @@ input:hover {
   grid-template-columns: 5fr 7fr !important;
   column-gap: 12px;
 }
-.row-vip>.col-5{
+.row-vip > .col-5 {
   width: 100%;
   max-width: 100%;
 }
@@ -319,7 +319,6 @@ input:hover {
   text-align: center;
   border-radius: 2px;
   overflow: hidden !important;
-  
 }
 
 .room .wrapper .row .col article .room_name {
@@ -384,7 +383,7 @@ input:hover {
 
 .room_img {
   width: 100%;
-  height: 100%;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -451,7 +450,7 @@ input:hover {
   align-items: center;
   margin-top: 8px;
   margin-bottom: 3px;
-  padding: 0 10px
+  padding: 0 10px;
 }
 
 .room_vip-service > section > span > img {
@@ -512,16 +511,15 @@ input:hover {
 .room_content > .row > .col-5 > article > form {
   padding: 0 10px;
   margin-top: 12px;
- 
 }
 .room_content > .row-vip > .col-5 > article {
   position: relative;
   background-color: #fff;
   box-shadow: 0 1px 2px 0 rgb(149 129 129 / 50%);
   margin-bottom: 20px;
-  
+
   border-radius: 2px;
-  overflow: hidden
+  overflow: hidden;
 }
 .room_content > .row-vip > .col-5 > article > form > input[type="submit"] {
   background-color: #fff;
@@ -533,9 +531,14 @@ input:hover {
   transition: 0.25s linear;
   margin: 10px 10px;
 }
-.room_content > .row-vip > .col-5 > article > form > input[type="submit"]:hover {
+.room_content
+  > .row-vip
+  > .col-5
+  > article
+  > form
+  > input[type="submit"]:hover {
   background-color: #c40025;
-  color: white
+  color: white;
 }
 .room_content > .row > .col-5 > article > form > input[type="submit"]:hover {
   color: white;
@@ -549,13 +552,13 @@ input:hover {
 .room_vip-left > .row {
   display: grid;
   grid-template-columns: 1fr 1fr !important;
- row-gap: 24px
+  row-gap: 24px;
 }
 
-.room_vip-left>.row{
-  margin:0 !important;
+.room_vip-left > .row {
+  margin: 0 !important;
 }
-.room_vip-left>.row>.col{
+.room_vip-left > .row > .col {
   padding: 0 !important;
 }
 .room_vip-left > .row > .col > article > .room_vip-infomation {
