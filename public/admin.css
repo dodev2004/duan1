@@ -365,6 +365,10 @@ background: white;
   justify-content: end;
   column-gap: 4px;
 }
+.pagin_book{
+    display: flex;
+    justify-content: space-between;
+}
 .pagin a {
     padding: 5px 19px;
   color: white;

@@ -325,21 +325,37 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $status = $_GET["status"];
                     if($status == 2){
                         book_change_status($status,$id);
-                        header("Location: ?act=xndp&page=datphong");
+                        header("Location: ?act=xndp&page=datphong&currentPage=1");
                     }
                 }
-                $books  = book_select_by_stt_xndp();
-                
+                $books  = db_book_select_all_Pagin($_GET["currentPage"],1);
+                $count = count($books);
+                $pagin = ceil(count(book_select_all(1)));
                 include "../view/admin/phongdat/xacnhandp.php";
-            } else if ($act == "xntt") {
-                $books = book_select_by_stt_xntt();
+            } 
+            else if($act == "huydp"){
+                $status = $_GET["status"];
+                $id = $_GET["id"];
+                book_change_status($status,$id);
+                header("Location: ?act=xndp&page=datphong&currentPage=1");
+            }
+            else if ($act == "xntt") {
                 if(isset($_GET["status"])){
                     $id = $_GET["id"];
                     $status = $_GET["status"];
                     book_change_status($status,$id);
-                    header("Location: ?act=xntt&page=datphong");
+                    header("Location: ?act=xntt&page=datphong&currentPage=1");
                 }
+                $books  = db_book_select_all_Pagin($_GET["currentPage"],2);
+                $count = count($books);
+                $pagin = ceil(count(book_select_all(2)));
                 include "../view/admin/phongdat/xacnhantt.php";
+            }
+            else {
+                    $books = db_book_select_all_Pagin($_GET["currentPage"]);
+                    $count  = count($books);
+                    $pagin = ceil(count(book_select_all())/4);
+                    include  "../view/admin/phongdat/lichsudp.php";
             }
             break;
         case "dangxuat":

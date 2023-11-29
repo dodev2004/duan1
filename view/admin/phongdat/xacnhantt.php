@@ -27,10 +27,49 @@
                                         <p><strong>Tổng</strong> : <span><?= number_format($book["price"],0,',',',')?>VND</span></p>
                                     </th>
                                     <th>
+                                        <?php 
+                                                $check_in = strtotime($book["check_in"]);
+                                                $checkout = strtotime($book["check_out"]);
+                                                $distance = $checkout - $check_in;
+                                                if($distance > 0){                 
+                                                   $days = floor($distance/( 60 * 60 * 24));
+                                                   $months = floor($days/30);
+                
+                                                }
+                                                $now  = time();
+                                                $countTime = $checkout - time();
+                                                if($countTime > 0){                 
+                                                    $ngayconlai = floor($distance/( 60 * 60 * 24));
+                                                    $thangconlai = floor($days/30);
+                 
+                                                 }
+                                              
+                                        ?>
                                         <p class="id_room"><strong>Ngày vào </strong>: <span><?php echo $book["check_in"] ?></span></p>
                                         <p class=""><strong>Ngày trả :</strong><span><?php echo $book["check_out"] ?></span></p>
-                                        <p><strong>Thời gian :</strong> <span>5 ngày</span></p>
-                                        <p><strong>Thời gian còn lại : </strong> 5 ngày</p>
+                                        <p><strong>Thời gian :</strong> <span><?php
+                                        if($days > 0 && $months ==0){
+                                            echo $days . " ngày";
+                                        }
+                                        else if($day > 0 && $months > 0) {
+                                            echo $months . " tháng" . $days . " ngày";
+                                        }
+                                        else {
+                                            "Không hợp lệ";
+                                        }
+                                        
+                                        ?></span></p>
+                                        <p><strong>Thời gian còn lại : </strong><?php
+                                         if($days > 0 && $months ==0){
+                                            echo $days . " ngày";
+                                        }
+                                        else if($day > 0 && $months > 0) {
+                                            echo $months . " tháng" . $days . " ngày";
+                                        }
+                                        else {
+                                            "Hết hạn";
+                                        }
+                                        ?></p>
                                     </th>
                                     <th style="text-align: inherit;">
                                         <a  href="?act=xntt&page=datphong&status=3&id=<?php echo $book["id"] ?>"><input style="margin-bottom: 20px;"
@@ -42,7 +81,10 @@
                                 </tr>
                                 <?php endforeach ?>
 
-
+                                <section class="pagin pagin_book">
+                                <section class="tk_sp">Có <span><?php echo $count ?></span> sản phẩm trong trang số <?php echo $_GET["currentPage"] ?></section>
+        <?php  get_paging_book($pagin,"datphong",'history')?>
+        </section>
                             </table>
 
                         </div>

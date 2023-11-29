@@ -30,7 +30,12 @@ $jsonArray = json_encode($rs);
     inputCheckOut.onblur = function(){
         var timeCheckin = new Date(inputCheckIn.value).getTime();
         var timeCheckout = new Date(inputCheckOut.value).getTime();
-      
+        var distance = timeCheckout - timeCheckin;
+        console.log(distance)
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            const months = Math.floor(days / 30);
+                            const years = Math.floor(months / 12);
+                         
         
     
 }

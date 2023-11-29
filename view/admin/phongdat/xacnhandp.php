@@ -24,19 +24,19 @@
                                         <?php $room = db_phong_select_by_id($book["id_Phong"]) ?>
                                         <p class="id_room"><strong>Tên phòng </strong>: <span><?php echo $room["ten_Phong"] ?></span></p>
                                         <p class=""><strong>Gía</strong> : <span><?php echo number_format($room["gia"],0,',',',')?> VNĐ</span></p>
-                                        <p><strong>Tổng</strong> : <span><?php echo number_format($book["price"],0,',',',')?> VNĐ</span></p>
+                                       
                                     </th>
                                     <th>
                                         <p class="id_room"><strong>Ngày vào </strong>: <span><?php echo $book["check_in"] ?></span></p>
                                         <p class=""><strong>Ngày trả : </strong><span><?php echo $book["check_out"] ?></span></p>
-                                       
+                                        <p><strong>Tổng</strong> : <span><?php echo number_format($book["price"],0,',',',')?> VNĐ</span></p>
                                     </th>
                                        
                                     <th style="text-align: inherit;">
                                         <a  href="?act=xndp&page=datphong&status=2&id=<?php echo $book["id"] ?>"><input style="margin-bottom: 20px;"
                                             type="button" name="sua" value="Xác nhận đặt phòng"></a>
                                             <br>
-                                    <a  href="?act=xndp&page=datphong&status=4&id=<?php echo $book["id"]?>"><input type="button" name="xoa"
+                                    <a  href="?act=huydp&page=datphong&status=4&id=<?php echo $book["id"]?>"><input type="button"  style="background-color: #C80A1C;" name="xoa"
                                             value="Hủy đặt phòng"></a>
                                     </th>
 
@@ -45,7 +45,10 @@
                                 <?php endforeach ?>
 
 
-
+                                <section class="pagin pagin_book">
+                                <section class="tk_sp">Có <span><?php echo $count ?></span> sản phẩm trong trang số <?php echo $_GET["currentPage"] ?></section>
+        <?php  get_paging_book($pagin,"datphong",'history')?>
+        </section>
                             </table>
 
                         </div>

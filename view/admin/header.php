@@ -58,20 +58,20 @@
                                             <a href="?act=lk&page=tiennghi">Dịch vụ</a>
                                         </li>
                                         <?php } ?>
-                                        <?php if(checkPrivileges("act=xndp&page=datphong") ||checkPrivileges("act=xntt&page=datphong") || checkPrivileges("act=history&page=datphong") ){ ?>
+                                        <?php if(checkPrivileges("act=xndp&page=datphong&currentPage=1") ||checkPrivileges("act=xntt&page=datphong&currentPage=1") || checkPrivileges("act=history&page=datphong&currentPage=1") ){ ?>
                                         <li class="admin-component_item admin-component_todolist">
                                             <a href="?page=datphong">Đặt phòng
                                                 <i class="fa-solid fa-caret-right"></i>
                                             </a>
                                             <section class="todolist">
-                                                <?php if(checkPrivileges("act=xndp&page=datphong")){ ?>
-                                                <a href="?act=xndp&page=datphong">Xác nhận đặt phòng</a>
+                                                <?php if(checkPrivileges("act=xndp&page=datphong&currentPage=1")){ ?>
+                                                <a href="?act=xndp&page=datphong&currentPage=1">Xác nhận đặt phòng</a>
                                                 <?php } ?>
-                                                <?php if(checkPrivileges("act=xntt&page=datphong")){ ?>
-                                                <a href="?act=xntt&page=datphong">Xác nhận thanh toán</a>
+                                                <?php if(checkPrivileges("act=xntt&page=datphong&currentPage=1")){ ?>
+                                                <a href="?act=xntt&page=datphong&currentPage=1">Xác nhận thanh toán</a>
                                                 <?php } ?>
-                                                <?php if(checkPrivileges("act=history&page=datphong")){ ?>
-                                                <a href="?act=history&page=datphong">Lịch sử đặt phòng</a>
+                                                <?php if(checkPrivileges("act=history&page=datphong&currentPage=1")){ ?>
+                                                <a href="?act=history&page=datphong&currentPage=1">Lịch sử đặt phòng</a>
                                                 <?php }?>
                                             </section>
                                         </li>
