@@ -8,7 +8,39 @@
     </section>
     <div class="manage__room">
         <div class="room_row">
+            <?php foreach($books as $book):
+            $room = db_phong_select_by_id($book["id_Phong"]);  
+            ?>
             <div class="room__item">
+                <h3><?php echo $room["ten_Phong"] ?></h3>
+                <p><?php echo number_format($room["gia"],0,".",".")?> VNĐ</p>
+                <p><b>Ngày Vào: </b> <?php echo $book["check_in"] ?></p>
+                <p><b>Ngày Trả: </b> <?php echo $book["check_out"] ?></p>
+                <p><b>Tổng: </b><?php echo number_format($book["price"],0,".",".")?> VND</p>
+                <p><b>ID Đơn: </b>BND-<?php echo $book["id"] ?></p>
+                <p><b>Ngày Đặt: </b> <?php echo $book["created_time"] ?></p>
+                <?php
+                    $status = $book["status"];
+                    if($status == 1){
+
+                    
+                ?>
+                <button class="btn_order-success">Đã Đặt</button>
+                <a href="?act=quanlyphongdat&status=4&id=<?php echo $book["id"] ?>"> <button class="btn_cancel">Hủy Đặt Phòng</button></a>
+                <?php }
+                else if($status == 2) {
+                    echo '<button class="btn_order">Đã Xác nhận đặt phòng</button>';
+                }
+                else if($status == 3){
+                    echo '<button class="btn_pay">Đã Thanh Toán</button>
+                    <button class="btn_ratings">Đánh giá</button>';
+                }
+                else {
+                    echo ' <button class="btn_cancel-confirm"> Đã Hủy</button>';
+                }?>
+            </div>
+            <?php endforeach ?>
+            <!-- <div class="room__item">
                 <h3>Phòng Bình Dân</h3>
                 <p>800.000 vnđ</p>
                 <p><b>Ngày Vào:</b> 19-05-2022</p>
@@ -16,8 +48,7 @@
                 <p><b>Tổng:</b> 4000000 vnđ</p>
                 <p><b>ID Đơn:</b> ORD_09877</p>
                 <p><b>Ngày Đặt:</b> 19-05-2022</p>
-                <a href="#"><button class="btn_order-success">Đã Đặt</button></a>
-                <a href="#"> <button class="btn_cancel">Hủy Đặt Phòng</button></a>
+                <button class="btn_cancel-confirm"> Đã Hủy</button>
             </div>
             <div class="room__item">
                 <h3>Phòng Bình Dân</h3>
@@ -27,31 +58,10 @@
                 <p><b>Tổng:</b> 4000000 vnđ</p>
                 <p><b>ID Đơn:</b> ORD_09877</p>
                 <p><b>Ngày Đặt:</b> 19-05-2022</p>
-                <a href="#"> <button class="btn_cancel-confirm"> Đã Hủy</button></a>
-            </div>
-            <div class="room__item">
-                <h3>Phòng Bình Dân</h3>
-                <p>800.000 vnđ</p>
-                <p><b>Ngày Vào:</b> 19-05-2022</p>
-                <p><b>Ngày Trả:</b> 20-05-2022</p>
-                <p><b>Tổng:</b> 4000000 vnđ</p>
-                <p><b>ID Đơn:</b> ORD_09877</p>
-                <p><b>Ngày Đặt:</b> 19-05-2022</p>
-                <a href="#"><button class="btn_pay">Đã Thanh Toán</button></a>
+               <button class="btn_pay">Đã Thanh Toán</button>
                 <a href="#"> <button class="btn_ratings">Đánh giá</button></a>
             </div>
-        </div>
-        <div class="room_row">
-            <div class="room__item">
-                <h3>Phòng Bình Dân</h3>
-                <p>800.000 vnđ</p>
-                <p><b>Ngày Vào:</b> 19-05-2022</p>
-                <p><b>Ngày Trả:</b> 20-05-2022</p>
-                <p><b>Tổng:</b> 4000000 vnđ</p>
-                <p><b>ID Đơn:</b> ORD_09877</p>
-                <p><b>Ngày Đặt:</b> 19-05-2022</p>
-                <a href="#"> <button class="btn_cancel-confirm"> Đã Hủy</button></a>
-            </div>
+  
             <div class="room__item">
                 <h3>Phòng Bình Dân</h3>
                 <p>800.000 vnđ</p>
@@ -72,7 +82,6 @@
                 <p><b>ID Đơn:</b> ORD_09877</p>
                 <p><b>Ngày Đặt:</b> 19-05-2022</p>
                 <a href="#"> <button class="btn_order">Đã Xác nhận đặt phòng</button></a>
-            </div>
-        </div>
+            </div> -->
     </div>
 </main>

@@ -134,6 +134,13 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/thuvienanh.php";
             break;
         case 'quanlyphongdat':
+            $books = book_select_all();
+            if(isset($_GET["status"])){
+                    $status = $_GET["status"];
+                    $id = $_GET["id"];
+                    book_change_status($status,$id);
+                    header("Location: ?act=quanlyphongdat");
+            }
             include "../view/user/quanlyphongdat.php";
             break;
         case 'phong':
