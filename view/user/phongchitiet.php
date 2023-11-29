@@ -8,10 +8,18 @@
             <a href="">Phòng chi tiết</a>
         </div>
     </section>
+
+    <?php
+    // var_dump($phongchitiet);
+    // die();
+    extract($phongchitiet);
+    $hinh = $img_path . $avatar;
+    ?>
     <div class="banner_room">
-        <img id="slideshow" src="../public/image/bannerphong_chitiet/anh1.webp">
-        <h2>Phòng đơn tiêu chuẩn</h2>
+        <img id="slideshow" src="<?php echo $hinh ?>">
+        <h2><?php echo $ten_Phong ?></h2>
     </div>
+
     <div class="room_content_main">
         <div class="room_content_main_left">
             <div class="tag_info_room">
@@ -29,11 +37,7 @@
                 </div>
             </div>
             <div class="product-summary">
-                <p>Các phòng trang nhã và dãy phòng trang nghiêm của chúng tôi gợi nhớ về một thời đại đã qua. Mỗi
-                    tính năng như đường cong, thảm sang trọng, trần nhà cao, phòng tắm lát đá cẩm thạch, thiết bị
-                    làm sạch và nhiều không gian đều được bố trí một cách chu đáo để gọi cho riêng bạn. Tông màu nâu
-                    phong phú và gỗ sồi tự nhiên tạo nên những khu bảo tồn yên tĩnh và yên tĩnh, được tôn lên một
-                    cách tuyệt vời bởi đồ nội thất trang nhã.</p>
+                <p><?php echo $mota_chung ?></p>
             </div>
             <div class="room_services_content">
                 <div class="title_services">
@@ -57,7 +61,7 @@
         </div>
         <div class="room_content_main_right">
             <div class="price_booking">
-                <span>500.000₫/Đêm</span>
+                <span><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
             </div>
             <form id="form-book" action="?act=billcomfirm" method="post">
                 <input type="text" name="id_Phong" value="<?php echo $_GET["id"] ?>" hidden>
@@ -116,9 +120,7 @@
             <div class="product_tab_title_item">Tiện nghi</div>
         </div>
         <div class="tab-float">
-            <p>Với cảnh quan tuyệt đẹp, bạn sẽ tận hưởng đầy đủ kỳ nghỉ với các dịch vụ hoàn hảo. Ngoài ra
-                khách đặt phòng còn được miễn phí ăn sáng. Tiện ích phòng đầy đủ máy lạnh, tivi màn hình
-                phẳng và nhiều tiện ích khác nữa.</p>
+            <p><?php echo $mota_chinh ?></p>
         </div>
     </div>
     <div class="productRelate">
@@ -131,7 +133,36 @@
                     <!-- <h2 class="room_title">Phòng</h2> -->
                     <!-- <span></span> -->
                     <div class="row">
-                        <div class="col">
+                        <?php foreach ($phongcungloai as $value) {
+                            extract($value);
+                            $hinh = $img_path . $avatar;
+                        ?>
+                            <div class="col">
+                                <article>
+                                    <a href="?act=phongchitiet&id=<?php echo $id ?>"> <img class="room_img" src="<?php echo  $hinh ?>" alt=""></a>
+                                    <a href="" class="room_name">
+                                        <h2 class="room_name"><?php echo $ten_Phong ?></h2>
+                                    </a>
+                                    <span class="room_line"></span>
+                                    <section class="room_service">
+                                        <img src="/public/image/Không có tiêu đề.png" alt="">
+                                        <img src="/public/image/tag_icon_4.svg" alt="">
+                                        <img src="/public/image/tag_icon_5.svg" alt="">
+                                    </section>
+                                    <section class="room_information">
+                                        <span class="room_guest">02 khách</span>
+                                        <span class="room_area"><?php echo $dientich ?>m<sup>2</sup></span>
+                                    </section>
+                                    <section class="room_buy">
+                                        <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
+                                        <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                            <input type="submit" name="buy" value="Đặt Phòng">
+                                        </form>
+                                    </section>
+
+                                </article>
+                            </div>
+                            <!-- <div class="col">
                             <article>
                                 <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
                                 <a href="" class="room_name">
@@ -205,32 +236,8 @@
                                 </section>
 
                             </article>
-                        </div>
-                        <div class="col">
-                            <article>
-                                <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                                <a href="" class="room_name">
-                                    <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                                </a>
-                                <span class="room_line"></span>
-                                <section class="room_service">
-                                    <img src="../public/image/Không có tiêu đề.png" alt="">
-                                    <img src="../public/image/tag_icon_4.svg" alt="">
-                                    <img src="../public/image/tag_icon_5.svg" alt="">
-                                </section>
-                                <section class="room_information">
-                                    <span class="room_guest">02 khách</span>
-                                    <span class="room_area">25m<sup>2</sup></span>
-                                </section>
-                                <section class="room_buy">
-                                    <span class="room_price">500.000₫/đêm</span>
-                                    <form class="room_buy-form" action="" method="post">
-                                        <input type="submit" name="buy" value="Đặt Phòng">
-                                    </form>
-                                </section>
-
-                            </article>
-                        </div>
+                        </div> -->
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -286,7 +293,8 @@
                         const checkIn = new Date(time["check_in"]).getTime();
                         const checkOut = new Date(time["check_out"]).getTime();
 
-                        if (timeCheckin < checkIn && timeCheckout < checkIn || timeCheckin > checkOut && timeCheckout > checkOut) {
+                        if (timeCheckin < checkIn && timeCheckout < checkIn || timeCheckin > checkOut && timeCheckout >
+                            checkOut) {
 
                             notification.style.display = "block";
                             notification_eror.style.display = "none";

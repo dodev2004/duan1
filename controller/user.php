@@ -137,6 +137,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             $id = $_GET["id"];
             $rs = book_select_by_id_Phong($id);
             $books = json_encode($rs);
+            $phongchitiet = load_onephong($id);
+            extract($phongchitiet);
+            $phongcungloai = load_phong_cungloai($id, $id_loaiPhong);
             include "../view/user/phongchitiet.php";
             break;
         case "billcomfirm":

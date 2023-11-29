@@ -160,3 +160,15 @@ function db_phong_select_by_id_user($id)
     $phong = pdo_query($sql);
     return $phong;
 }
+function load_onephong($id)
+{
+    $sql = "select * from phong where id = " . $id;
+    $phong = pdo_query_one($sql);
+    return $phong;
+}
+function load_phong_cungloai($id, $id_loaiPhong)
+{
+    $sql = "SELECT * FROM phong where id_loaiPhong = " . $id_loaiPhong . "  AND id <> " . $id;
+    $phong = pdo_query($sql);
+    return $phong;
+}
