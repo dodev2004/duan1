@@ -105,6 +105,34 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/doimatkhau.php";
             break;
+        case 'quenmk':
+            $eror = "";
+            if (isset($_POST["submit"])) {
+
+                $email = $_POST["email"];
+                if (db_column_user_exist($email, 'email')) {
+                    $ids = db_user_id_select_by_email($email);
+
+                    header("Location:?act=mkmoi&id=" . $ids["id"]);
+                } else {
+                    $eror = "Email không tồn tại";
+                }
+            }
+            include "../view/user/quenmatkhau.php";
+            break;
+        case "mkmoi":
+        case 'phong':
+            if (isset($_GET['idLoaiPhong']) && $_GET['idLoaiPhong'] > 0) {
+                $id = $_GET['idLoaiPhong'];
+                $dsphong = db_phong_select_by_id_user($id);
+            } else {
+                $id = 0;
+                $dsphong = db_phong_select_all();
+            }
+            // var_dump($_GET['idLoaiPhong']);
+            // die();
+            include "../view/user/phong.php";
+            break;
         case "phongchitiet":
             $id = $_GET["id"];
             $rs = book_select_by_id_Phong($id);
@@ -130,22 +158,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
 
             include "../view/user/billcomfirm.php";
             break;
-        case 'quenmk':
-            $eror = "";
-            if (isset($_POST["submit"])) {
 
-                $email = $_POST["email"];
-                if (db_column_user_exist($email, 'email')) {
-                    $ids = db_user_id_select_by_email($email);
-
-                    header("Location:?act=mkmoi&id=" . $ids["id"]);
-                } else {
-                    $eror = "Email không tồn tại";
-                }
-            }
-            include "../view/user/quenmatkhau.php";
-            break;
-        case "mkmoi":
             $eror = "";
             if (isset($_POST["submit"])) {
                 // var_dump(md5(3333));
@@ -167,10 +180,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
         case 'quanlyphongdat':
             include "../view/user/quanlyphongdat.php";
             break;
-        case 'phong':
-            $dsphong = db_phong_select_all();
-            include "../view/user/phong.php";
-            break;
+
         case 'dangxuat':
             dangxuat();
             header("location: user.php");

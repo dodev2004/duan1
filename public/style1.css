@@ -271,8 +271,8 @@ main .banner_room img {
 }
 .profile_user-right .avatar_user {
   /* background-color: #6c707e; */
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-image: url("image/people.webp");
   margin-bottom: 10px;

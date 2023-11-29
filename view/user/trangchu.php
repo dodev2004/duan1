@@ -67,214 +67,86 @@
             <h2 class="room_title">Phòng đơn</h2>
             <span></span>
             <div class="row">
-                <div class="col">
-                    <article>
-                        <a href="?act=phongchitiet&id=17"> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
+                <?php
+                $count = 0;
+                $dsphong = db_phong_select_by_id_user(27);
+                foreach ($dsphong as $value) {
+                    extract($value);
+                    $hinh = $img_path . $avatar;
+                ?>
+                    <div class="col">
+                        <article>
+                            <a href="?act=phongchitiet&id=<?php echo $id ?>"> <img class="room_img" src="<?php echo  $hinh ?>" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name"><?php echo $ten_Phong ?></h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="/public/image/Không có tiêu đề.png" alt="">
+                                <img src="/public/image/tag_icon_4.svg" alt="">
+                                <img src="/public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area"><?php echo $dientich ?>m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
+                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
 
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-
-
+                        </article>
+                    </div>
+                <?php
+                    $count++;
+                    if ($count == 4) {
+                        break;
+                    }
+                } ?>
             </div>
             <h2 class="room_title">Phòng đôi</h2>
             <span></span>
             <div class="row">
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
+                <?php
+                $count = 0;
+                $dsphong = db_phong_select_by_id_user(28);
+                foreach ($dsphong as $value) {
+                    extract($value);
+                    $hinh = $img_path . $avatar;
+                ?>
+                    <div class="col">
+                        <article>
+                            <a href="?act=phongchitiet&id=<?php echo $id ?>"> <img class="room_img" src="<?php echo  $hinh ?>" alt=""></a>
+                            <a href="" class="room_name">
+                                <h2 class="room_name"><?php echo $ten_Phong ?></h2>
+                            </a>
+                            <span class="room_line"></span>
+                            <section class="room_service">
+                                <img src="/public/image/Không có tiêu đề.png" alt="">
+                                <img src="/public/image/tag_icon_4.svg" alt="">
+                                <img src="/public/image/tag_icon_5.svg" alt="">
+                            </section>
+                            <section class="room_information">
+                                <span class="room_guest">02 khách</span>
+                                <span class="room_area"><?php echo $dientich ?>m<sup>2</sup></span>
+                            </section>
+                            <section class="room_buy">
+                                <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
+                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </section>
 
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-                <div class="col">
-                    <article>
-                        <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                        <a href="" class="room_name">
-                            <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                        </a>
-                        <span class="room_line"></span>
-                        <section class="room_service">
-                            <img src="../public/image/Không có tiêu đề.png" alt="">
-                            <img src="../public/image/tag_icon_4.svg" alt="">
-                            <img src="../public/image/tag_icon_5.svg" alt="">
-                        </section>
-                        <section class="room_information">
-                            <span class="room_guest">02 khách</span>
-                            <span class="room_area">25m<sup>2</sup></span>
-                        </section>
-                        <section class="room_buy">
-                            <span class="room_price">500.000₫/đêm</span>
-                            <form class="room_buy-form" action="" method="post">
-                                <input type="submit" name="buy" value="Đặt Phòng">
-                            </form>
-                        </section>
-
-                    </article>
-                </div>
-
-
+                        </article>
+                    </div>
+                <?php
+                    $count++;
+                    if ($count == 4) {
+                        break;
+                    }
+                } ?>
             </div>
 
         </div>
@@ -286,95 +158,77 @@
             <section class="room_content">
                 <div class="row-vip">
                     <div class="col-5">
-                        <article>
-                            <div class="room_vip-img" style="background: url(../public/image/anh1a6283d038ec94b4abbca2d4e02.webp);"></div>
-                            <h2 class="room_vip-title">Phòng đơn vip </h2>
-                            <section class="room_vip-service">
-                                <section class="room_vip-infomation">
-                                    <span class="room_vip-guess">
-                                        <img src="../public/image/tag-user.svg" alt="">
-                                        <span class="room_guest">02 khách</span>
-                                    </span>
-                                    <span class="room_vip-area">
-                                        <img src="../public/image/tag-meters.svg" alt="">
-                                        <span class="room_area">25m<sup>2</sup></span>
-                                    </span>
+                        <?php
+                        $count = 0;
+                        $dsphong = db_phong_select_by_id_user(29);
+                        foreach ($dsphong as $value) {
+                            extract($value);
+                            $hinh = $img_path . $avatar;
+                        ?>
+                            <article>
+                                <div class="room_vip-img" style="background: url(<?php echo $hinh ?>"></div>
+                                <h2 class="room_vip-title"><?php echo $ten_Phong ?> </h2>
+                                <section class="room_vip-service">
+                                    <section class="room_vip-infomation">
+                                        <span class="room_vip-guess">
+                                            <img src="../public/image/tag-user.svg" alt="">
+                                            <span class="room_guest">02 khách</span>
+                                        </span>
+                                        <span class="room_vip-area">
+                                            <img src="../public/image/tag-meters.svg" alt="">
+                                            <span class="room_area">25m<sup>2</sup></span>
+                                        </span>
+                                    </section>
+                                    <section class="room_service">
+                                        <img src="../public/image/Không có tiêu đề.png" alt="">
+                                        <img src="../public/image/tag_icon_4.svg" alt="">
+                                        <img src="../public/image/tag_icon_5.svg" alt="">
+                                    </section>
                                 </section>
-                                <section class="room_service">
-                                    <img src="../public/image/Không có tiêu đề.png" alt="">
-                                    <img src="../public/image/tag_icon_4.svg" alt="">
-                                    <img src="../public/image/tag_icon_5.svg" alt="">
-                                </section>
-                            </section>
-                            <span class="room_vip-description">Với tiêu chí ngày càng nâng cao và đáp ứng mọi nhu
-                                cầu của khách hàng chúng tôi cung cấp thêm loại phòng đơ... </span>
-                            <form action="">
-                                <input type="submit" type="submit" value="Đặt phòng">
-                            </form>
-                        </article>
+                                <span class="room_vip-description"><?php echo $mota_chung ?> </span>
+                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                    <input type="submit" name="buy" value="Đặt Phòng">
+                                </form>
+                            </article>
+                        <?php
+                            $count++;
+                            if ($count == 1) {
+                                break;
+                            }
+                        } ?>
                     </div>
                     <div class="col-5">
                         <section class="room_vip-left">
                             <div class="row">
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
+                                <?php
+                                $count = 0;
+                                $dsphong = db_phong_select_by_id_user(29);
+                                foreach ($dsphong as $value) {
+                                    extract($value);
+                                    $hinh = $img_path . $avatar;
+                                ?>
+                                    <div class="col">
+                                        <article>
+                                            <a href="?act=phongchitiet&id=<?php echo $id ?>">
+                                                <img src="<?php echo $hinh ?>" alt="">
                                             </a>
-                                            <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
+                                            <section class="room_vip-infomation">
+                                                <a href="?act=phongchitiet&id=<?php echo $id ?>" class="room_vip-name">
+                                                    <?php echo $ten_Phong ?>
+                                                </a>
+                                                <a href="" class="room_vip-price">
+                                                    <?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</a>
 
-                                        </section>
-                                    </article>
-                                </div>
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
-
-                                        </section>
-                                    </article>
-                                </div>
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price"> 3.000.000₫/Đêm</a>
-
-                                        </section>
-                                    </article>
-                                </div>
-                                <div class="col">
-                                    <article>
-                                        <a href="">
-                                            <img src="../public/image/anh1a6283d038ec94b4abbca2d4e02.webp" alt="">
-                                        </a>
-                                        <section class="room_vip-infomation">
-                                            <a href="#" class="room_vip-name">
-                                                Phòng đơn vip
-                                            </a>
-                                            <a href="" class="room_vip-price">3.000.000₫/Đêm</a>
-
-                                        </section>
-                                    </article>
-                                </div>
+                                            </section>
+                                        </article>
+                                    </div>
+                                <?php
+                                    $count++;
+                                    if ($count == 4) {
+                                        break;
+                                    }
+                                } ?>
                             </div>
-
-
                     </div>
             </section>
             </div>
