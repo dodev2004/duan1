@@ -28,12 +28,17 @@
                         </a>
                         <span class="room_line"></span>
                         <section class="room_service">
-                            <img src="/public/image/Không có tiêu đề.png" alt="">
-                            <img src="/public/image/tag_icon_4.svg" alt="">
-                            <img src="/public/image/tag_icon_5.svg" alt="">
+                            <?php
+                                $id_dv = db_phong_select_id_dichvu($id);
+                                foreach ($id_dv as $id) {
+                                    $dichvu = load_dichvu($id["id_dichVu"]);
+                                    $hinh = $img_path_icon . $dichvu[0]['icon'];
+                                ?>
+                            <img src="<?php echo $hinh ?>" alt="">
+                            <?php } ?>
                         </section>
                         <section class="room_information">
-                            <span class="room_guest">02 khách</span>
+                            <span class="room_guest">0<?php echo $slNguoiLon ?> khách</span>
                             <span class="room_area"><?php echo $dientich ?>m<sup>2</sup></span>
                         </section>
                         <section class="room_buy">

@@ -485,6 +485,13 @@ input:hover {
   padding: 0 10px;
   display: block;
   text-align: justify;
+  max-height: 100px;
+  overflow: hidden;
+}
+.room_vip-description > p {
+  height: 100%;
+  text-overflow: clip;
+  max-width: 100%;
 }
 
 .room_vip-infomation span {
