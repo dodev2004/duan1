@@ -45,20 +45,28 @@
                 </div>
                 <div class="box_services">
                     <?php
+                    foreach ($id_dv as $id) {
+                        $dichvu = load_dichvu($id["id_dichVu"]);
+                        // var_dump($dichvu);
+                        // die();
+                        $hinh = $img_path_icon . $dichvu[0]['icon'];
+
+
 
                     ?>
-                    <div class="item_services">
-                        <img src="../public/image/tag_icon_4.svg" alt="">
-                        <span>Cà Phê Buổi Sáng</span>
-                    </div>
-                    <div class="item_services">
+                        <div class="item_services">
+                            <img src="<?php echo $hinh ?>" alt="">
+                            <span><?php echo $dichvu[0]['ten_dichVu'] ?></span>
+                        </div>
+                        <!-- <div class="item_services">
                         <img src="../public/image/tag_icon_4.svg" alt="">
                         <span>Bồn Tắm Hoa Sen</span>
                     </div>
                     <div class="item_services">
                         <img src="../public/image/tag_icon_5.svg" alt="">
                         <span>Internet Không Dây</span>
-                    </div>
+                    </div> -->
+                    <?php } ?>
                 </div>
             </div>
         </div>

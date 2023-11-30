@@ -141,7 +141,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $phongchitiet = load_onephong($id);
                 $phongcungloai = load_phong_cungloai($id, $phongchitiet["id_loaiPhong"]);
                 $id_dv = db_phong_select_id_dichvu($id);
-                // var_dump($id_dv);
+                // var_dump($id_dv[0]["id_dichVu"]);
+                // die();
+                // var_dump($dichvu);
                 // die();
             }
             include "../view/user/phongchitiet.php";
