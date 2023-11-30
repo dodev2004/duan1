@@ -18,7 +18,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
+.item_tag_info {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
 .header_top-slogan h3 {
   color: white !important;
   font-size: 13px !important;
@@ -52,7 +56,9 @@ nav .header_top-user {
   margin-left: 6px;
   font-size: 13px;
 }
-
+.user_infomation-list {
+  color: #2e988a !important;
+}
 li {
   list-style: none !important;
 }
@@ -116,6 +122,7 @@ li {
   margin: 0 auto !important;
   display: flex !important;
   justify-content: space-between;
+  padding: 0 12px !important;
 }
 
 .header_bottom {
@@ -220,7 +227,6 @@ input:hover {
   color: white;
   font-weight: 700;
   border-radius: 4px;
-  margin-top: -13px;
 }
 
 .create_room {
@@ -283,13 +289,27 @@ input:hover {
   object-fit: contain;
 }
 
-.room .wrapper .row {
+.room > .wrapper > .row {
   display: grid;
+  padding: 0 !important;
+  margin: 0 !important;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 24px;
   row-gap: 17px;
 }
-
+.room > .wrapper > .row > .col {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.row-vip {
+  display: grid;
+  grid-template-columns: 5fr 7fr !important;
+  column-gap: 12px;
+}
+.row-vip > .col-5 {
+  width: 100%;
+  max-width: 100%;
+}
 .room > .wrapper > .row > .col > article {
   position: relative;
   background-color: #fff;
@@ -362,7 +382,7 @@ input:hover {
 
 .room_img {
   width: 100%;
-  height: 100%;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -427,8 +447,8 @@ input:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 12px;
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 3px;
   padding: 0 10px;
 }
 
@@ -439,6 +459,25 @@ input:hover {
 .room_vip-title {
   padding: 0 10px;
   margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  white-space: unset;
+  max-height: 22px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+  transition: 0.25s linear;
+  color: #323c42 !important;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .room_vip-infomation {
@@ -472,16 +511,34 @@ input:hover {
   padding: 0 10px;
   margin-top: 12px;
 }
+.room_content > .row-vip > .col-5 > article {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgb(149 129 129 / 50%);
+  margin-bottom: 20px;
 
-.room_content > .row > .col-5 > article > form > input[type="submit"] {
+  border-radius: 2px;
+  overflow: hidden;
+}
+.room_content > .row-vip > .col-5 > article > form > input[type="submit"] {
   background-color: #fff;
   color: #c40025;
   border: 1px solid #c40025;
   padding: 5px 10px;
   text-transform: capitalize;
   cursor: pointer;
+  transition: 0.25s linear;
+  margin: 10px 10px;
 }
-
+.room_content
+  > .row-vip
+  > .col-5
+  > article
+  > form
+  > input[type="submit"]:hover {
+  background-color: #c40025;
+  color: white;
+}
 .room_content > .row > .col-5 > article > form > input[type="submit"]:hover {
   color: white;
   background-color: #c40025;
@@ -494,12 +551,15 @@ input:hover {
 .room_vip-left > .row {
   display: grid;
   grid-template-columns: 1fr 1fr !important;
+  row-gap: 24px;
 }
 
-.room_vip-left > .row > .col > article {
-  position: relative;
+.room_vip-left > .row {
+  margin: 0 !important;
 }
-
+.room_vip-left > .row > .col {
+  padding: 0 !important;
+}
 .room_vip-left > .row > .col > article > .room_vip-infomation {
   position: absolute;
   bottom: 20px;
@@ -519,6 +579,7 @@ input:hover {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
   color: white;
   text-decoration: none;
 }
@@ -718,12 +779,10 @@ input:hover {
 .my_hotel-task > .wrapper > a:last-child {
   color: #c40025;
 }
-
 .my_hotel-title {
   text-transform: uppercase;
   font-size: 18px;
 }
-
 .mu_hotel-content img {
   object-fit: contain;
   width: 100%;
@@ -733,6 +792,7 @@ input:hover {
 .mu_hotel-content > p {
   text-align: justify;
   line-height: 20px;
+
 }
 
 /* Footer */
