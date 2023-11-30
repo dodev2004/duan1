@@ -25,15 +25,15 @@
             <div class="tag_info_room">
                 <div class="item_tag_info">
                     <img src="../public/image/people.webp" alt="">
-                    <span> 02 Người lớn</span>
+                    <span> <?php echo $slNguoiLon ?> Người lớn</span>
                 </div>
                 <div class="item_tag_info">
                     <img src="../public/image/people.webp" alt="">
-                    <span> 02 Người lớn</span>
+                    <span> <?php echo $slTreEm ?> Trẻ em</span>
                 </div>
                 <div class="item_tag_info">
-                    <img src="../public/image/people.webp" alt="">
-                    <span> 02 Người lớn</span>
+                    <img src="../public/image/dientich.png" alt="">
+                    <span> Phòng <?php echo $dientich ?>m<sup>2</sup></span>
                 </div>
             </div>
             <div class="product-summary">
@@ -44,6 +44,9 @@
                     Dịch vụ phòng
                 </div>
                 <div class="box_services">
+                    <?php
+
+                    ?>
                     <div class="item_services">
                         <img src="../public/image/tag_icon_4.svg" alt="">
                         <span>Cà Phê Buổi Sáng</span>

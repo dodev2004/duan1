@@ -172,3 +172,20 @@ function load_phong_cungloai($id, $id_loaiPhong)
     $phong = pdo_query($sql);
     return $phong;
 }
+function load_dichvu($id_dichvu)
+{
+    $sql = "select * from dichvu where id = " . $id_dichvu;
+    $phong = pdo_query($sql);
+    return $phong;
+}
+// function db_phong_select_id_dichvu($id)
+// {
+//     $sql = "SELECT * from dichvuphong where id_phong = ? ";
+//     return pdo_query($sql, $id);
+// }
+function load_id_dichvu($id_dichvu)
+{
+    $sql = "select id_dichVu from dichvuphong where id = " . $id_dichvu;
+    $phong = pdo_query($sql);
+    return $phong;
+}

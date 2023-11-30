@@ -134,12 +134,16 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/phong.php";
             break;
         case "phongchitiet":
-            $id = $_GET["id"];
-            $rs = book_select_by_id_Phong($id);
-            $books = json_encode($rs);
-            $phongchitiet = load_onephong($id);
-            extract($phongchitiet);
-            $phongcungloai = load_phong_cungloai($id, $id_loaiPhong);
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET["id"];
+                $rs = book_select_by_id_Phong($id);
+                $books = json_encode($rs);
+                $phongchitiet = load_onephong($id);
+                $phongcungloai = load_phong_cungloai($id, $phongchitiet["id_loaiPhong"]);
+                $id_dv = db_phong_select_id_dichvu($id);
+                // var_dump($id_dv);
+                // die();
+            }
             include "../view/user/phongchitiet.php";
             break;
         case "billcomfirm":
