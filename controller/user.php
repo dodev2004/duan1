@@ -106,12 +106,48 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/doimatkhau.php";
             break;
+        case 'quenmk':
+            $eror = "";
+            if (isset($_POST["submit"])) {
+
+                $email = $_POST["email"];
+                if (db_column_user_exist($email, 'email')) {
+                    $ids = db_user_id_select_by_email($email);
+
+                    header("Location:?act=mkmoi&id=" . $ids["id"]);
+                } else {
+                    $eror = "Email không tồn tại";
+                }
+            }
+            include "../view/user/quenmatkhau.php";
+            break;
+        case "mkmoi":
+        case 'phong':
+            if (isset($_GET['idLoaiPhong']) && $_GET['idLoaiPhong'] > 0) {
+                $id = $_GET['idLoaiPhong'];
+                $dsphong = db_phong_select_by_id_user($id);
+            } else {
+                $id = 0;
+                $dsphong = db_phong_select_all();
+            }
+            // var_dump($_GET['idLoaiPhong']);
+            // die();
+            include "../view/user/phong.php";
+            break;
         case "phongchitiet":
-            $id = $_GET["id"];
-            $rs = book_select_by_id_Phong($id);
-            $bls = bl_select_by_id_Phong($id);
-           
-            $books = json_encode($rs);
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET["id"];
+                $rs = book_select_by_id_Phong($id);
+                $bls = bl_select_by_id_Phong($id);
+                $books = json_encode($rs);
+                $phongchitiet = load_onephong($id);
+                $phongcungloai = load_phong_cungloai($id, $phongchitiet["id_loaiPhong"]);
+                $id_dv = db_phong_select_id_dichvu($id);
+                // var_dump($id_dv[0]["id_dichVu"]);
+                // die();
+                // var_dump($dichvu);
+                // die();
+            }
             include "../view/user/phongchitiet.php";
             break;
         case "billcomfirm":
@@ -132,6 +168,22 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
 
             include "../view/user/billcomfirm.php";
+            break;
+
+            $eror = "";
+            if (isset($_POST["submit"])) {
+                // var_dump(md5(3333));
+                // die();
+                $password = $_POST["password"];
+                $matkhaumoi = md5($password);
+                $id = $_GET["id"];
+                // var_dump(md5( $matkhaumoi));
+                // die();
+                db_user_change_password($id, $matkhaumoi);
+                echo "<script language=javascript>alert('Thay đổi thành công')</script>";
+                header("Location:?act=mkmoi");
+            }
+            include "../view/user/matkhaumoi.php";
             break;
         case 'thuvienanh':
             include "../view/user/thuvienanh.php";
@@ -157,10 +209,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/quanlyphongdat.php";
             break;
-        case 'phong':
-            $dsphong = db_phong_select_all();
-            include "../view/user/phong.php";
-            break;
+
         case 'dangxuat':
             dangxuat();
             header("location: user.php");
