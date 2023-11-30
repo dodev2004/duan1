@@ -46,19 +46,15 @@ function nguoidung_select_all_Pagin($currentPage, $id)
 {
     $offset = ($currentPage - 1) * 4;
     if (isset($_POST["seach"])) {
-        $seach_name = !empty($_POST["seach_name"]) ? $_POST["seach_name"] : "";
-        $id_user = !empty($_POST["seach_iduser"]) ? $_POST["seach_iduser"] : "";
-
-        if (trim($seach_name) == "" && trim($id_user) == "") {
-            $sql = "SELECT * FROM nguoidunng where id != $id  order by id desc  limit 4 offset $offset";
-        } else if (trim($seach_name) != "" && trim($id_user) == "") {
-            $sql = "SELECT * FROM nguoidunng   where name like '%" . $seach_name . "%' order by id desc limit 4 offset $offset";
-        } else if (trim($seach_name) == "" && trim($id_user) != "") {
-            $sql = "SELECT * FROM nguoidunng  where id  = $id_user order by id desc limit 4 offset $offset";
-        } else {
-            $sql = "SELECT * FROM nguoidunng  where id =  $id_user AND " . "name like '%" .  $seach_name . "%' order by id desc limit 4 offset $offset";
-        }
-    } else {
+        $seach_name = !empty($_POST["seach_username"]) ? $_POST["seach_username"] : "";
+        if (trim($seach_name) != "") {
+            $sql = "SELECT * FROM nguoidung   where user_name like '%" . $seach_name . "%' order by id desc limit 4 offset $offset";
+     
+    }
+    else {
+        $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
+    }
+ } else {
         $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
     }
     return pdo_query($sql);
