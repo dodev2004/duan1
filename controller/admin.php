@@ -331,7 +331,7 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 }
                 $books  = db_book_select_all_Pagin($_GET["currentPage"],1);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(1)));
+                $pagin = ceil(count(book_select_all(1))/4);
                 include "../view/admin/phongdat/xacnhandp.php";
             } 
             else if($act == "huydp"){
@@ -349,7 +349,7 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 }
                 $books  = db_book_select_all_Pagin($_GET["currentPage"],2);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(2)));
+                $pagin = ceil(count(book_select_all(2))/4);
                 include "../view/admin/phongdat/xacnhantt.php";
             }
             else {
