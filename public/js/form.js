@@ -174,4 +174,20 @@
          return value.trim() !== "" ? "" : "Vui lòng nhập trường này";
         }
     }
-
+// rating
+const rating = document.querySelector(".btn_ratings");
+if(rating){
+    const rate = document.querySelector(".rate");
+    const id_Phong = document.querySelector(".rate_content>form>input[name=id_Phong]");
+    const id_book = document.querySelector(".rate_content>form>input[name=id_book]");
+   const cancle = document.querySelector(".rate_content>form>.rate_title>i");
+    rating.onclick = function(){
+        event.preventDefault();
+        id_Phong.value = this.dataset.id;
+        id_book.value = this.dataset.bookid;
+        rate.classList.add("active");
+    }
+    cancle.onclick = function(){
+        rate.classList.remove("active");
+    }
+}

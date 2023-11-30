@@ -16,6 +16,7 @@ include "../models/phong.php";
 include "../models/dichvu.php";
 include "../models/thanhvien.php";
 include "../models/privilege.php";
+include "../models/binhluan.php";
 include "../view/admin/regex.php";
 include "../view/admin/header.php";
 
@@ -356,6 +357,27 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $count  = count($books);
                     $pagin = ceil(count(book_select_all())/4);
                     include  "../view/admin/phongdat/lichsudp.php";
+            }
+            break;
+        case "bl":
+            if($act == "lk"){
+                $bls  = bl_select_all_pagin($_GET["currentPage"]);
+                $count = count($bls);
+                $pagin = ceil(count(bl_select_all())/4);
+                include "../view/admin/binhluan/lk.php";
+            }
+           
+            else if($act == "delete"){
+                bl_delete($_GET["id"]);
+                header("Location:?act=lk&page=bl&currentPage=1");
+            }
+            else if($act == "rmAll") {
+                $id = $_GET["id"];
+                $ids = explode(",", $id);
+                var_dump($ids);
+                bl_delete($ids);
+                
+                header("Location:?act=lk&page=bl&currentPage=1");
             }
             break;
         case "dangxuat":

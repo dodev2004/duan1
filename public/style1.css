@@ -227,6 +227,65 @@ main .banner_room img {
 .btn_order:hover {
   opacity: 0.5;
 }
+.rate{
+  position: fixed !important;
+  top: 0;
+  z-index: 12;
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  height: 100vh !important;
+  background-color: #0000004c;
+  transform: scale(0.5);
+  transition: 0.15s ease-in !important;
+  pointer-events: none;
+  opacity: 0;
+}
+.rate.active{
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+.rate_content{
+border-radius: 8px;
+margin-left: auto;
+margin-right: auto;
+width: 500px;
+padding: 50px;
+background-color: white !important;
+
+}
+.rate_title{
+  position: relative;
+  display: flex !important; 
+  justify-content: space-between;
+}
+.rate_content>form>.rate_title>h1{
+  font-size: 19px !important;
+  font-weight: 700;
+}
+.rate_content>form>.rate_title>i{
+  margin-top: -20px;
+  margin-left: -20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.rate_content>form>button{
+  background: #c40b0b !important;
+  border: none;
+}
+.user_rate{
+  padding-top: 4px;
+
+  padding-top: 9px;
+}
+.user_rate-name{
+  margin: 0;
+}
+
+.user_rate-date{
+ font-size: 13px;
+}
 .room__item .btn_order-success {
   background-color: #cd9a2b;
   margin: 10px 0;

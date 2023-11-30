@@ -4,12 +4,20 @@
         return pdo_query($sql);
     }
     function book_insert($id_user,$book_name,$sdt,$id_Phong,$sl_NgoiLon,$sl_tre_em,$check_in,$check_out,$price){
-       $sql = "INSERT INTO book(book_name,sdt,sl_NguoiLon,sl_tre_em,check_in,check_out,price,iduser,id_Phong) values(?,?,?,?,?,?,?,?,?) ";
-       return pdo_execute($sql,$book_name,$sdt,$sl_NgoiLon,$sl_tre_em,$check_in,$check_out,$price,$id_user,$id_Phong);
+       $sql = "INSERT INTO book(book_name,sdt,sl_NguoiLon,sl_tre_em,check_in,check_out,price,iduser,id_Phong,created_time) values(?,?,?,?,?,?,?,?,?,?) ";
+       return pdo_execute($sql,$book_name,$sdt,$sl_NgoiLon,$sl_tre_em,$check_in,$check_out,$price,$id_user,$id_Phong,date('Y-m-d'),time());
     }
     function book_select_by_id($id){
         $sql = "select * from book where id = ?";
         return pdo_query_one($sql,$id);
+    }
+    function book_change_status_bl($status,$id){
+        $sql = "UPDATE book set ttBl = ? where id = ?";
+        pdo_execute($sql,$status,$id);
+    }
+    function book_select_all_by_user($id_user){
+        $sql = "SELECT  * from book where iduser =?   ";
+        return pdo_query($sql,$id_user);
     }
     function book_select_by_stt_xndp(){
         $sql = "SELECT * from book where status = 1";

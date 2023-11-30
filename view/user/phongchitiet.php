@@ -121,6 +121,37 @@
                 phẳng và nhiều tiện ích khác nữa.</p>
         </div>
     </div>
+    <div class="product_tab product_tab-comment">
+        <div class="product_tab_title">
+            <div class="product_tab_title_item">Đánh giá</div>
+        </div>
+        <div style="max-width: 700px;
+        " class="tab-float">
+        <?php foreach($bls as $bl):
+            $user = nguoidung_select_by_id($bl["iduser"]); ?>
+           <div class="user_rate">
+            <p class="user_rate-name">Người dùng : <?=$user["name"]?></p>
+            <div class="user_rate-star">
+                <?php for($i = 1 ; $i<=$bl["rate"];$i++){
+                    echo '<i class="fa-solid fa-star" style="color: yellow;"></i>';
+                }  ?>
+             <!-- <i class="fa-solid fa-star" style="color: yellow;"></i>
+             <i class="fa-solid fa-star" style="color: yellow;"></i>
+             <i class="fa-solid fa-star" style="color: yellow;"></i>
+             <i class="fa-solid fa-star" style="color: yellow;"></i>
+             <i class="fa-solid fa-star" style="color: yellow;"></i> -->
+                
+            </div>
+            <div class="user_rate-content">
+                <?php echo $bl["content"] ?>
+            </div>
+            <div class="user_rate-date">
+             Ngày đăng : <?php echo $bl["ngaydang"] ?>
+            </div>
+           </div>
+           <?php endforeach ?>
+        </div>
+    </div>
     <div class="productRelate">
         <div class="productRelate_title">
             Phòng tương tự

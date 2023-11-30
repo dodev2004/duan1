@@ -7,6 +7,7 @@ include "../models/datphong.php";
 include "../models/loaiphong.php";
 
 $dsdm = db_lp_Select_all();
+include "../models/binhluan.php";
 include "../models/phong.php";
 include "../models/dichvu.php";
 include "../models/thanhvien.php";
@@ -108,6 +109,8 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
         case "phongchitiet":
             $id = $_GET["id"];
             $rs = book_select_by_id_Phong($id);
+            $bls = bl_select_by_id_Phong($id);
+           
             $books = json_encode($rs);
             include "../view/user/phongchitiet.php";
             break;
@@ -134,12 +137,23 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/thuvienanh.php";
             break;
         case 'quanlyphongdat':
-            $books = book_select_all();
+            $books = book_select_all_by_user($_SESSION["user"]["id"]);
             if(isset($_GET["status"])){
                     $status = $_GET["status"];
                     $id = $_GET["id"];
                     book_change_status($status,$id);
                     header("Location: ?act=quanlyphongdat");
+            }
+            if(isset($_POST["rate"])){
+                $id_Phong = $_POST["id_Phong"];
+                $content = $_POST["rate_content"];
+                $star = $_POST["rate_star"];
+                $id_user = $_SESSION["user"]["id"];
+                $status = 1;
+                $id_book = $_POST["id_book"];
+                book_change_status_bl($status,$id_book);
+                bl_insert($id_user,$id_Phong,$content,$star,date("Y-m-d",time()));
+                header("Location: ?act=quanlyphongdat");
             }
             include "../view/user/quanlyphongdat.php";
             break;

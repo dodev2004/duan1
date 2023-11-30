@@ -15,7 +15,7 @@ if (elementas) {
         remove.onclick = function () {
             event.preventDefault();
             let checkbox = this.parentElement.parentElement.querySelector("input[type=checkbox]");
-            console.log(checkbox);
+            
             let page = checkbox.dataset.page;
             const id = remove.parentElement.parentElement.querySelector(".id").textContent.trim();
             let resuilt = confirm("Bạn chắc chắn muốn xóa chứ");

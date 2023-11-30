@@ -137,18 +137,6 @@ function thanhvien_get_paging($pagin)
         echo "<a  href=?act=lk&page=thanhvien&currentPage=" . $pagin . ">Last</a>";
     }
 }
-function reverseMD5($hash)
-{
-    $url = "https://md5.gromweb.com/?md5=" . $hash;
-    $response = file_get_contents($url);
-
-    if (strpos($response, "No hash found") !== false) {
-        return "Không tìm thấy giá trị MD5.";
-    } else {
-        preg_match('/<em class="long-content string">(.*?)<\/em>/s', $response, $matches);
-        return $matches[1];
-    }
-}
 function dangxuat()
 {
     if (isset($_SESSION['user'])) {

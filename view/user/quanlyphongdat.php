@@ -22,7 +22,6 @@
                 <?php
                     $status = $book["status"];
                     if($status == 1){
-
                     
                 ?>
                 <button class="btn_order-success">Đã Đặt</button>
@@ -32,11 +31,15 @@
                     echo '<button class="btn_order">Đã Xác nhận đặt phòng</button>';
                 }
                 else if($status == 3){
-                    echo '<button class="btn_pay">Đã Thanh Toán</button>
-                    <button class="btn_ratings">Đánh giá</button>';
+                    echo '<button class="btn_pay">Đã Thanh Toán</button>';
+                    if($book["ttBl"] == 0){
+                        echo '<button class="btn_ratings" data-id= '.$book["id_Phong"]. ' data-bookid=' .$book["id"].'>Đánh giá</button>';
+                    }
+                  
+                   
                 }
                 else {
-                    echo ' <button class="btn_cancel-confirm"> Đã Hủy</button>';
+                    echo ' <button  class="btn_cancel-confirm"> Đã Hủy</button>';
                 }?>
             </div>
             <?php endforeach ?>
@@ -84,4 +87,35 @@
                 <a href="#"> <button class="btn_order">Đã Xác nhận đặt phòng</button></a>
             </div> -->
     </div>
+            </div>
+    <div class="rate">
+                <div class="rate_content">
+                    <form action="?act=quanlyphongdat" method="post">
+                        <div class="rate_title">
+                            <h1>Đánh Giá</h1>
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                       
+                        <input type="text" name="id_Phong"  hidden>
+                        <input type="text" name="id_book" hidden>
+                        
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Cảm nhận của bạn sau khi trải nhiệm</label>
+                            <select name="rate_star" class="form-control" id="exampleFormControlSelect1">
+                                <option checked ></option>
+                                <option value="5" >Rất tốt</option>
+                                <option value="4">Tôt</option>
+                                <option value="3">Khá</option>
+                                <option value="2">Tệ</option>
+                                <option value="1">Rất tệ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Để lại ý kiến</label>
+                            <textarea  class="form-control" id="exampleFormControlTextarea1" name="rate_content" rows="3"></textarea>
+                        </div>
+                        <button type="submit" name="rate" class="btn btn-primary">Gửi</button>
+                    </form>
+                </div>
+            </div>
 </main>
