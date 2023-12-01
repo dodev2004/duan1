@@ -189,3 +189,7 @@ function load_id_dichvu($id_dichvu)
     $phong = pdo_query($sql);
     return $phong;
 }
+function seach_phong($checkin, $checkout,$slNguoiLon,$sltreem){
+    $sql = "SELECT * FROM `phong` WHERE id NOT IN(SELECT id_Phong FROM `book` WHERE $checkin >= check_in AND check_out >= '$checkin' AND  check_in <= $checkout AND check_out >= $checkout) AND slNguoiLon <= $slNguoiLon AND slTreEm <=$sltreem";
+    return pdo_query($sql);
+}

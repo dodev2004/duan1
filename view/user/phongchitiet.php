@@ -68,10 +68,12 @@
                     <div class="item_booking">
                         <label for="">Họ và tên</label>
                         <input type="text" name="book_name">
+                        <p class="eror_messsage"></p>
                     </div>
                     <div class="item_booking">
                         <label for="">Số điện thoại</label>
                         <input type="text" name="sdt">
+                        <p class="eror_messsage"></p>
                     </div>
                 </div>
                 <div class="form_booking">

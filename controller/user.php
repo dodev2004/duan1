@@ -32,10 +32,12 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $checked = nguoidung_signin($user, $password);
                 if (is_array($checked)) {
                     $_SESSION["user"] = $checked;
+                
                     header("Location: user.php");
                 } else {
                     $eror["password"] = "Thông tin đăng nhập sai";
                     $eror["username"] = "Thông tin đăng nhập sai";
+                    
                 }
             }
             include "../view/user/dangnhap.php";

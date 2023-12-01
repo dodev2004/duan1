@@ -5,20 +5,20 @@
         </section>
         <section class="seach_room">
             <h4>Tìm phòng</h4>
-            <form class="form_seach-room" action="" method="post">
+            <form class="form_seach-room" action="" method="POST">
                 <div class="form_group">
                     <label for="">Ngày nhận phòng</label>
-                    <input type="date" name="create_room" class="create_room">
+                    <input type="date" name="checkin" class="create_room">
                     <p class="message_eror"></p>
                 </div>
                 <div class="form_group">
                     <label for="">Ngày trả phòng</label>
-                    <input type="date" name="end_room" class="end_room">
+                    <input type="date" name="checkout" class="end_room">
                     <p class="message_eror"></p>
                 </div>
                 <div class="form_group">
                     <label for="">Số lượng người lớn</label>
-                    <select name="" id="">
+                    <select name="sl_Nguoi_Lon" id="">
                         <option value="1">1</option>
                         <option value="1">2</option>
                         <option value="1">3</option>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form_group">
                     <label for="">Số lượng trẻ em</label>
-                    <select name="" id="" <option value="1">1</option>
+                    <select name="sl_tre_em" id="" <option value="1">1</option>
                         <option value="1">2</option>
                         <option value="1">3</option>
                         <option value="1">4</option>
