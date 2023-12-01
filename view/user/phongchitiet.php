@@ -61,7 +61,7 @@
             <div class="price_booking">
                 <span><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
             </div>
-            <form id="form-book" action="?act=billcomfirm" method="post">
+            <form id="form-book" action="?act=xacnhanttdatphong" method="post">
                 <input type="text" name="id_Phong" value="<?php echo $_GET["id"] ?>" hidden>
                 <input type="text" name="price" value="<?php echo $gia ?>" hidden>
                 <div class=" form_booking">

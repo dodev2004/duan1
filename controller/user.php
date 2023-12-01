@@ -121,7 +121,6 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/quenmatkhau.php";
             break;
-        case "mkmoi":
         case 'phong':
             if (isset($_GET['idLoaiPhong']) && $_GET['idLoaiPhong'] > 0) {
                 $id = $_GET['idLoaiPhong'];
@@ -150,8 +149,26 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/phongchitiet.php";
             break;
+        case 'xacnhanttdatphong':
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $id_Phong = $_POST["id_Phong"];
+                $price = $_POST["price"];
+                $name = $_POST["book_name"];
+                $sdt  = $_POST["sdt"];
+                $checkin = $_POST["check_in"];
+                $checkout = $_POST["check_out"];
+                $slNguoiLon = $_POST["sl_NguoiLon"];
+                $sltreEm = $_POST["sl_tre_em"];
+                $total_price = $_POST["total_price"];
+                // $id_user = $_SESSION["user"]["id"];
+                // $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+                // $bill = book_select_by_id($id);
+                // $room = db_phong_select_by_id($bill["id_Phong"]);
+            }
+            include "../view/user/xacnhanttdatphong.php";
+            break;
         case "billcomfirm":
-            if (isset($_POST["bill"])) {
+            if (isset($_POST["xndatphongoff"])) {
                 $id_Phong = $_POST["id_Phong"];
                 $price = $_POST["price"];
                 $name = $_POST["book_name"];
@@ -170,6 +187,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/billcomfirm.php";
             break;
 
+        case "mkmoi":
             $eror = "";
             if (isset($_POST["submit"])) {
                 // var_dump(md5(3333));
@@ -190,21 +208,21 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             break;
         case 'quanlyphongdat':
             $books = book_select_all_by_user($_SESSION["user"]["id"]);
-            if(isset($_GET["status"])){
-                    $status = $_GET["status"];
-                    $id = $_GET["id"];
-                    book_change_status($status,$id);
-                    header("Location: ?act=quanlyphongdat");
+            if (isset($_GET["status"])) {
+                $status = $_GET["status"];
+                $id = $_GET["id"];
+                book_change_status($status, $id);
+                header("Location: ?act=quanlyphongdat");
             }
-            if(isset($_POST["rate"])){
+            if (isset($_POST["rate"])) {
                 $id_Phong = $_POST["id_Phong"];
                 $content = $_POST["rate_content"];
                 $star = $_POST["rate_star"];
                 $id_user = $_SESSION["user"]["id"];
                 $status = 1;
                 $id_book = $_POST["id_book"];
-                book_change_status_bl($status,$id_book);
-                bl_insert($id_user,$id_Phong,$content,$star,date("Y-m-d",time()));
+                book_change_status_bl($status, $id_book);
+                bl_insert($id_user, $id_Phong, $content, $star, date("Y-m-d", time()));
                 header("Location: ?act=quanlyphongdat");
             }
             include "../view/user/quanlyphongdat.php";

@@ -65,7 +65,6 @@
                                         ?>
                 </th>
 
-
             </tr>
 
             <?php endforeach ?>
