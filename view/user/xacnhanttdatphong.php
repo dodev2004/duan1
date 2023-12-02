@@ -32,10 +32,16 @@
         </div>
         <button style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" type="submit" name="xndatphongoff">Thanh toán tại quầy</button>
     </form>
-    <form action="../view/user/congthanhtoan.php" id="create_form" method="post">
+   
+    <form action="../../view/user/congthanhtoan.php" id="create_form" method="POST">
         <img style="width: 310px;display: block; height: 200px; margin:0 auto;" src="../../public/image/vnpay.jpg" alt="">
-        <input type="hidden" name="gia" value="<?php echo $total_price ?>">
         <input type="hidden" name="ma_donhang" value="<?php echo $id_Phong ?>">
+        <input type="hidden" name="gia" value="<?php echo $total_price ?>">
+        <input type="hidden" name="sdt" value="<?php echo $sdt ?>">
+        <input type="hidden" name="check_in" value="<?php echo $checkin ?>">
+        <input type="hidden" name="check_out" value="<?php echo $checkout ?>">
+        <input type="hidden" name="sl_NguoiLon" value="<?php echo $slNguoiLon ?>">
+        <input type="hidden" name="sl_tre_em" value="<?php echo $sltreEm  ?>">
         <button style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" type="submit" name="redirect" id="redirect" class="btn btn-default">Thanh toán online bằng VNPAY</button>
     </form>
 </div>
