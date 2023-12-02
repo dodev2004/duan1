@@ -32,12 +32,11 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $checked = nguoidung_signin($user, $password);
                 if (is_array($checked)) {
                     $_SESSION["user"] = $checked;
-                
+
                     header("Location: user.php");
                 } else {
                     $eror["password"] = "Thông tin đăng nhập sai";
                     $eror["username"] = "Thông tin đăng nhập sai";
-                    
                 }
             }
             include "../view/user/dangnhap.php";
@@ -182,6 +181,20 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $total_price = $_POST["total_price"];
                 $id_user = $_SESSION["user"]["id"];
                 $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+                $bill = book_select_by_id($id);
+                $room = db_phong_select_by_id($bill["id_Phong"]);
+            }
+            if (isset($_GET["partnerCode"])) {
+                $partnerCode = $_GET["partnerCode"];
+                $accessKey = $_GET["accessKey"];
+                $serectkey = $_GET["secretKey"];
+                $orderId = $_GET["orderId"]; // Mã đơn hàng
+                $orderInfo = "";
+                $amount = $_GET["amount"];
+                $ipnUrl = "";
+                $redirectUrl = "";
+                $extraData = "";
+                $id = book_insert("", "", "",  $orderId, "", "", "", "", $amount);
                 $bill = book_select_by_id($id);
                 $room = db_phong_select_by_id($bill["id_Phong"]);
             }

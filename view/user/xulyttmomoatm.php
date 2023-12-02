@@ -35,21 +35,21 @@ $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 $orderInfo = "Thanh toán qua MoMo ATM";
 $amount = "10000";
 $orderId = time() . "";
-$redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm";
+$redirectUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
 $ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
 $extraData = "";
 
 
 // if (!empty($_POST)) {
-//     $partnerCode = $_POST["partnerCode"];
-//     $accessKey = $_POST["accessKey"];
-//     $serectkey = $_POST["secretKey"];
-//     $orderId = $_POST["orderId"]; // Mã đơn hàng
-//     $orderInfo = $_POST["orderInfo"];
-//     $amount = $_POST["amount"];
-//     $ipnUrl = $_POST["ipnUrl"];
-//     $redirectUrl = $_POST["redirectUrl"];
-//     $extraData = $_POST["extraData"];
+// $partnerCode = $_POST["partnerCode"];
+// $accessKey = $_POST["accessKey"];
+// $serectkey = $_POST["secretKey"];
+// $orderId = $_POST["ma_donhang"]; // Mã đơn hàng
+// $amount = $_POST["gia"];
+// $orderInfo = $_POST["orderInfo"];
+// $ipnUrl = $_POST["ipnUrl"];
+// $redirectUrl = $_POST["redirectUrl"];
+// $extraData = $_POST["extraData"];
 
 $requestId = time() . "";
 $requestType = "payWithATM";

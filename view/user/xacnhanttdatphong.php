@@ -48,6 +48,13 @@
         <button type="submit" style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" name="momo">Thanh toán momo</button>
     </form>
     <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="../../view/user/xulyttmomoatm.php">
+        <input type="hidden" name="ma_donhang" value="<?php echo $id_Phong ?>">
+        <input type="hidden" name="gia" value="<?php echo $total_price ?>">
+        <input type="hidden" name="sdt" value="<?php echo $sdt ?>">
+        <input type="hidden" name="check_in" value="<?php echo $checkin ?>">
+        <input type="hidden" name="check_out" value="<?php echo $checkout ?>">
+        <input type="hidden" name="sl_NguoiLon" value="<?php echo $slNguoiLon ?>">
+        <input type="hidden" name="sl_tre_em" value="<?php echo $sltreEm  ?>">
         <button type="submit" style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" name="momo">Thanh toán momo atm</button>
     </form>
 </div>
