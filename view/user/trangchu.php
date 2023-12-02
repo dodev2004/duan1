@@ -5,39 +5,40 @@
         </section>
         <section class="seach_room">
             <h4>Tìm phòng</h4>
-            <form class="form_seach-room" action="" method="post">
+            <form class="form_seach-room" action="?act=phong" method="POST">
                 <div class="form_group">
                     <label for="">Ngày nhận phòng</label>
-                    <input type="date" name="create_room" class="create_room">
+                    <input type="date" name="checkin" class="create_room">
                     <p class="message_eror"></p>
                 </div>
                 <div class="form_group">
                     <label for="">Ngày trả phòng</label>
-                    <input type="date" name="end_room" class="end_room">
+                    <input type="date" name="checkout" class="end_room">
                     <p class="message_eror"></p>
                 </div>
                 <div class="form_group">
                     <label for="">Số lượng người lớn</label>
-                    <select name="" id="">
+                    <select name="sl_Nguoi_Lon" id="">
                         <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                        <option value="1">4</option>
-                        <option value="1">5</option>
-                        <option value="1">6</option>
-                        <option value="1">7</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
                     </select>
                     <p class="message_eror"></p>
                 </div>
                 <div class="form_group">
                     <label for="">Số lượng trẻ em</label>
-                    <select name="" id="" <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                        <option value="1">4</option>
-                        <option value="1">5</option>
-                        <option value="1">6</option>
-                        <option value="1">7</option>
+                    <select name="sl_tre_em" id="" <option value="1">1</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
                     </select>
                     <p class="message_eror"></p>
                 </div>

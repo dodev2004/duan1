@@ -67,33 +67,35 @@
                 <div class=" form_booking">
                     <div class="item_booking">
                         <label for="">Họ và tên</label>
-                        <input type="text" name="book_name">
+                        <input type="text" name="book_name" required>
+                        <p class="eror_messsage"></p>
                     </div>
                     <div class="item_booking">
                         <label for="">Số điện thoại</label>
-                        <input type="text" name="sdt">
+                        <input type="text" name="sdt" required>
+                        <p class="eror_messsage"></p>
                     </div>
                 </div>
                 <div class="form_booking">
                     <div class="item_booking">
                         <label for="">Ngày nhận</label>
-                        <input type="date" name="check_in">
+                        <input type="date" name="check_in" required>
                         <p class="eror_messsage"></p>
                     </div>
                     <div class="item_booking">
                         <label for="">Ngày trả</label>
-                        <input type="date" name="check_out">
+                        <input type="date" name="check_out" required>
                         <p class="eror_messsage"></p>
                     </div>
                 </div>
                 <div class="form_booking">
                     <div class="item_booking">
                         <label for="">Người lớn</label>
-                        <input type="text" name="sl_NguoiLon" placeholder="2">
+                        <input type="text" name="sl_NguoiLon" placeholder="2" required>
                     </div>
                     <div class="item_booking">
                         <label for="">Trẻ em</label>
-                        <input type="text" name="sl_tre_em" placeholder="1">
+                        <input type="text" name="sl_tre_em" placeholder="1" required>
                     </div>
                 </div>
                 <div class="notification">

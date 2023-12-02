@@ -17,21 +17,19 @@ function db_phong_update($name, $loaiphong, $dientich, $giaphong, $slp, $slNguoi
 function db_phong_select_all()
 {
     if (isset($_POST["seach"])) {
-        $seach_Tenphong = !empty($_POST["seach_Tenphong"]) ? $_POST["seach_Tenphong"] : "";
-        $id_LoaiPhong = !empty($_POST["seach_idLoaiPhong"]) ? $_POST["seach_idLoaiPhong"] : "";
-
-        if (trim($seach_Tenphong) == "" && trim($id_LoaiPhong) == "") {
-            $sql = "SELECT * FROM phong order by id desc ";
-        } else if (trim($seach_Tenphong) != "" && trim($id_LoaiPhong) == "") {
-            $sql = "SELECT * FROM phong where ten_Phong like '%" . $seach_Tenphong . "%' order by id desc";
-        } else if (trim($seach_Tenphong) == "" && trim($id_LoaiPhong) != "") {
-            $sql = "SELECT * FROM phong where id_loaiPhong  = $id_LoaiPhong order by id desc";
-        } else {
-            $sql = "SELECT * FROM phong where id_loaiPhong =  $id_LoaiPhong AND " . "ten_Phong like '%" .  $seach_Tenphong . "%' order by id desc";
-        }
+        $checkin  = !empty($_POST["checkin"]) ? $_POST["checkin"] : "";
+        $checkout = !empty($_POST["checkout"]) ? $_POST["checkout"] : "";
+        $slNguoiLon = !empty($_POST["sl_Nguoi_Lon"]) ? $_POST["sl_Nguoi_Lon"] : "";
+        $treEm = !empty($_POST["sl_tre_em"]) ? $_POST["sl_tre_em"] : "";
+        $sql = "SELECT * FROM `phong` WHERE id NOT IN(SELECT id_Phong FROM `book` WHERE '$checkin' >= check_in AND check_out >= '$checkin' AND  check_in <= '$checkout' AND check_out >= '$checkout') AND slNguoiLon <= $slNguoiLon AND slTreEm <=$treEm";
     } else {
         $sql = "SELECT * FROM phong order by id desc";
     }
+    return pdo_query($sql);
+}
+function seach_phong($checkin, $checkout, $slNguoiLon, $sltreem)
+{
+    $sql = "";
     return pdo_query($sql);
 }
 function db_phong_select_all_Pagin($currentPage)
