@@ -124,6 +124,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/quenmatkhau.php";
             break;
         case "mkmoi":
+            break;
         case 'phong':
             if (isset($_GET['idLoaiPhong']) && $_GET['idLoaiPhong'] > 0) {
                 $id = $_GET['idLoaiPhong'];
