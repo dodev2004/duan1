@@ -35,7 +35,7 @@ $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
 $orderInfo = "Thanh toán qua MoMo atm";
 $amount = "10000";
 $orderId = time() . "";
-$redirectUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
+$redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm";
 $ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
 $extraData = "";
 
