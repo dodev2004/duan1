@@ -32,7 +32,7 @@
         </div>
         <button style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" type="submit" name="xndatphongoff">Thanh toán tại quầy</button>
     </form>
-   
+
     <form action="../../view/user/congthanhtoan.php" id="create_form" method="POST">
         <img style="width: 310px;display: block; height: 200px; margin:0 auto;" src="../../public/image/vnpay.jpg" alt="">
         <input type="hidden" name="ma_donhang" value="<?php echo $id_Phong ?>">
@@ -43,5 +43,11 @@
         <input type="hidden" name="sl_NguoiLon" value="<?php echo $slNguoiLon ?>">
         <input type="hidden" name="sl_tre_em" value="<?php echo $sltreEm  ?>">
         <button style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" type="submit" name="redirect" id="redirect" class="btn btn-default">Thanh toán online bằng VNPAY</button>
+    </form>
+    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="../../view/user/xulyttmomo.php">
+        <button type="submit" style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" name="momo">Thanh toán momo</button>
+    </form>
+    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="../../view/user/xulyttmomoatm.php">
+        <button type="submit" style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" name="momo">Thanh toán momo atm</button>
     </form>
 </div>
