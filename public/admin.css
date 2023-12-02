@@ -94,8 +94,10 @@ line-height: normal;
     position: relative;
 }
 .admin-component_todolist>a>i{
-    margin-left: 100px;
+ 
     transition: 0.25s;
+    position: absolute;
+  right: 0;
 }
 .admin-component_todolist>.todolist{
     display: flex;
@@ -158,18 +160,6 @@ table{
     border-radius: 2rem;
     margin-bottom: 20px;
 }
-.table-category tr:nth-child(2n) th:nth-child(1){
-    width: 10%;
-}
-.table-category tr:nth-child(2n) th:nth-child(2){
-    width: 20%;
-}
-.table-category tr:nth-child(2n) th:nth-child(3){
-    width: 45%;
-}
-.table-category tr:nth-child(2n) th:nth-child(4){
-    width: 25%;
-}
 table tr th{
     font-size: 0.9rem;
     color: #192A3E;
@@ -177,6 +167,7 @@ table tr th{
     border-bottom: 1px solid #ccccccd2;
     font-size: 14px;
     font-weight: 500;
+    text-align: center;
 }
 table tr:nth-child(1){
   color: #192A3E;
@@ -184,7 +175,7 @@ table tr:nth-child(1){
 input[name="xoa"] ,input[name="sua"]{
     color: white;
     background-color: #192A3E;
-    width: 5rem;
+    padding: 3px 10px;
     border-radius: 0.4rem;
     margin-left: 0.5rem;
     cursor: pointer;
@@ -359,7 +350,7 @@ form h1{
     background-color: white;
     padding-right: 20px;
     font-size: 14px;
-    margin-bottom: 12px;
+    padding: 5px 10px;
 }
 .tk_sp span {
     color: #152C70;
@@ -369,10 +360,14 @@ form h1{
 background: white;
   padding-top: 20px;
   padding-bottom: 17px;
-
+  padding-right: 25px;
   display: flex;
   justify-content: end;
   column-gap: 4px;
+}
+.pagin_book{
+    display: flex;
+    justify-content: space-between;
 }
 .pagin a {
     padding: 5px 19px;
@@ -427,4 +422,65 @@ form h1{
 .logout{
     position: absolute;
     bottom: 28px;
+}
+.room_input-avatar{
+    width: 300px;
+    height: 150px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    flex-direction: column;
+    
+}
+.room_input-avatar>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+.form_show-image>div{
+    position: relative;
+}
+.form_show-image>div>a{
+    position: absolute;
+    top: 0;
+    padding: 5px 10px;
+    background-color: #109CF1;
+    color: white;
+    text-decoration:  none;
+}
+.form_show-image>div>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.form-group_avatar{
+    display: flex;
+    flex-direction: column;
+}
+.service_list{
+    margin-top: 5px;
+    margin-bottom: 5x;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 50px;
+
+}
+.privilege_service{
+    margin-top: 5px;
+    margin-bottom: 5x;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 100px;
+    row-gap: 50px;
+}
+.privilege_service>.privilege_service-item>label{
+    margin-left: 12px;
+}
+.form_group{
+    margin-bottom: 14px !important;
+    padding: 0;
 }

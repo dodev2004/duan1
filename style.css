@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 body {
+=======
+/* body {
+>>>>>>> 1fc22870dfa5725a072b73196f4487a58d2693c9
   font-size: 16px;
 }
 
@@ -7,6 +11,7 @@ body {
   padding: 20px;
 }
 
+<<<<<<< HEAD
 .form--lienhe input[type="text"],
 .form--lienhe input[type="email"],
 .form--lienhe textarea {
@@ -20,8 +25,18 @@ body {
 
 .form--lienhe input[type="submit"] {
   width: 100%;
+=======
+
+input[type="submit"] {
+>>>>>>> 1fc22870dfa5725a072b73196f4487a58d2693c9
   background-color: #000;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
 }
+<<<<<<< HEAD
+=======
+.wrapper1 {
+  padding: 10px 0;
+} */
+>>>>>>> 1fc22870dfa5725a072b73196f4487a58d2693c9
