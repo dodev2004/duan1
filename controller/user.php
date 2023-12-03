@@ -169,9 +169,11 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             include "../view/user/xacnhanttdatphong.php";
             break;
         case "billcomfirm":
+
             if (isset($_POST["xndatphongoff"])) {
+
                 $id_Phong = $_POST["id_Phong"];
-                $price = $_POST["price"];
+                // $price = $_POST["price"];
                 $name = $_POST["book_name"];
                 $sdt  = $_POST["sdt"];
                 $checkin = $_POST["check_in"];
@@ -183,20 +185,25 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
                 $bill = book_select_by_id($id);
                 $room = db_phong_select_by_id($bill["id_Phong"]);
-            }
-            if (isset($_GET["partnerCode"])) {
-                $partnerCode = $_GET["partnerCode"];
-                $accessKey = $_GET["accessKey"];
-                $serectkey = $_GET["secretKey"];
-                $orderId = $_GET["orderId"]; // Mã đơn hàng
-                $orderInfo = "";
-                $amount = $_GET["amount"];
-                $ipnUrl = "";
-                $redirectUrl = "";
-                $extraData = "";
-                $id = book_insert("", "", "",  $orderId, "", "", "", "", $amount);
-                $bill = book_select_by_id($id);
-                $room = db_phong_select_by_id($bill["id_Phong"]);
+            } else {
+                if (isset($_GET)) {
+                    $id_user = $_SESSION["user"]["id"];
+                    $id_Phong  = $_GET["orderInfo"];
+                    $name = $_GET["name"];
+                    $sdt  = $_GET["sdt"];
+                    $checkin = $_GET["checkin"];
+                    $checkout = $_GET["checkout"];
+                    $slNguoiLon = $_GET["slNguoiLon"];
+                    $sltreEm = $_GET["sltreEm"];
+                    $total_price = $_GET["amount"];
+                    $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+
+                    // $id = book_insert_momo($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $status, 3);
+                    // $status = 3;
+                    // $id =  book_insert_momo($id_user, $name, $sdt, $id_Phong,  $slNguoiLon,  $sltreEm, $checkin, $checkout,  $total_price, 3);
+                    $bill = book_select_by_id($id);
+                    $room = db_phong_select_by_id($bill["id_Phong"]);
+                }
             }
 
             include "../view/user/billcomfirm.php";

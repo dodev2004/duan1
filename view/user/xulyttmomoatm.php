@@ -1,7 +1,13 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
-
-
+// giá trị từ form
+$idphong = $_POST['idphong'];
+$name = $_POST['name'];
+$sdt = $_POST['sdt'];
+$checkin = $_POST['check_in'];
+$checkout = $_POST['check_out'];
+$slNguoiLon = $_POST['sl_NguoiLon'];
+$sltreEm = $_POST['sl_tre_em'];
 function execPostRequest($url, $data)
 {
     $ch = curl_init($url);
@@ -24,39 +30,38 @@ function execPostRequest($url, $data)
     curl_close($ch);
     return $result;
 }
-
+// Include your execPostRequest function and other necessary code
 
 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
-
-
 $partnerCode = 'MOMOBKUN20180529';
 $accessKey = 'klm05TvNBzhg7h7j';
 $secretKey = 'at67qH6mk8w5Y1nAyMoYKMWACiEi2bsa';
-$orderInfo = "Thanh toán qua MoMo ATM";
-$amount = "10000";
+
+// Retrieve data from the form
+$orderInfo = $_POST['idphong'];
+$amount = $_POST['gia'];
 $orderId = time() . "";
-$redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm";
+// $redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm";
+$redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm&name=$name&sdt=$sdt&checkin=$checkin&checkout=$checkout&slNguoiLon=$slNguoiLon&sltreEm=$sltreEm";
 $ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
 $extraData = "";
 
-
-// if (!empty($_POST)) {
-// $partnerCode = $_POST["partnerCode"];
-// $accessKey = $_POST["accessKey"];
-// $serectkey = $_POST["secretKey"];
-// $orderId = $_POST["ma_donhang"]; // Mã đơn hàng
-// $amount = $_POST["gia"];
-// $orderInfo = $_POST["orderInfo"];
-// $ipnUrl = $_POST["ipnUrl"];
-// $redirectUrl = $_POST["redirectUrl"];
-// $extraData = $_POST["extraData"];
+// // giá trị từ form
+// $name = $_POST['name'];
+// $sdt = $_POST['sdt'];
+// $checkin = $_POST['check_in'];
+// $checkout = $_POST['check_out'];
+// $slNguoiLon = $_POST['sl_NguoiLon'];
+// $sltreEm = $_POST['sl_tre_em'];
 
 $requestId = time() . "";
 $requestType = "payWithATM";
-$extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");
-//before sign HMAC SHA256 signature
+
+// Build the raw hash for the signature
 $rawHash = "accessKey=" . $accessKey . "&amount=" . $amount . "&extraData=" . $extraData . "&ipnUrl=" . $ipnUrl . "&orderId=" . $orderId . "&orderInfo=" . $orderInfo . "&partnerCode=" . $partnerCode . "&redirectUrl=" . $redirectUrl . "&requestId=" . $requestId . "&requestType=" . $requestType;
 $signature = hash_hmac("sha256", $rawHash, $secretKey);
+
+// Include additional form data in the API request
 $data = array(
     'partnerCode' => $partnerCode,
     'partnerName' => "Test",
@@ -70,12 +75,29 @@ $data = array(
     'lang' => 'vi',
     'extraData' => $extraData,
     'requestType' => $requestType,
-    'signature' => $signature
+    'signature' => $signature,
+
+    'idphong' => $idphong,
+    'name' => $name,
+    'sdt' => $sdt,
+    'checkin' => $checkin,
+    'checkout' => $checkout,
+    'slNguoiLon' => $slNguoiLon,
+    'sltreEm' => $sltreEm
 );
+// var_dump($data);
+// die();
+// Make the API request
 $result = execPostRequest($endpoint, json_encode($data));
-$jsonResult = json_decode($result, true);  // decode json
+// var_dump($result);
+// die();
+$jsonResult = json_decode($result, true);
 
-//Just a example, please check more in there
-
-header('Location: ' . $jsonResult['payUrl']);
-// }
+// Process the API response and redirect
+if (isset($jsonResult['payUrl'])) {
+    header('Location: ' . $jsonResult['payUrl']);
+} else {
+    echo "Lỗi: Không thể lấy được URL thanh toán.";
+    // Log details of the response for debugging
+    // error_log(print_r($jsonResult, true));
+}
