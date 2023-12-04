@@ -49,6 +49,7 @@
 
                 <th>
                     <?php 
+                    
                                             $status = $book["status"];
                                             if($status == 1){
                                                 echo "Chờ xác nhận đặt phòng";
@@ -58,6 +59,9 @@
                                             }
                                             else if($status == 3){
                                                 echo "Thanh toán thành công";
+                                            }
+                                            else if($status == 5 ){
+                                                echo "Xác nhận đã trả phòng";
                                             }
                                             else {
                                                 echo "Đã hủy";

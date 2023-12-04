@@ -71,6 +71,9 @@
                                                 <?php if (checkPrivileges("act=xntt&page=datphong&currentPage=1")) { ?>
                                                 <a href="?act=xntt&page=datphong&currentPage=1">Xác nhận thanh toán</a>
                                                 <?php } ?>
+                                                <?php if (checkPrivileges("act=xntp&page=datphong&currentPage=1")) { ?>
+                                                <a href="?act=xntp&page=datphong&currentPage=1">Xác nhận trả phòng</a>
+                                                <?php } ?>
                                                 <?php if (checkPrivileges("act=history&page=datphong&currentPage=1")) { ?>
                                                 <a href="?act=history&page=datphong&currentPage=1">Lịch sử đặt phòng</a>
                                                 <?php } ?>

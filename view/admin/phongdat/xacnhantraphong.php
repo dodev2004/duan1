@@ -57,7 +57,6 @@
                                                                 }
 
                                                                 ?></span></p>
-                        <?php if($book["ptt"] == 0) {?>
                         <p><strong>Thời gian còn lại : </strong><?php
                                                                 if ($days > 0 && $months == 0) {
                                                                     echo $days . " ngày";
@@ -67,13 +66,17 @@
                                                                     "Hết hạn";
                                                                 }
                                                                 ?></p>
-                        <?php }
+                                                                <p><strong>PTT</strong> : <span> <?php 
+                        if($book["ptt"] == 0){
+                            echo "Thanh toán khi nhận phòng";
+                        }
                         else {
-                            echo "Đã thanh toán online";
-                        }?>
+                            echo "Thanh toán online";
+                        }
+                    ?></span></p>
                     </th>
                     <th style="text-align: inherit;">
-                        <a href="?act=xntt&page=datphong&status=3&id=<?php echo $book["id"] ?>"><input style="margin-bottom: 20px;" type="button" name="sua" value="Xác nhận thanh toán"></a>
+                        <a href="?act=xntp&page=datphong&status=5&id=<?php echo $book["id"] ?>"><input style="margin-bottom: 20px;" type="button" name="sua" value="Xác nhận trả phòng"></a>
                         <br>
                     </th>
                 </tr>

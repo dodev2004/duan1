@@ -33,7 +33,12 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 if (is_array($checked)) {
                     $_SESSION["user"] = $checked;
 
-                    header("Location: user.php");
+                    echo "<script language=javascript>
+                    window.onload = function(){
+                      sessionStorage.setItem('user','true');
+                      window.location.href = 'user.php';
+                    }
+                    </script>";
                 } else {
                     $eror["password"] = "Thông tin đăng nhập sai";
                     $eror["username"] = "Thông tin đăng nhập sai";
@@ -252,7 +257,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
 
         case 'dangxuat':
             dangxuat();
-            header("location: user.php");
+            echo "<script language=javascript>
+                sessionStorage.removeItem('user');
+                window.location.href = 'user.php'</script>";
             // include "../view/user/dangnhap.php";
 
             break;

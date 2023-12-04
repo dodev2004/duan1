@@ -31,8 +31,6 @@ if (!$check) {
 if (isset($_GET["act"]) || isset($_GET["page"])) {
     $act = isset($_GET["act"]) ? $_GET["act"] : "";
     $page = $_GET["page"];
-
-
     switch ($page) {
         case "loaiphong":
             if ($act == "lk") {
@@ -351,6 +349,18 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 $count = count($books);
                 $pagin = ceil(count(book_select_all(2))/4);
                 include "../view/admin/phongdat/xacnhantt.php";
+            }
+            else if ($act == "xntp") {
+                if(isset($_GET["status"])){
+                    $id = $_GET["id"];
+                    $status = $_GET["status"];
+                    book_change_status($status,$id);
+                    header("Location: ?act=xntp&page=datphong&currentPage=1");
+                }
+                $books  = db_book_select_all_Pagin($_GET["currentPage"],3);
+                $count = count($books);
+                $pagin = ceil(count(book_select_all(2))/4);
+                include "../view/admin/phongdat/xacnhantraphong.php";
             }
             else {
                     $books = db_book_select_all_Pagin($_GET["currentPage"]);

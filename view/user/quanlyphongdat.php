@@ -32,11 +32,15 @@
                 }
                 else if($status == 3){
                     echo '<button class="btn_pay">Đã Thanh Toán</button>';
+                   
+                  
+                   
+                }
+                else if($status == 5){
+                    echo '<button class="btn_pay">Đã Trả  Phòng</button>';
                     if($book["ttBl"] == 0){
                         echo '<button class="btn_ratings" data-id= '.$book["id_Phong"]. ' data-bookid=' .$book["id"].'>Đánh giá</button>';
                     }
-                  
-                   
                 }
                 else {
                     echo ' <button  class="btn_cancel-confirm"> Đã Hủy</button>';
