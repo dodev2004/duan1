@@ -223,7 +223,7 @@ main .banner_room h2 {
   border-radius: 5px;
   opacity: 1;
 }
-.room__item .btn_order-success:hover,
+
 .room__item .btn_cancel:hover,
 .btn_cancel-confirm:hover,
 .btn_pay:hover,
