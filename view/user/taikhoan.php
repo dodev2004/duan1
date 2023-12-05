@@ -19,10 +19,10 @@
                         <h4>Thông tin tài khoản</h4>
                         <p>Quản lý thông tin hồ sơ để bảo mật tài khoản </p>
                     </div>
-                    <div>
+                    <!-- <div>
                         <div class="avatar_user"></div>
                         <input type="file">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="mb-3">Tên đăng nhập
                     <input style="width: 200px;" class="form-control" type="text" value="<?php echo $user_name ?>" aria-label="Disabled input example" disabled readonly>

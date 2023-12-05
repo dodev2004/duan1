@@ -40,7 +40,7 @@
                                         <?php if(checkPrivileges("page=loaiphong&act=edit&id=". $rt["id_LoaiPhong"])){ ?>
                                         <a href="?page=loaiphong&act=edit&id=<?php echo $rt["id_LoaiPhong"]?>"><input type="button" name="sua" value="Sửa"/></a>
                                         <?php } ?>
-                                        <?php  if(checkPrivileges("page=loaiphong&act=delete&id=".$rt["id_LoaiPhong"])){?>
+                                        <?php  if(checkPrivileges("act=delete&page=loaiphong&id=".$rt["id_LoaiPhong"])){?>
                                         <a class="remove" href="?page=loaiphong&act=delete&id=<?php echo $rt["id_LoaiPhong"]?>"><input type="button" name="xoa"
                                                 value="Xóa"></a>
                                         <?php }?>
@@ -53,7 +53,7 @@
                             </table>
 
                         </div>
-                        <?php if(checkPrivileges("page=loaiphong&act=delete&id=0")){?>
+                        <?php if(checkPrivileges("act=delete&page=loaiphong&id=0")){?>
                         <input style="margin-bottom: 2rem;" type="button" class="check_all" name="them"
                             value="Tích toàn bộ">
                         <input style="margin-bottom: 2rem;" type="button" name="them" class="checked_remove"

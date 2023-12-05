@@ -49,16 +49,19 @@ function nguoidung_select_all_Pagin($currentPage, $id)
         $seach_name = !empty($_POST["seach_username"]) ? $_POST["seach_username"] : "";
         if (trim($seach_name) != "") {
             $sql = "SELECT * FROM nguoidung   where user_name like '%" . $seach_name . "%' order by id desc limit 4 offset $offset";
+
      
     }
     else {
         $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
     }
  } else {
+
         $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
     }
     return pdo_query($sql);
 }
+
 
 function nguoidung_delete($ma_kh)
 {
@@ -148,4 +151,14 @@ function nguoidung_update_password($ma_kh, $password)
 {
     $sql = "UPDATE nguoidung SET password='" . $password . "' WHERE id='" . $ma_kh . "'";
     pdo_execute($sql);
+}
+function db_user_id_select_by_email($email)
+{
+    $sql = "SELECT id FROM nguoidung WHERE email=?";
+    return pdo_query_one($sql, $email);
+}
+function db_user_change_password($ma_kh, $mat_khau_moi)
+{
+    $sql = "UPDATE nguoidung SET password=? WHERE id=?";
+    pdo_execute($sql, $mat_khau_moi, $ma_kh);
 }

@@ -50,7 +50,8 @@
                                 <nav class="todolist_room">
                                     <?php foreach ($dsdm as $dm) {
                                         extract($dm); ?>
-                                    <a href=""><?php echo $ten_LoaiPhong ?></a>
+                                    <a
+                                        href="?act=phong&idLoaiPhong=<?php echo $id_LoaiPhong ?>"><?php echo $ten_LoaiPhong ?></a>
                                     <?php } ?>
                                     <!-- <a href="">Phòng khách</a>
                                     <a href="">Phòng Vip</a> -->

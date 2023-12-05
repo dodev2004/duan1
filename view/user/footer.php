@@ -38,6 +38,7 @@
 
 <script>
     validationForm("#usersigup");
+    validationForm("#form-book");
 </script>
 
 </body>
