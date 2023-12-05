@@ -33,7 +33,7 @@
         <button style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin: 16px 0;" type="submit" name="xndatphongoff">Thanh toán tại quầy</button>
     </form>
 
-   
+
     <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="../../view/user/xulyttmomoatm.php">
         <input type="hidden" name="idphong" value="<?php echo $id_Phong ?>">
         <input type="hidden" name="name" value="<?php echo $name ?>">

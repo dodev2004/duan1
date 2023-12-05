@@ -166,10 +166,6 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $slNguoiLon = $_POST["sl_NguoiLon"];
                 $sltreEm = $_POST["sl_tre_em"];
                 $total_price = $_POST["total_price"];
-                // $id_user = $_SESSION["user"]["id"];
-                // $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
-                // $bill = book_select_by_id($id);
-                // $room = db_phong_select_by_id($bill["id_Phong"]);
             }
             include "../view/user/xacnhanttdatphong.php";
             break;
@@ -208,6 +204,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                     // $id = book_insert_momo($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $status, 3);
                     // $status = 3;
                     // $id =  book_insert_momo($id_user, $name, $sdt, $id_Phong,  $slNguoiLon,  $sltreEm, $checkin, $checkout,  $total_price, 3);
+            
                     $bill = book_select_by_id($id);
                     $room = db_phong_select_by_id($bill["id_Phong"]);
                 }
