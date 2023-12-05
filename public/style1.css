@@ -223,7 +223,7 @@ main .banner_room h2 {
   border-radius: 5px;
   opacity: 1;
 }
-.room__item .btn_order-success:hover,
+
 .room__item .btn_cancel:hover,
 .btn_cancel-confirm:hover,
 .btn_pay:hover,
@@ -231,7 +231,7 @@ main .banner_room h2 {
 .btn_order:hover {
   opacity: 0.5;
 }
-.rate{
+.rate {
   position: fixed !important;
   top: 0;
   z-index: 12;
@@ -245,50 +245,49 @@ main .banner_room h2 {
   pointer-events: none;
   opacity: 0;
 }
-.rate.active{
+.rate.active {
   opacity: 1;
   transform: scale(1);
   pointer-events: all;
 }
-.rate_content{
-border-radius: 8px;
-margin-left: auto;
-margin-right: auto;
-width: 500px;
-padding: 50px;
-background-color: white !important;
-
+.rate_content {
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  padding: 50px;
+  background-color: white !important;
 }
-.rate_title{
+.rate_title {
   position: relative;
-  display: flex !important; 
+  display: flex !important;
   justify-content: space-between;
 }
-.rate_content>form>.rate_title>h1{
+.rate_content > form > .rate_title > h1 {
   font-size: 19px !important;
   font-weight: 700;
 }
-.rate_content>form>.rate_title>i{
+.rate_content > form > .rate_title > i {
   margin-top: -20px;
   margin-left: -20px;
   font-size: 30px;
   cursor: pointer;
 }
-.rate_content>form>button{
+.rate_content > form > button {
   background: #c40b0b !important;
   border: none;
 }
-.user_rate{
+.user_rate {
   padding-top: 4px;
 
   padding-top: 9px;
 }
-.user_rate-name{
+.user_rate-name {
   margin: 0;
 }
 
-.user_rate-date{
- font-size: 13px;
+.user_rate-date {
+  font-size: 13px;
 }
 .room__item .btn_order-success {
   background-color: #cd9a2b;
@@ -421,4 +420,10 @@ background-color: white !important;
   display: flex;
   column-gap: 100px;
   margin-top: 20px;
+}
+/* Xac nhận đặt phòng */
+.xndatphong {
+  margin: 0 auto;
+  margin-top: 130px;
+  width: 508px;
 }

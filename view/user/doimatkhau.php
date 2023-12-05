@@ -4,7 +4,7 @@
             <ul>
                 <h5>Tài khoản của tôi</h5>
                 <li><a href="?act=taikhoan">Hồ sơ của tôi</a></li>
-                <li><a href="#">Đơn hàng</a></li>
+                <li><a href="?act=quanlyphongdat">Phòng đã đặt</a></li>
                 <li><a href="?act=doimatkhau">Đổi mật khẩu</a></li>
                 <li><a href="#">Địa chỉ</a></li>
             </ul>
@@ -30,13 +30,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Mật khẩu mới</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="matkhaumoi1"
-                            require>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="matkhaumoi1" require>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Nhập lại mật khẩu mới</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="matkhaumoi2"
-                            require>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="matkhaumoi2" require>
                         <div class="err-failed"> <?php echo $eror["matkhaumoi"]; ?> </div>
                     </div>
                     <button type="submit" name="doimatkhau" class="btn btn-primary">Đổi mật khẩu</button>

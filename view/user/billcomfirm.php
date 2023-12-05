@@ -1,5 +1,5 @@
 
-<main >
+<main>
     <section class="container">
         <section class="cart_list">
 
@@ -12,7 +12,7 @@
                     </svg> <span>Cảm ơn bạn đã đặt phòng</span>
                 </section>
                 <section class="information_content">
-                <section class="infomation">
+                    <section class="infomation">
                         <span class="infomation_title">
                             Thông tin hàng đã đặt
                         </span>
@@ -20,39 +20,39 @@
                             <tr>
                                 <td>Mã đơn hàng</td>
                                 <td>
-                                    BND-<?php echo $bill["id"] ?>
+                                    BND-<?php echo isset($bill["id"]) ? $bill["id"] : "" ?>
                                 </td>
 
                             </tr>
                             <tr>
                                 <td>Tên phòng</td>
                                 <td>
-                                    <?php echo $room["ten_Phong"] ?>
+                                    <?php echo isset($room["ten_Phong"]) ? $room["ten_Phong"] : "" ?>
                                 </td>
 
                             </tr>
                             <tr>
                                 <td>Ngày nhận phòng</td>
                                 <td>
-                                    <?php echo $bill["check_in"] ?>
+                                    <?php echo isset($bill["check_in"]) ? $bill["check_in"] : "" ?>
                                 </td>
 
                             </tr>
                             <tr>
                                 <td>Ngày trả phòng</td>
                                 <td>
-                                    <?php echo $bill["check_out"] ?>
+                                    <?php echo isset($bill["check_out"]) ? $bill["check_out"] : "" ?>
                                 </td>
 
                             </tr>
                             <tr>
-                                <td>Tổng tiền</td>
-                                <td><?php echo number_format($bill["price"],0,',',',') ?> VND</td>
+                                <td>Tổng tiền </td>
+                                <td><?php echo isset($bill["price"]) ? number_format($bill["price"], 0, ',', ',') : "" ?> VND</td>
                             </tr>
                             <tr>
                                 <td>Ngày đặt phòng</td>
                                 <td>
-                                    <?php     
+                                    <?php
                                     echo date("h:i:s d-m-Y", time()) ?>
                                 </td>
                             </tr>
@@ -60,17 +60,26 @@
                                 <td>Trạng thái</td>
                                 <td>
                                     <?php
-                                    if ($bill["status"] == 1) {
+                                    if (($bill["status"]) == 1) {
                                         echo "Chờ xác nhận";
-                                    } else if ($bill["status"] == 2) {
-                                        echo "Xác nhận đặt phòng";
-                                    } else {
-                                        echo "Xác nhận thanh toán";
+                                    } 
+                                    ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phương thức thanh toán</td>
+                                <td>
+                                    <?php
+                                    if (($bill["ptt"]) == 1) {
+                                        echo "Thánh toán bằng thẻ tín dụng MOMO";
+                                    } 
+                                    else{
+                                        echo "Thánh toán khi nhận phòng";
                                     }
                                     ?>
                                 </td>
                             </tr>
-                        
+
 
                         </table>
                     </section>
@@ -82,25 +91,23 @@
                             <tr>
                                 <td>Tên:</td>
                                 <td>
-                                    <?php echo $bill["book_name"] ?>
+                                    <?php echo isset($bill["book_name"]) ? $bill["book_name"] : "" ?>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Số điện thoại:</td>
                                 <td>
-                                    <?php echo $bill["sdt"] ?>
+                                    <?php echo isset($bill["sdt"]) ? $bill["sdt"] : "" ?>
                                 </td>
                             </tr>
-                           
-
                         </table>
                     </section>
-                  
+
                 </section>
 
 
 
-              
+
 
             </section>
 
