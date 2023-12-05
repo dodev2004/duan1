@@ -49,10 +49,14 @@ function nguoidung_select_all_Pagin($currentPage, $id)
         $seach_name = !empty($_POST["seach_username"]) ? $_POST["seach_username"] : "";
         if (trim($seach_name) != "") {
             $sql = "SELECT * FROM nguoidung   where user_name like '%" . $seach_name . "%' order by id desc limit 4 offset $offset";
-        } else {
-            $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
-        }
-    } else {
+
+     
+    }
+    else {
+        $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
+    }
+ } else {
+
         $sql = "SELECT * FROM nguoidung where id != $id order by id desc limit 4 offset $offset";
     }
     return pdo_query($sql);
