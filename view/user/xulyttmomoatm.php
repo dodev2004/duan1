@@ -42,7 +42,7 @@ $orderInfo = $_POST['idphong'];
 $amount = $_POST['gia'];
 $orderId = time() . "";
 // $redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm";
-$redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm&name=$name&sdt=$sdt&checkin=$checkin&checkout=$checkout&slNguoiLon=$slNguoiLon&sltreEm=$sltreEm";
+$redirectUrl = "http://localhost:3000/controller/user.php?act=billcomfirm&name=$name&sdt=$sdt&checkin=$checkin&checkout=$checkout&slNguoiLon=$slNguoiLon&sltreEm=$sltreEm&ptt=1";
 $ipnUrl = "https://webhook.site/b3088a6a-2d17-4f8d-a383-71389a6c600b";
 $extraData = "";
 
