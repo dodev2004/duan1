@@ -171,5 +171,6 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
     }
 } else {
     include "../view/user/trangchu.php";
+   
 }
 include "../view/user/footer.php";
