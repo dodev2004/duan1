@@ -179,6 +179,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
 
                 $id_Phong = $_POST["id_Phong"];
                 // $price = $_POST["price"];
+                $ptt = $_GET["ptt"];
                 $name = $_POST["book_name"];
                 $sdt  = $_POST["sdt"];
                 $checkin = $_POST["check_in"];
@@ -187,11 +188,12 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $sltreEm = $_POST["sl_tre_em"];
                 $total_price = $_POST["total_price"];
                 $id_user = $_SESSION["user"]["id"];
-                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price,$ptt);
                 $bill = book_select_by_id($id);
                 $room = db_phong_select_by_id($bill["id_Phong"]);
             } else {
                 if (isset($_GET)) {
+                    $ptt = $_GET["ptt"];
                     $id_user = $_SESSION["user"]["id"];
                     $id_Phong  = $_GET["orderInfo"];
                     $name = $_GET["name"];
@@ -201,7 +203,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                     $slNguoiLon = $_GET["slNguoiLon"];
                     $sltreEm = $_GET["sltreEm"];
                     $total_price = $_GET["amount"];
-                    $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+                    $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price,$ptt);
 
                     // $id = book_insert_momo($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $status, 3);
                     // $status = 3;

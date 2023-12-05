@@ -60,12 +60,21 @@
                                 <td>Trạng thái</td>
                                 <td>
                                     <?php
-                                    if (isset($bill["status"]) == 1) {
+                                    if (($bill["status"]) == 1) {
                                         echo "Chờ xác nhận";
-                                    } else if (isset($bill["status"]) == 2) {
-                                        echo "Xác nhận đặt phòng";
-                                    } else {
-                                        echo "Xác nhận thanh toán";
+                                    } 
+                                    ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phương thức thanh toán</td>
+                                <td>
+                                    <?php
+                                    if (($bill["ptt"]) == 1) {
+                                        echo "Thánh toán bằng thẻ tín dụng MOMO";
+                                    } 
+                                    else{
+                                        echo "Thánh toán khi nhận phòng";
                                     }
                                     ?>
                                 </td>

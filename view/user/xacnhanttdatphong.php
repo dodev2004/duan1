@@ -1,6 +1,6 @@
 <div class="xndatphong">
     <h2>Xác nhận đặt phòng</h2>
-    <form action="?act=billcomfirm" method="POST">
+    <form action="?act=billcomfirm&ptt=0" method="POST">
         <input type="hidden" name="id_Phong" value="<?php echo $id_Phong ?>">
         <div class="form-floating mb-3">
             <label for="floatingInputGroup1">Họ và tên</label>

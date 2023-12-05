@@ -4,10 +4,10 @@ function book_select_by_id_Phong($id)
     $sql = "SELECT check_in,check_out from book where id_Phong = $id";
     return pdo_query($sql);
 }
-function book_insert($id_user, $book_name, $sdt, $id_Phong, $sl_NgoiLon, $sl_tre_em, $check_in, $check_out, $price)
+function book_insert($id_user, $book_name, $sdt, $id_Phong, $sl_NgoiLon, $sl_tre_em, $check_in, $check_out, $price,$ptt)
 {
-    $sql = "INSERT INTO book(book_name,sdt,sl_NguoiLon,sl_tre_em,check_in,check_out,price,iduser,id_Phong,created_time) values(?,?,?,?,?,?,?,?,?,?) ";
-    return pdo_execute($sql, $book_name, $sdt, $sl_NgoiLon, $sl_tre_em, $check_in, $check_out, $price, $id_user, $id_Phong, date('Y-m-d', time()));
+    $sql = "INSERT INTO book(book_name,sdt,sl_NguoiLon,sl_tre_em,check_in,check_out,price,iduser,id_Phong,created_time,ptt) values(?,?,?,?,?,?,?,?,?,?,?) ";
+    return pdo_execute($sql, $book_name, $sdt, $sl_NgoiLon, $sl_tre_em, $check_in, $check_out, $price, $id_user, $id_Phong, date('Y-m-d', time()),$ptt);
 }
 
 function book_select_by_id($id)
