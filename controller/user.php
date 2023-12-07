@@ -33,7 +33,12 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 if (is_array($checked)) {
                     $_SESSION["user"] = $checked;
 
-                    header("Location: user.php");
+                    echo "<script language=javascript>
+                    window.onload = function(){
+                      sessionStorage.setItem('user','true');
+                      window.location.href = 'user.php';
+                    }
+                    </script>";
                 } else {
                     $eror["password"] = "Thông tin đăng nhập sai";
                     $eror["username"] = "Thông tin đăng nhập sai";
@@ -161,17 +166,16 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $slNguoiLon = $_POST["sl_NguoiLon"];
                 $sltreEm = $_POST["sl_tre_em"];
                 $total_price = $_POST["total_price"];
-                // $id_user = $_SESSION["user"]["id"];
-                // $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
-                // $bill = book_select_by_id($id);
-                // $room = db_phong_select_by_id($bill["id_Phong"]);
             }
             include "../view/user/xacnhanttdatphong.php";
             break;
         case "billcomfirm":
+
             if (isset($_POST["xndatphongoff"])) {
+
                 $id_Phong = $_POST["id_Phong"];
-                $price = $_POST["price"];
+                // $price = $_POST["price"];
+                $ptt = $_GET["ptt"];
                 $name = $_POST["book_name"];
                 $sdt  = $_POST["sdt"];
                 $checkin = $_POST["check_in"];
@@ -180,23 +184,30 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $sltreEm = $_POST["sl_tre_em"];
                 $total_price = $_POST["total_price"];
                 $id_user = $_SESSION["user"]["id"];
-                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price);
+                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price,$ptt);
                 $bill = book_select_by_id($id);
                 $room = db_phong_select_by_id($bill["id_Phong"]);
-            }
-            if (isset($_GET["partnerCode"])) {
-                $partnerCode = $_GET["partnerCode"];
-                $accessKey = $_GET["accessKey"];
-                $serectkey = $_GET["secretKey"];
-                $orderId = $_GET["orderId"]; // Mã đơn hàng
-                $orderInfo = "";
-                $amount = $_GET["amount"];
-                $ipnUrl = "";
-                $redirectUrl = "";
-                $extraData = "";
-                $id = book_insert("", "", "",  $orderId, "", "", "", "", $amount);
-                $bill = book_select_by_id($id);
-                $room = db_phong_select_by_id($bill["id_Phong"]);
+            } else {
+                if (isset($_GET)) {
+                    $ptt = $_GET["ptt"];
+                    $id_user = $_SESSION["user"]["id"];
+                    $id_Phong  = $_GET["orderInfo"];
+                    $name = $_GET["name"];
+                    $sdt  = $_GET["sdt"];
+                    $checkin = $_GET["checkin"];
+                    $checkout = $_GET["checkout"];
+                    $slNguoiLon = $_GET["slNguoiLon"];
+                    $sltreEm = $_GET["sltreEm"];
+                    $total_price = $_GET["amount"];
+                    $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price,$ptt);
+
+                    // $id = book_insert_momo($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $status, 3);
+                    // $status = 3;
+                    // $id =  book_insert_momo($id_user, $name, $sdt, $id_Phong,  $slNguoiLon,  $sltreEm, $checkin, $checkout,  $total_price, 3);
+            
+                    $bill = book_select_by_id($id);
+                    $room = db_phong_select_by_id($bill["id_Phong"]);
+                }
             }
 
             include "../view/user/billcomfirm.php";
@@ -245,7 +256,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
 
         case 'dangxuat':
             dangxuat();
-            header("location: user.php");
+            echo "<script language=javascript>
+                sessionStorage.removeItem('user');
+                window.location.href = 'user.php'</script>";
             // include "../view/user/dangnhap.php";
 
             break;
@@ -253,5 +266,6 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
     }
 } else {
     include "../view/user/trangchu.php";
+   
 }
 include "../view/user/footer.php";

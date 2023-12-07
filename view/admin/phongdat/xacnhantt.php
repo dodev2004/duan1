@@ -57,6 +57,7 @@
                                                                 }
 
                                                                 ?></span></p>
+                        <?php if($book["ptt"] == 0) {?>
                         <p><strong>Thời gian còn lại : </strong><?php
                                                                 if ($days > 0 && $months == 0) {
                                                                     echo $days . " ngày";
@@ -66,6 +67,10 @@
                                                                     "Hết hạn";
                                                                 }
                                                                 ?></p>
+                        <?php }
+                        else {
+                            echo "Đã thanh toán online";
+                        }?>
                     </th>
                     <th style="text-align: inherit;">
                         <a href="?act=xntt&page=datphong&status=3&id=<?php echo $book["id"] ?>"><input style="margin-bottom: 20px;" type="button" name="sua" value="Xác nhận thanh toán"></a>

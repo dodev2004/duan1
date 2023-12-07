@@ -23,7 +23,7 @@
                 <th>
                     <?php $room = db_phong_select_by_id($book["id_Phong"]) ?>
                     <p class="id_room"><strong>Tên phòng </strong>: <span><?php echo $room["ten_Phong"] ?></span></p>
-                    <p class=""><strong>Gía</strong> : <span><?php echo number_format($room["gia"],0,',',',')?>
+                    <p class=""><strong>Giá</strong> : <span><?php echo number_format($room["gia"],0,',',',')?>
                             VNĐ</span></p>
 
                 </th>
@@ -31,6 +31,14 @@
                     <p class="id_room"><strong>Ngày vào </strong>: <span><?php echo $book["check_in"] ?></span></p>
                     <p class=""><strong>Ngày trả : </strong><span><?php echo $book["check_out"] ?></span></p>
                     <p><strong>Tổng</strong> : <span><?php echo number_format($book["price"],0,',',',')?> VNĐ</span></p>
+                    <p><strong>PTT</strong> : <span> <?php 
+                        if($book["ptt"] == 0){
+                            echo "Thanh toán khi nhận phòng";
+                        }
+                        else {
+                            echo "Thanh toán online";
+                        }
+                    ?></span></p>
                 </th>
 
                 <th style="text-align: inherit;">

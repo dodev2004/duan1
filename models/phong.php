@@ -21,7 +21,7 @@ function db_phong_select_all()
         $checkout = !empty($_POST["checkout"]) ? $_POST["checkout"] : "";
         $slNguoiLon = !empty($_POST["sl_Nguoi_Lon"]) ? $_POST["sl_Nguoi_Lon"] : "";
         $treEm = !empty($_POST["sl_tre_em"]) ? $_POST["sl_tre_em"] : "";
-        $sql = "SELECT * FROM `phong` WHERE id NOT IN(SELECT id_Phong FROM `book` WHERE '$checkin' >= check_in AND check_out >= '$checkin' AND  check_in <= '$checkout' AND check_out >= '$checkout') AND slNguoiLon <= $slNguoiLon AND slTreEm <=$treEm";
+        $sql = "SELECT * FROM `phong` WHERE id NOT IN(SELECT id_Phong FROM `book` WHERE '$checkin' >= check_in AND check_out >= '$checkin' AND  check_in <= '$checkout' AND check_out >= '$checkout' AND status = 1 OR status = 2 OR status = 3) AND slNguoiLon <= $slNguoiLon AND slTreEm <=$treEm";
     } else {
         $sql = "SELECT * FROM phong order by id desc";
     }

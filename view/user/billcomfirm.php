@@ -1,3 +1,4 @@
+
 <main>
     <section class="container">
         <section class="cart_list">
@@ -59,12 +60,21 @@
                                 <td>Trạng thái</td>
                                 <td>
                                     <?php
-                                    if (isset($bill["status"]) == 1) {
+                                    if (($bill["status"]) == 1) {
                                         echo "Chờ xác nhận";
-                                    } else if (isset($bill["status"]) == 2) {
-                                        echo "Xác nhận đặt phòng";
-                                    } else {
-                                        echo "Xác nhận thanh toán";
+                                    } 
+                                    ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Phương thức thanh toán</td>
+                                <td>
+                                    <?php
+                                    if (($bill["ptt"]) == 1) {
+                                        echo "Thánh toán bằng thẻ tín dụng MOMO";
+                                    } 
+                                    else{
+                                        echo "Thánh toán khi nhận phòng";
                                     }
                                     ?>
                                 </td>
@@ -91,13 +101,6 @@
                                 </td>
                             </tr>
                         </table>
-                        <!-- <form action="../view/user/congthanhtoan.php" id="create_form" method="post">
-                            <img style="width: 310px;display: block; height: 200px; margin:0 auto;" src="../../public/image/vnpay.jpg" alt="">
-                            <input type="hidden" name="gia" value="<?php echo $bill["price"] ?>">
-                            <input type="hidden" name="ma_donhang" value="<?php echo $bill["id"] ?>">
-                            <button style="background-color: yellow; font-size: 20px; width: 100%; border-radius: 10px; margin-top: 16px;" type="submit" name="redirect" id="redirect" class="btn btn-default">Thanh toán online bằng VNPAY</button>
-
-                        </form> -->
                     </section>
 
                 </section>

@@ -67,35 +67,35 @@
                 <div class=" form_booking">
                     <div class="item_booking">
                         <label for="">Họ và tên</label>
-                        <input type="text" name="book_name" required>
+                        <input type="text" name="book_name"  required>
                         <p class="eror_messsage"></p>
                     </div>
                     <div class="item_booking">
                         <label for="">Số điện thoại</label>
-                        <input type="text" name="sdt" required>
+                        <input type="text" name="sdt" >
                         <p class="eror_messsage"></p>
                     </div>
                 </div>
                 <div class="form_booking">
                     <div class="item_booking">
                         <label for="">Ngày nhận</label>
-                        <input type="date" name="check_in" required>
+                        <input type="date" name="check_in" >
                         <p class="eror_messsage"></p>
                     </div>
                     <div class="item_booking">
                         <label for="">Ngày trả</label>
-                        <input type="date" name="check_out" required>
+                        <input type="date" name="check_out" >
                         <p class="eror_messsage"></p>
                     </div>
                 </div>
                 <div class="form_booking">
                     <div class="item_booking">
                         <label for="">Người lớn</label>
-                        <input type="text" name="sl_NguoiLon" placeholder="2" required>
+                        <input type="text" name="sl_NguoiLon" placeholder="2" >
                     </div>
                     <div class="item_booking">
                         <label for="">Trẻ em</label>
-                        <input type="text" name="sl_tre_em" placeholder="1" required>
+                        <input type="text" name="sl_tre_em" placeholder="1" >
                     </div>
                 </div>
                 <div class="notification">
@@ -192,82 +192,7 @@
                                     </section>
 
                                 </article>
-                            </div>
-                            <!-- <div class="col">
-                            <article>
-                                <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                                <a href="" class="room_name">
-                                    <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                                </a>
-                                <span class="room_line"></span>
-                                <section class="room_service">
-                                    <img src="../public/image/Không có tiêu đề.png" alt="">
-                                    <img src="../public/image/tag_icon_4.svg" alt="">
-                                    <img src="../public/image/tag_icon_5.svg" alt="">
-                                </section>
-                                <section class="room_information">
-                                    <span class="room_guest">02 khách</span>
-                                    <span class="room_area">25m<sup>2</sup></span>
-                                </section>
-                                <section class="room_buy">
-                                    <span class="room_price">500.000₫/đêm</span>
-                                    <form class="room_buy-form" action="" method="post">
-                                        <input type="submit" name="buy" value="Đặt Phòng">
-                                    </form>
-                                </section>
-
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article>
-                                <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                                <a href="" class="room_name">
-                                    <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                                </a>
-                                <span class="room_line"></span>
-                                <section class="room_service">
-                                    <img src="../public/image/Không có tiêu đề.png" alt="">
-                                    <img src="../public/image/tag_icon_4.svg" alt="">
-                                    <img src="../public/image/tag_icon_5.svg" alt="">
-                                </section>
-                                <section class="room_information">
-                                    <span class="room_guest">02 khách</span>
-                                    <span class="room_area">25m<sup>2</sup></span>
-                                </section>
-                                <section class="room_buy">
-                                    <span class="room_price">500.000₫/đêm</span>
-                                    <form class="room_buy-form" action="" method="post">
-                                        <input type="submit" name="buy" value="Đặt Phòng">
-                                    </form>
-                                </section>
-
-                            </article>
-                        </div>
-                        <div class="col">
-                            <article>
-                                <a href=""> <img class="room_img" src="../public/image/anh1.webp" alt=""></a>
-                                <a href="" class="room_name">
-                                    <h2 class="room_name">Phòng đơn tiêu chuẩn</h2>
-                                </a>
-                                <span class="room_line"></span>
-                                <section class="room_service">
-                                    <img src="../public/image/Không có tiêu đề.png" alt="">
-                                    <img src="../public/image/tag_icon_4.svg" alt="">
-                                    <img src="../public/image/tag_icon_5.svg" alt="">
-                                </section>
-                                <section class="room_information">
-                                    <span class="room_guest">02 khách</span>
-                                    <span class="room_area">25m<sup>2</sup></span>
-                                </section>
-                                <section class="room_buy">
-                                    <span class="room_price">500.000₫/đêm</span>
-                                    <form class="room_buy-form" action="" method="post">
-                                        <input type="submit" name="buy" value="Đặt Phòng">
-                                    </form>
-                                </section>
-
-                            </article>
-                        </div> -->
+                            </div>                  
                         <?php } ?>
                     </div>
                 </div>
@@ -279,8 +204,7 @@
 </main>
 <script>
     const form = document.querySelector('#form-book');
-    console.log(form);
-
+   
     if (form) {
         const price = form.querySelector("input[name='price']");
         const inputTotalPrice = form.querySelector("input[name='total_price']");
@@ -289,7 +213,8 @@
         const total_timer = form.querySelector(".total_timer");
         const inputCheckIn = form.querySelector("input[name=check_in]");
         const inputCheckOut = form.querySelector("input[name=check_out]");
-        let checked = true;
+        let checked = false;
+       
         inputCheckIn.onblur = function(e) {
             const eror_message = inputCheckIn.parentElement.querySelector(".eror_messsage");
             const timer = new Date(inputCheckIn.value).getTime();
@@ -337,7 +262,7 @@
                             } else {
                                 notification.style.display = "none";
                                 notification_eror.style.display = "block";
-                                console.log("Phòng đã thuê ")
+                                // console.log("Phòng đã thuê ")
                                 checked = false;
                             }
                         }
@@ -363,15 +288,26 @@
                             total_price.innerHTML = VND.format(price.value * days);
                             inputTotalPrice.value = price.value * days;
                         }
+
                     }
                 }
             }
 
 
         }
+        form.onsubmit = function (event) {
+            if(JSON.parse(sessionStorage.getItem('user'))){
+                return checked;
+            }
+            else {
+                alert("Vui lòng đăng nhập tài khoản để có thể đặt phòng");
+                return false;
+            }
+            
+        }
+        
+        
     }
-
-
     function checkCurrentTime(time) {
         let year = new Date().getFullYear();
         let month = new Date().getMonth() + 1;

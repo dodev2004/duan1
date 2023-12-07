@@ -31,8 +31,6 @@ if (!$check) {
 if (isset($_GET["act"]) || isset($_GET["page"])) {
     $act = isset($_GET["act"]) ? $_GET["act"] : "";
     $page = $_GET["page"];
-
-
     switch ($page) {
         case "loaiphong":
             if ($act == "lk") {
@@ -321,36 +319,47 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
 
         case "datphong":
             if ($act == "xndp") {
-                if(isset($_GET["status"])){
+                if (isset($_GET["status"])) {
                     $id  = $_GET["id"];
                     $status = $_GET["status"];
-                    if($status == 2){
-                        book_change_status($status,$id);
+                    include "../view/admin/phongdat/xuly.php";
+                    if ($status == 2) {
+                        book_change_status($status, $id);
                         header("Location: ?act=xndp&page=datphong&currentPage=1");
                     }
                 }
-                $books  = db_book_select_all_Pagin($_GET["currentPage"],1);
+                $books  = db_book_select_all_Pagin($_GET["currentPage"], 1);
                 $count = count($books);
                 $pagin = ceil(count(book_select_all(1))/4);
                 include "../view/admin/phongdat/xacnhandp.php";
-            } 
-            else if($act == "huydp"){
+            } else if ($act == "huydp") {
                 $status = $_GET["status"];
                 $id = $_GET["id"];
-                book_change_status($status,$id);
+                book_change_status($status, $id);
                 header("Location: ?act=xndp&page=datphong&currentPage=1");
+            } else if ($act == "xntt") {
+                if (isset($_GET["status"])) {
+                    $id = $_GET["id"];
+                    $status = $_GET["status"];
+                    book_change_status($status, $id);
+                    header("Location: ?act=xntt&page=datphong&currentPage=1");
+                }
+                $books  = db_book_select_all_Pagin($_GET["currentPage"], 2);
+                $count = count($books);
+                $pagin = ceil(count(book_select_all(2))/4);
+                include "../view/admin/phongdat/xacnhantt.php";
             }
-            else if ($act == "xntt") {
+            else if ($act == "xntp") {
                 if(isset($_GET["status"])){
                     $id = $_GET["id"];
                     $status = $_GET["status"];
                     book_change_status($status,$id);
-                    header("Location: ?act=xntt&page=datphong&currentPage=1");
+                    header("Location: ?act=xntp&page=datphong&currentPage=1");
                 }
-                $books  = db_book_select_all_Pagin($_GET["currentPage"],2);
+                $books  = db_book_select_all_Pagin($_GET["currentPage"],3);
                 $count = count($books);
                 $pagin = ceil(count(book_select_all(2))/4);
-                include "../view/admin/phongdat/xacnhantt.php";
+                include "../view/admin/phongdat/xacnhantraphong.php";
             }
             else {
                     $books = db_book_select_all_Pagin($_GET["currentPage"]);
@@ -360,23 +369,20 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
             }
             break;
         case "bl":
-            if($act == "lk"){
+            if ($act == "lk") {
                 $bls  = bl_select_all_pagin($_GET["currentPage"]);
                 $count = count($bls);
-                $pagin = ceil(count(bl_select_all())/4);
+                $pagin = ceil(count(bl_select_all()) / 4);
                 include "../view/admin/binhluan/lk.php";
-            }
-           
-            else if($act == "delete"){
+            } else if ($act == "delete") {
                 bl_delete($_GET["id"]);
                 header("Location:?act=lk&page=bl&currentPage=1");
-            }
-            else if($act == "rmAll") {
+            } else if ($act == "rmAll") {
                 $id = $_GET["id"];
                 $ids = explode(",", $id);
                 var_dump($ids);
                 bl_delete($ids);
-                
+
                 header("Location:?act=lk&page=bl&currentPage=1");
             }
             break;
@@ -393,6 +399,7 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
     }
 } else {
     include "../view/admin/header.php";
+    include "../view/admin/dashboard.php";
 }
 include "../view/admin/footer.php";
 ?>

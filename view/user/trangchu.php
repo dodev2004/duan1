@@ -78,7 +78,7 @@
                     <div class="col">
                         <article>
                             <a href="?act=phongchitiet&id=<?php echo $id ?>"> <img class="room_img" src="<?php echo  $hinh ?>" alt=""></a>
-                            <a href="" class="room_name">
+                            <a href="?act=phongchitiet&id=<?php echo $id ?>" class="room_name">
                                 <h2 class="room_name"><?php echo $ten_Phong ?></h2>
                             </a>
                             <span class="room_line"></span>
@@ -98,7 +98,7 @@
                             </section>
                             <section class="room_buy">
                                 <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
-                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                <form action="?act=phongchitiet&id=<?php echo $value["id"] ?>" method="post" class="room_buy-form">
                                     <input type="submit" name="buy" value="Đặt Phòng">
                                 </form>
                             </section>
@@ -125,7 +125,7 @@
                     <div class="col">
                         <article>
                             <a href="?act=phongchitiet&id=<?php echo $id ?>"> <img class="room_img" src="<?php echo  $hinh ?>" alt=""></a>
-                            <a href="" class="room_name">
+                            <a href="?act=phongchitiet&id=<?php echo $id ?>" class="room_name">
                                 <h2 class="room_name"><?php echo $ten_Phong ?></h2>
                             </a>
                             <span class="room_line"></span>
@@ -145,7 +145,7 @@
                             </section>
                             <section class="room_buy">
                                 <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
-                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $value["id"] ?>" method="post">
                                     <input type="submit" name="buy" value="Đặt Phòng">
                                 </form>
                             </section>
@@ -178,7 +178,9 @@
                         ?>
                             <article>
                                 <div class="room_vip-img" style="background: url(<?php echo $hinh ?>"></div>
-                                <h2 class="room_vip-title"><?php echo $ten_Phong ?> </h2>
+                                <a href="?act=phongchitiet&id=<?php echo $id ?>">
+                                    <h2 class="room_vip-title"><?php echo $ten_Phong ?> </h2>
+                                </a>
                                 <section class="room_vip-service">
                                     <section class="room_vip-infomation">
                                         <span class="room_vip-guess">
