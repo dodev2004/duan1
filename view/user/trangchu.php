@@ -98,7 +98,7 @@
                             </section>
                             <section class="room_buy">
                                 <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
-                                <form action="?act=phongchitiet&id=<?php echo $id ?>" method="post" class="room_buy-form">
+                                <form action="?act=phongchitiet&id=<?php echo $value["id"] ?>" method="post" class="room_buy-form">
                                     <input type="submit" name="buy" value="Đặt Phòng">
                                 </form>
                             </section>
@@ -145,7 +145,7 @@
                             </section>
                             <section class="room_buy">
                                 <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
-                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $value["id"] ?>" method="post">
                                     <input type="submit" name="buy" value="Đặt Phòng">
                                 </form>
                             </section>
