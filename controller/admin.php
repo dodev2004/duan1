@@ -4,7 +4,7 @@ ob_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 if (!(isset($_SESSION["user"]))) {
     header("Location: ../view/admin/login/index.php");
-    var_dump($_SESSION["user"]);
+  
 }
 
 ?>
@@ -19,9 +19,18 @@ include "../models/privilege.php";
 include "../models/binhluan.php";
 include "../view/admin/regex.php";
 include "../view/admin/header.php";
+include "../models/bieudo.php";
+$tk = thongke_sp_theodanhmuc();
+$ptt = thongke_donhang_pttt();
 
+
+$dhcheck = thongke_donhang_cho();
 $user_privilege = select_all_db_user_privilege($_SESSION["user"]["id"]);
-
+foreach ($dhcheck as $check) {
+    if ($check["status"] == 2) {
+        echo $check["sl"];
+    }
+}
 $check = checkPrivileges();
 var_dump($check);
 if (!$check) {
@@ -323,14 +332,14 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $id  = $_GET["id"];
                     $status = $_GET["status"];
                     include "../view/admin/phongdat/xuly.php";
-                    if ($status == 2) {
+                    if ($status == 6) {
                         book_change_status($status, $id);
                         header("Location: ?act=xndp&page=datphong&currentPage=1");
                     }
                 }
                 $books  = db_book_select_all_Pagin($_GET["currentPage"], 1);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(1))/4);
+                $pagin = ceil(count(book_select_all(1)) / 4);
                 include "../view/admin/phongdat/xacnhandp.php";
             } else if ($act == "huydp") {
                 $status = $_GET["status"];
@@ -346,26 +355,35 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 }
                 $books  = db_book_select_all_Pagin($_GET["currentPage"], 2);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(2))/4);
+                $pagin = ceil(count(book_select_all(2)) / 4);
                 include "../view/admin/phongdat/xacnhantt.php";
-            }
-            else if ($act == "xntp") {
-                if(isset($_GET["status"])){
+            } else if ($act == "xntp") {
+                if (isset($_GET["status"])) {
                     $id = $_GET["id"];
                     $status = $_GET["status"];
-                    book_change_status($status,$id);
+                    book_change_status($status, $id);
                     header("Location: ?act=xntp&page=datphong&currentPage=1");
                 }
-                $books  = db_book_select_all_Pagin($_GET["currentPage"],3);
+                $books  = db_book_select_all_Pagin($_GET["currentPage"], 3);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(2))/4);
+                $pagin = ceil(count(book_select_all(2)) / 4);
                 include "../view/admin/phongdat/xacnhantraphong.php";
-            }
-            else {
-                    $books = db_book_select_all_Pagin($_GET["currentPage"]);
-                    $count  = count($books);
-                    $pagin = ceil(count(book_select_all())/4);
-                    include  "../view/admin/phongdat/lichsudp.php";
+            } else if ($act == "xnnp") {
+                if (isset($_GET["status"])) {
+                    $id = $_GET["id"];
+                    $status = $_GET["status"];
+                    book_change_status($status, $id);
+                    header("Location: ?act=xnnp&page=datphong&currentPage=1");
+                }
+                $books  = db_book_select_all_Pagin($_GET["currentPage"], 6);
+                $count = count($books);
+                $pagin = ceil(count(book_select_all(2)) / 4);
+                include "../view/admin/phongdat/xacnhandatphong.php";
+            } else {
+                $books = db_book_select_all_Pagin($_GET["currentPage"]);
+                $count  = count($books);
+                $pagin = ceil(count(book_select_all()) / 4);
+                include  "../view/admin/phongdat/lichsudp.php";
             }
             break;
         case "bl":
@@ -399,7 +417,13 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
     }
 } else {
     include "../view/admin/header.php";
+    $tongdh = count_thong_ke_donhang();
+    $tongbl = count_bl_thongke();
+    $tkbl = rate_thongke_bl();
+    $xhpd = xh_phongdat();
     include "../view/admin/dashboard.php";
+
+
 }
 include "../view/admin/footer.php";
 ?>
