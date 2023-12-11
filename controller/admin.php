@@ -17,12 +17,16 @@ include "../models/dichvu.php";
 include "../models/thanhvien.php";
 include "../models/privilege.php";
 include "../models/binhluan.php";
+include "../models/baiviet.php";
 include "../view/admin/regex.php";
 include "../view/admin/header.php";
 include "../models/bieudo.php";
 $tk = thongke_sp_theodanhmuc();
 $ptt = thongke_donhang_pttt();
-
+$tongdh = count_thong_ke_donhang();
+$tongbl = count_bl_thongke();
+$tkbl = rate_thongke_bl();
+$xhpd = xh_phongdat();
 
 $dhcheck = thongke_donhang_cho();
 $user_privilege = select_all_db_user_privilege($_SESSION["user"]["id"]);
@@ -400,8 +404,58 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 $ids = explode(",", $id);
                 var_dump($ids);
                 bl_delete($ids);
-
                 header("Location:?act=lk&page=bl&currentPage=1");
+            }
+            break;
+        case "baiviet":
+            if($act == "lk"){
+                $baiviet = baiviet_select_all_Pagin($_GET["currentPage"]);
+                $count = count($baiviet);
+                $paggin = ceil(count(baiviet_select_all())/4);
+                include "../view/admin/baiviet/lk.php";
+            }
+            else if($act == "them"){
+                if(isset($_POST["add"])){
+                    $tieude_baiviet = $_POST["tieude_baiviet"];
+                    $title = $_POST["title"];
+                    $description = $_POST["description"];
+                    $avatar = isset($_FILES["avatar"]) ? $_FILES["avatar"]["name"] : null;
+                    $content = $_POST["content"];   
+                    if($avatar){
+                        move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/" . $avatar);
+                    }
+                    baiviet_insert($title,$avatar,$description,$content,$tieude_baiviet,$_SESSION["user"]["id"]);
+                    echo "<script language='javascript'>alert('Thêm thành công')
+                    window.location.href = '?act=lk&page=baiviet&currentPage=1'</script>
+                    ";
+                }
+                include "../view/admin/baiviet/add.php";
+
+            }
+            else if($act == "delete"){
+                var_dump($_GET["id"]);
+                baiviet_delete($_GET["id"]);
+                header("Location:?act=lk&page=baiviet&currentPage=1");
+            }
+            else if($act == "edit"){
+                $id = $_GET["id"];
+                if(isset($_POST["edit"])){
+                    
+                    $tieude_baiviet = $_POST["tieude_baiviet"];
+                    $title = $_POST["title"];
+                    $description = $_POST["description"];
+                    $avatar = isset($_FILES["avatar"]) ? $_FILES["avatar"]["name"] : null;
+                    $content = $_POST["content"];   
+                    if($avatar){
+                        move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/" . $avatar);
+                    }
+                    baiviet_update($id,$title,$avatar,$description,$content,$tieude_baiviet);
+                    echo "<script language='javascript'>alert('Sửa thành công')
+                    window.location.href = '?act=lk&page=baiviet&currentPage=1'</script>
+                    ";
+                }
+                $bv = baiviet_selelect_by_id($_GET["id"]);
+                include "../view/admin/baiviet/edit.php";
             }
             break;
         case "dangxuat":
@@ -417,10 +471,7 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
     }
 } else {
     include "../view/admin/header.php";
-    $tongdh = count_thong_ke_donhang();
-    $tongbl = count_bl_thongke();
-    $tkbl = rate_thongke_bl();
-    $xhpd = xh_phongdat();
+   
     include "../view/admin/dashboard.php";
 
 

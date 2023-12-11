@@ -1,9 +1,9 @@
 <section class="admin-column_right">
-                        <h2 class="admin-column_right--title">Danh Mục</h2>
-                        <span class="admin-column_right--linked"><b>Danh Mục</b> - Danh sách loại dang mục</span>
+                        <h2 class="admin-column_right--title">Phòng</h2>
+                        <span class="admin-column_right--linked"><b>Phòng</b> - Thêm phòng</span>
                         <div class="table table-category">
                             <a href="?act=lk&page=phong&currentPage=1"><input style="margin-bottom: 2rem;" type="button"
-                                    name="them" value="Thêm danh mục sản phẩm"></a>
+                                    name="them" value="Liệt kê danh sách phòng"></a>
                             <form id="form-addroom" method="POST" enctype="multipart/form-data" action="?act=them&page=phong">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
