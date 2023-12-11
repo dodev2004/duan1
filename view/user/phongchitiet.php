@@ -129,6 +129,8 @@
         </div>
         <div style="max-width: 700px;
         " class="tab-float">
+        <?php if(!empty($bls)){ ?>
+           
             <?php foreach ($bls as $bl) :
                 $user = nguoidung_select_by_id($bl["iduser"]); ?>
                 <div class="user_rate">
@@ -137,12 +139,6 @@
                         <?php for ($i = 1; $i <= $bl["rate"]; $i++) {
                             echo '<i class="fa-solid fa-star" style="color: yellow;"></i>';
                         }  ?>
-                        <!-- <i class="fa-solid fa-star" style="color: yellow;"></i>
-             <i class="fa-solid fa-star" style="color: yellow;"></i>
-             <i class="fa-solid fa-star" style="color: yellow;"></i>
-             <i class="fa-solid fa-star" style="color: yellow;"></i>
-             <i class="fa-solid fa-star" style="color: yellow;"></i> -->
-
                     </div>
                     <div class="user_rate-content">
                         <?php echo $bl["content"] ?>
@@ -152,6 +148,10 @@
                     </div>
                 </div>
             <?php endforeach ?>
+            <?php }
+            else {
+                echo "<span style='color: #e0d3b7;'>Không có đánh giá nào về phòng này</span>";
+            } ?>
         </div>
     </div>
     <div class="productRelate">

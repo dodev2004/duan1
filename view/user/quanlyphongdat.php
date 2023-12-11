@@ -30,7 +30,11 @@
                         echo '<button class="btn_order">Đã Xác nhận đặt phòng</button>';
                     } else if ($status == 3) {
                         echo '<button class="btn_pay">Đã Thanh Toán</button>';
-                    } else if ($status == 5) {
+                    } 
+                    else if($status == 6){
+                        echo '<button class="btn_pay">Đã nhận phòng</button>';
+                        echo '<button class="btn_pay">Chờ thanh toán</button>';
+                    }else if ($status == 5) {
                         echo '<button class="btn_pay">Đã Trả  Phòng</button>';
                         if ($book["ttBl"] == 0) {
                             echo '<button class="btn_ratings" data-id= ' . $book["id_Phong"] . ' data-bookid=' . $book["id"] . '>Đánh giá</button>';

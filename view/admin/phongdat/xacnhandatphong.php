@@ -42,8 +42,8 @@
                 </th>
 
                 <th style="text-align: inherit;">
-                    <a href="?act=xndp&page=datphong&status=6&id=<?php echo $book["id"] ?>"><input
-                            style="margin-bottom: 20px;" type="button" name="sua" value="Xác nhận đặt phòng"></a>
+                    <a href="?act=xnnp&page=datphong&status=2&id=<?php echo $book["id"] ?>"><input
+                            style="margin-bottom: 20px;" type="button" name="sua" value="Xác nhận nhận phòng"></a>
                     <br>
                     <a href="?act=huydp&page=datphong&status=4&id=<?php echo $book["id"]?>"><input type="button"
                             style="background-color: #C80A1C;" name="xoa" value="Hủy đặt phòng"></a>
