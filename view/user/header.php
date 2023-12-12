@@ -37,7 +37,7 @@
                     <section class="header_bottom-left">
                         <nav>
                             <li>
-                                <a class="logo" href="">Logo</a>
+                                <a class="logo" href=""></a>VietHotel
                             </li>
                             <li> <a href="../controller/user.php">Trang chủ</a></li>
                             <li>
