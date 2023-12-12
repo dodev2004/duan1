@@ -57,8 +57,6 @@
                                     <a href="">Phòng Vip</a> -->
                                 </nav>
                             </li>
-                            <li> <a href="">Ẩm thực</a></li>
-                            <li> <a href="">Dịch vụ</a></li>
                             <li> <a href="?act=thuvienanh">Thư viện ảnh</a></li>
                             <li><a href="">Liên hệ</a></li>
                         </nav>

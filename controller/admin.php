@@ -4,7 +4,7 @@ ob_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 if (!(isset($_SESSION["user"]))) {
     header("Location: ../view/admin/login/index.php");
-    var_dump($_SESSION["user"]);
+  
 }
 
 ?>
@@ -17,11 +17,24 @@ include "../models/dichvu.php";
 include "../models/thanhvien.php";
 include "../models/privilege.php";
 include "../models/binhluan.php";
+include "../models/baiviet.php";
 include "../view/admin/regex.php";
 include "../view/admin/header.php";
+include "../models/bieudo.php";
+$tk = thongke_sp_theodanhmuc();
+$ptt = thongke_donhang_pttt();
+$tongdh = count_thong_ke_donhang();
+$tongbl = count_bl_thongke();
+$tkbl = rate_thongke_bl();
+$xhpd = xh_phongdat();
 
+$dhcheck = thongke_donhang_cho();
 $user_privilege = select_all_db_user_privilege($_SESSION["user"]["id"]);
-
+foreach ($dhcheck as $check) {
+    if ($check["status"] == 2) {
+        echo $check["sl"];
+    }
+}
 $check = checkPrivileges();
 var_dump($check);
 if (!$check) {
@@ -240,12 +253,13 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $name = $_POST["name"];
                     $username = $_POST["username"];
                     $password = $_POST["password"];
+                    $role = $_POST["role"];
                     $checkuser = nguoidung_id_select_by_user_name($username);
 
                     if (is_array($checkuser)) {
                         $eror  = "Tài khoản đã được sử dụng ";
                     } else {
-                        nguoidung_insert($name, $username, "", md5($password), date('Y/m/d', time()), date('Y/m/d', time()));
+                        nguoidung_insert($name, $username, "", md5($password),$role, date('Y/m/d', time()), date('Y/m/d', time()));
                         echo "<script language=javascript>alert('Đăng ký thành công') window.location.href = '?act=lk&page=thanhvien&currentPage=1</script>
                            '
                         ";;
@@ -260,7 +274,8 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $name = $_POST["name"];
                     $user_name = $_POST["username"];
                     $password = $_POST["password"];
-                    nguoidung_update_admin($id, $name, $user_name, md5($password), date('Y/m/d', time()));
+                    $role = $_POST["role"];
+                    nguoidung_update_admin($id, $name, $user_name, md5($password),$role, date('Y/m/d', time()));
                     echo "<script language='javascript'>alert('Sửa thành công')
                     window.location.href = '?act=lk&page=thanhvien&currentPage=1'</script>
                     ";
@@ -323,14 +338,14 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $id  = $_GET["id"];
                     $status = $_GET["status"];
                     include "../view/admin/phongdat/xuly.php";
-                    if ($status == 2) {
+                    if ($status == 6) {
                         book_change_status($status, $id);
                         header("Location: ?act=xndp&page=datphong&currentPage=1");
                     }
                 }
                 $books  = db_book_select_all_Pagin($_GET["currentPage"], 1);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(1))/4);
+                $pagin = ceil(count(book_select_all(1)) / 4);
                 include "../view/admin/phongdat/xacnhandp.php";
             } else if ($act == "huydp") {
                 $status = $_GET["status"];
@@ -346,26 +361,35 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 }
                 $books  = db_book_select_all_Pagin($_GET["currentPage"], 2);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(2))/4);
+                $pagin = ceil(count(book_select_all(2)) / 4);
                 include "../view/admin/phongdat/xacnhantt.php";
-            }
-            else if ($act == "xntp") {
-                if(isset($_GET["status"])){
+            } else if ($act == "xntp") {
+                if (isset($_GET["status"])) {
                     $id = $_GET["id"];
                     $status = $_GET["status"];
-                    book_change_status($status,$id);
+                    book_change_status($status, $id);
                     header("Location: ?act=xntp&page=datphong&currentPage=1");
                 }
-                $books  = db_book_select_all_Pagin($_GET["currentPage"],3);
+                $books  = db_book_select_all_Pagin($_GET["currentPage"], 3);
                 $count = count($books);
-                $pagin = ceil(count(book_select_all(2))/4);
+                $pagin = ceil(count(book_select_all(2)) / 4);
                 include "../view/admin/phongdat/xacnhantraphong.php";
-            }
-            else {
-                    $books = db_book_select_all_Pagin($_GET["currentPage"]);
-                    $count  = count($books);
-                    $pagin = ceil(count(book_select_all())/4);
-                    include  "../view/admin/phongdat/lichsudp.php";
+            } else if ($act == "xnnp") {
+                if (isset($_GET["status"])) {
+                    $id = $_GET["id"];
+                    $status = $_GET["status"];
+                    book_change_status($status, $id);
+                    header("Location: ?act=xnnp&page=datphong&currentPage=1");
+                }
+                $books  = db_book_select_all_Pagin($_GET["currentPage"], 6);
+                $count = count($books);
+                $pagin = ceil(count(book_select_all(2)) / 4);
+                include "../view/admin/phongdat/xacnhandatphong.php";
+            } else {
+                $books = db_book_select_all_Pagin($_GET["currentPage"]);
+                $count  = count($books);
+                $pagin = ceil(count(book_select_all()) / 4);
+                include  "../view/admin/phongdat/lichsudp.php";
             }
             break;
         case "bl":
@@ -382,8 +406,58 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                 $ids = explode(",", $id);
                 var_dump($ids);
                 bl_delete($ids);
-
                 header("Location:?act=lk&page=bl&currentPage=1");
+            }
+            break;
+        case "baiviet":
+            if($act == "lk"){
+                $baiviet = baiviet_select_all_Pagin($_GET["currentPage"]);
+                $count = count($baiviet);
+                $paggin = ceil(count(baiviet_select_all())/4);
+                include "../view/admin/baiviet/lk.php";
+            }
+            else if($act == "them"){
+                if(isset($_POST["add"])){
+                    $tieude_baiviet = $_POST["tieude_baiviet"];
+                    $title = $_POST["title"];
+                    $description = $_POST["description"];
+                    $avatar = isset($_FILES["avatar"]) ? $_FILES["avatar"]["name"] : null;
+                    $content = $_POST["content"];   
+                    if($avatar){
+                        move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/" . $avatar);
+                    }
+                    baiviet_insert($title,$avatar,$description,$content,$tieude_baiviet,$_SESSION["user"]["id"]);
+                    echo "<script language='javascript'>alert('Thêm thành công')
+                    window.location.href = '?act=lk&page=baiviet&currentPage=1'</script>
+                    ";
+                }
+                include "../view/admin/baiviet/add.php";
+
+            }
+            else if($act == "delete"){
+                var_dump($_GET["id"]);
+                baiviet_delete($_GET["id"]);
+                header("Location:?act=lk&page=baiviet&currentPage=1");
+            }
+            else if($act == "edit"){
+                $id = $_GET["id"];
+                if(isset($_POST["edit"])){
+                    
+                    $tieude_baiviet = $_POST["tieude_baiviet"];
+                    $title = $_POST["title"];
+                    $description = $_POST["description"];
+                    $avatar = isset($_FILES["avatar"]) ? $_FILES["avatar"]["name"] : null;
+                    $content = $_POST["content"];   
+                    if($avatar){
+                        move_uploaded_file($_FILES["avatar"]["tmp_name"], "../public/image/avatar/" . $avatar);
+                    }
+                    baiviet_update($id,$title,$avatar,$description,$content,$tieude_baiviet);
+                    echo "<script language='javascript'>alert('Sửa thành công')
+                    window.location.href = '?act=lk&page=baiviet&currentPage=1'</script>
+                    ";
+                }
+                $bv = baiviet_selelect_by_id($_GET["id"]);
+                include "../view/admin/baiviet/edit.php";
             }
             break;
         case "dangxuat":
@@ -399,7 +473,10 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
     }
 } else {
     include "../view/admin/header.php";
+   
     include "../view/admin/dashboard.php";
+
+
 }
 include "../view/admin/footer.php";
 ?>

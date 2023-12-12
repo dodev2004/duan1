@@ -9,7 +9,7 @@
                             <table>
                                 <tr>
                                     
-                                    <th><?php if(checkPrivileges("page=loaiphong&act=delete&id=0")){
+                                    <th><?php if(checkPrivileges("act=delete&page=loaiphong&id=0")){
                                         echo "";
                                     }else {
                                         echo "STT";
@@ -17,7 +17,7 @@
                                   
                                     <th>Mã Loại</th>
                                     <th>Tên Loại</th>
-                                    <?php if(checkPrivileges("page=loaiphong&act=edit&id=0") || checkPrivileges("page=loaiphong&act=delete&id=0") ){ ?>
+                                    <?php if(checkPrivileges("page=loaiphong&act=edit&id=0") || checkPrivileges("act=delete&page=loaiphong&id=0") ){ ?>
                                     <th>Hành Động</th>
                                     <?php } ?>
                                 </tr>
@@ -26,7 +26,7 @@
 
                                 ?>
                                 <tr>
-                                    <?php if(checkPrivileges("page=loaiphong&act=delete&id=0")){ ?>
+                                    <?php if(checkPrivileges("act=delete&page=loaiphong&id=0")){ ?>
                                     <th><input data-page="loaiphong" type="checkbox" name="check_ml" value="<?=$rt["id_LoaiPhong"]?>"></th>
                                     <?php }
                                     else { ?>
@@ -35,7 +35,7 @@
                                     
                                     <th class="id"><?=$rt["id_LoaiPhong"]?></th>
                                     <th><?=$rt["ten_LoaiPhong"]?></th>
-                                    <?php if(checkPrivileges("page=loaiphong&act=edit&id=0") || checkPrivileges("page=loaiphong&act=delete&id=0") ){ ?>
+                                    <?php if(checkPrivileges("page=loaiphong&act=edit&id=0") || checkPrivileges("act=delete&page=loaiphong&id=0") ){ ?>
                                     <th>
                                         <?php if(checkPrivileges("page=loaiphong&act=edit&id=". $rt["id_LoaiPhong"])){ ?>
                                         <a href="?page=loaiphong&act=edit&id=<?php echo $rt["id_LoaiPhong"]?>"><input type="button" name="sua" value="Sửa"/></a>

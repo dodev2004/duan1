@@ -1,9 +1,9 @@
 <?php
-function nguoidung_insert($ho_ten, $username, $email, $mat_khau, $ngaytao, $ngaysua)
+function nguoidung_insert($ho_ten, $username, $email, $mat_khau,$role, $ngaytao, $ngaysua)
 {
     $mat_khau = md5($mat_khau);
-    $sql = "INSERT INTO nguoidung(name,user_name,email, password,ngaytao,ngaysua) VALUES (?,?,?,?,?,?) ";
-    pdo_execute($sql, $ho_ten, $username, $email, $mat_khau, $ngaytao, $ngaysua);
+    $sql = "INSERT INTO nguoidung(name,user_name,email, password,role,ngaytao,ngaysua) VALUES (?,?,?,?,?,?,?) ";
+    pdo_execute($sql, $ho_ten, $username, $email, $mat_khau, $role,$ngaytao, $ngaysua);
 }
 function nguoidung_update($ma_kh, $user,  $name, $email, $phone)
 {
@@ -15,10 +15,10 @@ function nguoidung_update_user($ma_kh,  $name, $email, $address, $phone)
     $sql = "UPDATE nguoidung SET name=?,email=?,diachi=?,sdt=? WHERE id=?";
     pdo_execute($sql, $name, $email, $address, $phone, $ma_kh);
 }
-function nguoidung_update_admin($id, $name, $user_name, $password, $ngaysua)
+function nguoidung_update_admin($id, $name, $user_name,$role, $password, $ngaysua)
 {
-    $sql = "UPDATE nguoidung SET name=?,user_name=?,password=?,ngaysua=? WHERE id=?";
-    pdo_execute($sql, $name, $user_name, $password, $ngaysua, $id);
+    $sql = "UPDATE nguoidung SET name=?,user_name=?,password=?,role=?,ngaysua=? WHERE id=?";
+    pdo_execute($sql, $name, $user_name, $password,$role, $ngaysua, $id);
 }
 function nguoidung_select_all()
 {
