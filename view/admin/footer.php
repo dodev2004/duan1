@@ -5,7 +5,6 @@
                 <footer>
 
                 </footer>
-
                 <script src="../../public/js/form.js"></script>
                 <script src="../../public/js/admin/main.js"></script>
                 <script>
@@ -18,9 +17,9 @@
                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
                 <script>
-                  $(document).ready(function() {
+                  if(document.getElementById("myfirstchart")){
+                    $(document).ready(function() {
                     thongke();
                     var char = new Morris.Area({
                       parseTime: false,
@@ -82,6 +81,8 @@
                     };
 
                   });
+                  }
+                 
                 </script>
                 <script src="https://www.gstatic.com/charts/loader.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>

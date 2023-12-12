@@ -80,9 +80,14 @@
                                                     <?php if (checkPrivileges("act=history&page=datphong&currentPage=1")) { ?>
                                                         <a href="?act=history&page=datphong&currentPage=1">Lịch sử đặt phòng</a>
                                                     <?php } ?>
+
                                                 </section>
                                             </li>
                                         <?php } ?>
+                                        <li class="admin-component_item">
+                                                <a href="?act=lk&page=baiviet&currentPage=1">Bài viết</a>
+                                        </li>
+                                        
                                         <?php if (checkPrivileges("act=lk&page=bl&currentPage=1")) { ?>
                                             <li class="admin-component_item">
                                                 <a href="?act=lk&page=bl&currentPage=1">Đánh giá</a>

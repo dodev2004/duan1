@@ -262,7 +262,27 @@
             <h2 class="room_news-title">Tin tức </h2>
             <section class="room_news-content">
                 <div class="row">
+                    <?php foreach($baiviet as $value): ?>
                     <div class="col">
+                        <article>
+                            <a class="news_avatar" href=""><img src="../public/image/avatar/<?php echo $value["avatar"] ?>" alt=""></a>
+                            <section class="news_content">
+                                <a href="" class="news_content-title">
+                                    <h3><?php echo $value["tieude_baiviet"] ?></h3>
+                                </a>
+                                <span class="news_content-description">
+                                   <?php echo $value["meta_description"] ?>
+                                </span>
+                                <section class="news_content-origin">
+                                    <span class="news_content-author">By Bean hotel</span>
+                                    <span class="news_cotent-creatednews"><?php echo $value["created_time"] ?></span>
+                                </section>
+                                <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
+                            </section>
+                        </article>
+                    </div>
+                    <?php endforeach ?>
+                    <!-- <div class="col">
                         <article>
                             <a class="news_avatar" href=""><img src="../public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp" alt=""></a>
                             <section class="news_content">
@@ -299,26 +319,7 @@
                                 <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
                             </section>
                         </article>
-                    </div>
-                    <div class="col">
-                        <article>
-                            <a class="news_avatar" href=""><img src="../public/image/10-xu-huong-thinh-hanh-trong-nganh-khach-san-2021.webp" alt=""></a>
-                            <section class="news_content">
-                                <a href="" class="news_content-title">
-                                    <h3>10 xu hướng thịnh hành trong nghành khách sạn 2022</h3>
-                                </a>
-                                <span class="news_content-description">
-                                    Không gian ngoài trời mở rộng hơn, nâng cấp công nghệ để hạn chế tối đa tiếp xúc
-                                    là những xu hướng mới nhiều khách...
-                                </span>
-                                <section class="news_content-origin">
-                                    <span class="news_content-author">By Bean hotel</span>
-                                    <span class="news_cotent-creatednews">6/12/2022</span>
-                                </section>
-                                <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
-                            </section>
-                        </article>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </section>

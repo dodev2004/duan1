@@ -5,8 +5,10 @@ date_default_timezone_set('Asia/Ho_Chi_Minh');
 include "../models/pdo.php";
 include "../models/datphong.php";
 include "../models/loaiphong.php";
-
+include "../models/baiviet.php";
 $dsdm = db_lp_Select_all();
+$baiviet = baiviet_select_all_limit();
+
 include "../models/binhluan.php";
 include "../models/phong.php";
 include "../models/dichvu.php";

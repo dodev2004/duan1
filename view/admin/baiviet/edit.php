@@ -1,65 +1,47 @@
 <section class="admin-column_right">
-                        <h2 class="admin-column_right--title">Thành viên</h2>
-                        <span class="admin-column_right--linked"><b>Thành viên</b> - Sửa thông tin thành viên</span>
+                        <h2 class="admin-column_right--title">Bài viết</h2>
+                        <span class="admin-column_right--linked"><b>Bài viết</b> - Thêm bài viết</span>
                         <div class="table table-category">
-                            <a href="?act=lk&page=thanhvien&currentPage=1"><input style="margin-bottom: 2rem;" type="button"
-                                    name="them" value="Liệt kê danh sách thành viên "></a>
-                            <form id="form-addmember" method="POST" enctype="multipart/form-data" action="?act=edit&page=thanhvien&id=<?=$id?>">
+                            <a href="?act=lk&page=phong&currentPage=1"><input style="margin-bottom: 2rem;" type="button"
+                                    name="them" value="Liệt kê bài viết"></a>
+                            <form id="form-addroom" method="POST" enctype="multipart/form-data" action="?act=edit&page=baiviet&id=<?php echo $id ?>">
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label for="room_name">Tên đầy đủ</label>
-                                        <input type="text" class="form-control" value="<?php echo $name  ?>" id="room_name" name="name" placeholder="Tên đầy đủ">
-                                        <div class="valid-feedback">
-                                            
-                                            </div>
-                                    </div>
-                                   
-                                    <div class="form-group col-md-6">
-                                        <label for="room_area">Tài khoản</label>
-                                        <input type="text" value="<?=$user_name?>" name="username" class="form-control" id="room_area" placeholder="Tài khoản">
+                                        <label for="room_name">Tiêu đề của bài viết</label>
+                                        <input type="text" class="form-control" value="<?php echo $bv["tieude_baiviet"] ?>" id="room_name" name="tieude_baiviet" placeholder="Tiêu đề bài viết">
                                         <div class="valid-feedback">
                                             
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="room_price">Mật khẩu</label>
-                                        <input type="password" value="" class="form-control " id="room_price"
-                                            placeholder="Password" name="password">
-                                            <div class="valid-feedback">
+                                        <label for="room_type">Title</label>
+                                        <input type="text" class="form-control" value="<?php echo $bv["title"] ?>" id="room_name" name="title" placeholder="Title">
+                                        <div class="valid-feedback">
                                             
-                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="room_quantity">Nhập lại mật khẩu</label>
-                                        <input type="password" value="" class="form-control" id="repeat-password"
-                                            placeholder="repeat-password" name="sl_Phong">
-                                            <div class="valid-feedback">
-                                            
-                                            </div>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="room_area">Tài khoản</label>
-                                        <select name="role" id="" class="form-control">
-                                          
-                                            <option value="0" <?php if($role ==0 ){
-                                                echo "selected";
-                                            } ?>>Người dùng</option>
-                                            <option value="1" <?php if($role==1){
-                                                echo "selected";
-                                            } ?>>Admin</option>
+                                    <div class="form-group col-md-12">
+                                        <label for="room_area">Tóm tắt </label>
+                                        <textarea name="description"   id="description" cols="30" rows="10">
+                                            <?php echo $bv["meta_description"] ?>
+                                        </textarea>
                                         
-                                        </select>
-                                        <div style="<?php if($eror){
-                                            echo "display:block";
-                                        } ?>" class="valid-feedback">
-                                            <?php  echo $eror ?>
-                                        </div>
                                     </div>
-                                    
+                                    <div class="form-group form-group_avatar col-md-12">
+                                        <label for="">Avatar</label>
+                                        <label class="room_input-avatar" for="room_avatar">
+                                        <img src="../public/image/avatar/<?=$bv["avatar"]?>" class="avatar" alt="">
+                                        </label>
+                                        <input name="avatar" type="file" hidden class="form-control" id="room_avatar" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="room_introduction">Nội dung</label>
+                                        <textarea name="content"  id="content" cols="30" rows="10"><?php echo $bv["content"] ?></textarea>
+                                    </div>
                                    
                                 </div>
 
-                                <button type="submit" name="edit" class="btn btn-primary">Sửa thành viên</button>
+                                <button type="submit" name="edit" class="btn btn-primary">Sửa bài viết</button>
                             </form>
                         </div>
                         
@@ -150,5 +132,6 @@
 
                             }
                             ckeditorID("description");
+                            ckeditorID("content");
                         </script>
                     </section>

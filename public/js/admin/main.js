@@ -5,17 +5,16 @@ const removeAll = document.querySelector(".removeAll");
 const checkboxs = Array.from(document.querySelectorAll("input[type=checkbox]"));
 
 const removes = document.querySelectorAll(".remove");
+
 const elementas = document.querySelectorAll("a");
  let page = "";
  
 
 if (elementas) {
-   
     removes.forEach((remove) => {
         remove.onclick = function () {
             event.preventDefault();
             let checkbox = this.parentElement.parentElement.querySelector("input[type=checkbox]");
-            
             let page = checkbox.dataset.page;
             const id = remove.parentElement.parentElement.querySelector(".id").textContent.trim();
             let resuilt = confirm("Bạn chắc chắn muốn xóa chứ");
