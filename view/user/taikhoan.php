@@ -6,7 +6,6 @@
                 <li><a href="?act=taikhoan">Hồ sơ của tôi</a></li>
                 <li><a href="?act=quanlyphongdat">Phòng đã đặt</a></li>
                 <li><a href="?act=doimatkhau">Đổi mật khẩu</a></li>
-                <li><a href="#">Địa chỉ</a></li>
             </ul>
         </div>
         <?php

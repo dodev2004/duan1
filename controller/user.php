@@ -65,7 +65,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $eror["user_name"] = $countname ? "Tài khoản đã tồn tại" : "";
                 if ($eror["email"] == "" && $eror["user_name"] == "") {
                     echo "<script language=javascript>alert('Đăng ký thành công')</script>";
-                    nguoidung_insert($name, $username, $email, $password,0, date('Y/m/d', time()), date('Y/m/d', time()));
+                    nguoidung_insert($name, $username, $email, $password, 0, date('Y/m/d', time()), date('Y/m/d', time()));
                     header("Location: user.php?act=dangnhap");
                 }
             }
@@ -186,7 +186,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 $sltreEm = $_POST["sl_tre_em"];
                 $total_price = $_POST["total_price"];
                 $id_user = $_SESSION["user"]["id"];
-                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price,$ptt);
+                $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $ptt);
                 $bill = book_select_by_id($id);
                 $room = db_phong_select_by_id($bill["id_Phong"]);
             } else {
@@ -201,12 +201,12 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                     $slNguoiLon = $_GET["slNguoiLon"];
                     $sltreEm = $_GET["sltreEm"];
                     $total_price = $_GET["amount"];
-                    $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price,$ptt);
+                    $id = book_insert($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $ptt);
 
                     // $id = book_insert_momo($id_user, $name, $sdt, $id_Phong, $slNguoiLon, $sltreEm, $checkin, $checkout, $total_price, $status, 3);
                     // $status = 3;
                     // $id =  book_insert_momo($id_user, $name, $sdt, $id_Phong,  $slNguoiLon,  $sltreEm, $checkin, $checkout,  $total_price, 3);
-            
+
                     $bill = book_select_by_id($id);
                     $room = db_phong_select_by_id($bill["id_Phong"]);
                 }
@@ -218,13 +218,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
         case "mkmoi":
             $eror = "";
             if (isset($_POST["submit"])) {
-                // var_dump(md5(3333));
-                // die();
                 $password = $_POST["password"];
                 $matkhaumoi = md5($password);
                 $id = $_GET["id"];
-                // var_dump(md5( $matkhaumoi));
-                // die();
                 db_user_change_password($id, $matkhaumoi);
                 echo "<script language=javascript>alert('Thay đổi thành công')</script>";
                 header("Location:?act=mkmoi");
@@ -268,6 +264,5 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
     }
 } else {
     include "../view/user/trangchu.php";
-   
 }
 include "../view/user/footer.php";
