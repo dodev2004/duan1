@@ -253,12 +253,13 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $name = $_POST["name"];
                     $username = $_POST["username"];
                     $password = $_POST["password"];
+                    $role = $_POST["role"];
                     $checkuser = nguoidung_id_select_by_user_name($username);
 
                     if (is_array($checkuser)) {
                         $eror  = "Tài khoản đã được sử dụng ";
                     } else {
-                        nguoidung_insert($name, $username, "", md5($password), date('Y/m/d', time()), date('Y/m/d', time()));
+                        nguoidung_insert($name, $username, "", md5($password),$role, date('Y/m/d', time()), date('Y/m/d', time()));
                         echo "<script language=javascript>alert('Đăng ký thành công') window.location.href = '?act=lk&page=thanhvien&currentPage=1</script>
                            '
                         ";;
@@ -273,7 +274,8 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                     $name = $_POST["name"];
                     $user_name = $_POST["username"];
                     $password = $_POST["password"];
-                    nguoidung_update_admin($id, $name, $user_name, md5($password), date('Y/m/d', time()));
+                    $role = $_POST["role"];
+                    nguoidung_update_admin($id, $name, $user_name, md5($password),$role, date('Y/m/d', time()));
                     echo "<script language='javascript'>alert('Sửa thành công')
                     window.location.href = '?act=lk&page=thanhvien&currentPage=1'</script>
                     ";

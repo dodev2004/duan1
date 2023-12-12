@@ -51,9 +51,13 @@
                     <th><?=$ngaytao?></th>
                     <th><?=$ngaysua?></th>
                     
-                    <?php if(checkPrivileges("act=privilege&page=thanhvien&id=".$id)){ ?>
+                    <?php if(checkPrivileges("act=privilege&page=thanhvien&id=".$id)){ 
+                        if($role == 1){?>
                     <th> <a href="?act=privilege&page=thanhvien&id=<?php echo $id ?>"><input type="button" name="sua" value="Phân quyền"></a></th>
-                    <?php }?>
+                    <?php }
+                    else { ?>
+                      <th> <input  type="button" hidden disabled name="sua" value="Phân quyền"></th>
+               <?php }}?>
                     <?php if(checkPrivileges("page=thanhvien&act=delete&id=1") || checkPrivileges("page=thanhvien&act=edit&id=0")) {?>
                     <th>
                     <?php if(checkPrivileges("page=thanhvien&act=edit&id=". $id)){ ?>

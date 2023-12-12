@@ -37,7 +37,24 @@
                                             
                                             </div>
                                     </div>
-                                   
+                                    <div class="form-group col-md-6">
+                                        <label for="room_area">Tài khoản</label>
+                                        <select name="role" id="" class="form-control">
+                                          
+                                            <option value="0" <?php if($role ==0 ){
+                                                echo "selected";
+                                            } ?>>Người dùng</option>
+                                            <option value="1" <?php if($role==1){
+                                                echo "selected";
+                                            } ?>>Admin</option>
+                                        
+                                        </select>
+                                        <div style="<?php if($eror){
+                                            echo "display:block";
+                                        } ?>" class="valid-feedback">
+                                            <?php  echo $eror ?>
+                                        </div>
+                                    </div>
                                     
                                    
                                 </div>

@@ -23,6 +23,7 @@
                                             <?php  echo $eror ?>
                                         </div>
                                     </div>
+                                 
                                     <div class="form-group col-md-6">
                                         <label for="room_price">Mật khẩu</label>
                                         <input type="password" value="" class="form-control " id="room_price"
@@ -38,6 +39,18 @@
                                             <div class="valid-feedback">
                                             
                                             </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="room_area">Tài khoản</label>
+                                        <select name="role" id="" class="form-control">
+                                            <option value="0">Người dùng</option>
+                                            <option value="1">Admin</option>
+                                        </select>
+                                        <div style="<?php if($eror){
+                                            echo "display:block";
+                                        } ?>" class="valid-feedback">
+                                            <?php  echo $eror ?>
+                                        </div>
                                     </div>
                                 </div>
 
