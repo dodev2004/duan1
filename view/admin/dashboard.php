@@ -2,7 +2,7 @@
 <h1 style="color: #152C70;
   font-size: 30px;
   font-weight: bold;" class="admin_title">VietHotel</h1>
-    <p>Thống kê đơn hàng theo : <span id="date"></span></p>
+    <p>Thống kê doanh số theo : <span id="date"></span></p>
     <p>
         <select name="" class="select_date" id="">
 

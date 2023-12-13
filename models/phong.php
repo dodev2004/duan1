@@ -35,7 +35,7 @@ function seach_phong($checkin, $checkout, $slNguoiLon, $sltreem)
 function db_phong_select_all_Pagin($currentPage)
 {
     $offset = ($currentPage - 1) * 4;
-    if (isset($_POST["seach"])) {
+    if (isset($_POST["seach1"])) {
         $seach_Tenphong = !empty($_POST["seach_Tenphong"]) ? $_POST["seach_Tenphong"] : "";
         $id_LoaiPhong = !empty($_POST["seach_idLoaiPhong"]) ? $_POST["seach_idLoaiPhong"] : "";
 

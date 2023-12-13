@@ -41,7 +41,7 @@
                             </li>
                             <li> <a href="../controller/user.php">Trang chủ</a></li>
                             <li>
-                                <a href="">Về chúng tôi</a>
+                                <a href="?act=myviethotel">Về chúng tôi</a>
                             </li>
                             <li class="list_room-item">
                                 <a class="menu_room" href="?act=phong">Phòng <i class="fa-solid fa-angle-down"></i>
