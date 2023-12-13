@@ -75,7 +75,7 @@
 
         </table>
         <section class="pagin">
-        <?php  get_paging($paggin)?>
+        <?php  get_paging_book($paggin,"thanhvien",'lk')?>
         </section>
     </div>
     <?php if(checkPrivileges("page=thanhvien&act=delete&id=0")){ ?>

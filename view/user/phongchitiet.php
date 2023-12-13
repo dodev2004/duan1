@@ -245,6 +245,7 @@
                     const timeCheckin = new Date(inputCheckIn.value).getTime();
                     const timeCheckout = new Date(inputCheckOut.value).getTime();
                     var times = <?php echo $books ?>;
+                    console.log(times);
                     const notification = form.querySelector(".notification")
                     const notification_eror = form.querySelector(".notification_eror")
                     if (times.length > 0) {

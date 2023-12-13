@@ -1,6 +1,6 @@
 <section class="admin-column_right">
-    <h2 class="admin-column_right--title">Danh Mục</h2>
-    <span class="admin-column_right--linked"><b>Danh Mục</b> - Danh sách loại dang mục</span>
+    <h2 class="admin-column_right--title">Phòng đặt</h2>
+    <span class="admin-column_right--linked"><b>Phòng đặt</b> - Xác nhận thanh toán</span>
     <div class="table table-category">
 
         <table>

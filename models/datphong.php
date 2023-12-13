@@ -1,7 +1,7 @@
 <?php
 function book_select_by_id_Phong($id)
 {
-    $sql = "SELECT check_in,check_out from book where id_Phong = $id";
+    $sql = "SELECT check_in,check_out from book where id_Phong = $id and status != 4 OR status != 5";
     return pdo_query($sql);
 }
 function book_insert($id_user, $book_name, $sdt, $id_Phong, $sl_NgoiLon, $sl_tre_em, $check_in, $check_out, $price,$ptt)
