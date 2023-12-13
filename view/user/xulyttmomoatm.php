@@ -92,7 +92,8 @@ $result = execPostRequest($endpoint, json_encode($data));
 // var_dump($result);
 // die();
 $jsonResult = json_decode($result, true);
-
+// var_dump($result);
+// die();
 // Process the API response and redirect
 if (isset($jsonResult['payUrl'])) {
     header('Location: ' . $jsonResult['payUrl']);

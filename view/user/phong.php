@@ -23,7 +23,7 @@
                     <article>
                         <a href="?act=phongchitiet&id=<?php echo $id ?>"> <img class="room_img"
                                 src="<?php echo  $hinh ?>" alt=""></a>
-                        <a href="" class="room_name">
+                        <a href="?act=phongchitiet&id=<?php echo $id ?>" class="room_name">
                             <h2 class="room_name"><?php echo $ten_Phong ?></h2>
                         </a>
                         <span class="room_line"></span>
@@ -43,7 +43,7 @@
                         </section>
                         <section class="room_buy">
                             <span class="room_price"><?php echo number_format($gia, 0, ',', ',')  ?>₫/đêm</span>
-                            <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                            <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo  $value["id"] ?>" method="post">
                                 <input type="submit" name="buy" value="Đặt Phòng">
                             </form>
                         </section>
