@@ -17,6 +17,7 @@
                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
                 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+                <!-- Biều đồ 1 -->
                 <script>
                   if(document.getElementById("myfirstchart")){
                     $(document).ready(function() {
@@ -86,6 +87,7 @@
                 </script>
                 <script src="https://www.gstatic.com/charts/loader.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+                <!-- Biểu đò 2 -->
                 <script>
                   if (document.getElementById("myChart")) {
                     google.charts.load('current', {
@@ -125,6 +127,7 @@
                     }
                   }
                 </script>
+                <!-- Biểu đồ 3 -->
                 <script>
                   if (document.getElementById("donhang")) {
                     const xValues = ["Chờ xác nhận", "Chờ thanh toán", "Chờ xác nhận nhận phòng", "Chờ xác nhận trả phòng"];
@@ -176,6 +179,7 @@
                     });
                   }
                 </script>
+                <!-- Biểu đồ 4 -->
                 <script>
                   if (document.getElementById("ptt")) {
                     google.charts.load('current', {
@@ -223,6 +227,7 @@
                     }
                   }
                 </script>
+                <!-- Biều đồ 5 -->
                 <script>
                   if (document.getElementById("tkbl")) {
                     google.charts.load('current', {

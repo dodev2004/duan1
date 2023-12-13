@@ -1,6 +1,6 @@
 <section class="admin-column_right">
     <h2 class="admin-column_right--title">Phòng Đặt</h2>
-    <span class="admin-column_right--linked"><b>Phòng Đặt</b> - Xác nhận đặt phòng</span>
+    <span class="admin-column_right--linked"><b>Phòng Đặt</b> - Lịch sử đặt phòng</span>
     <div class="table table-category">
 
         <table>

@@ -1,6 +1,6 @@
 <section class="admin-column_right">
-                        <h2 class="admin-column_right--title">Phòng</h2>
-                        <span class="admin-column_right--linked"><b>Phòng</b> - Danh sách phòng</span>
+                        <h2 class="admin-column_right--title">Bình luận</h2>
+                        <span class="admin-column_right--linked"><b>Bình luận</b> - Danh sách bình luận</span>
                         <div class="table table-category">
                         <section class="tk_sp">Có <span><?php echo $count ?></span> bình luận trong trang số <?php echo $_GET["currentPage"] ?></section>
                             <table>
