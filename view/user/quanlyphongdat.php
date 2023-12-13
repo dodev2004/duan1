@@ -23,24 +23,33 @@
                     $status = $book["status"];
                     if ($status == 1) {
 
-                    ?>
-                        <button disabled class="btn_order-success">Đã Đặt</button>
-                        <a href="?act=quanlyphongdat&status=4&id=<?php echo $book["id"] ?>"> <button class="btn_cancel">Hủy Đặt Phòng</button></a>
-                    <?php } else if ($status == 2) {
-                        echo '<button class="btn_order">Đã Xác nhận đặt phòng</button>';
-                    } else if ($status == 3) {
-                        echo '<button class="btn_pay">Đã Thanh Toán</button>';
-                    } 
-                    else if($status == 6){
-                        echo '<button class="btn_pay">Đã nhận phòng</button>';
-                        echo '<button class="btn_pay">Chờ thanh toán</button>';
-                    }else if ($status == 5) {
-                        echo '<button class="btn_pay">Đã Trả  Phòng</button>';
-                        if ($book["ttBl"] == 0) {
-                            echo '<button class="btn_ratings" data-id= ' . $book["id_Phong"] . ' data-bookid=' . $book["id"] . '>Đánh giá</button>';
-                        }
-                    } else {
-                        echo ' <button  class="btn_cancel-confirm"> Đã Hủy</button>';
+                        ?>
+                            <button disabled class="btn_order-success">Đã Đặt</button>
+                            <a href="?act=quanlyphongdat&status=4&id=<?php echo $book["id"] ?>"> <button class="btn_cancel">Hủy Đặt Phòng</button></a>
+                        <?php } else if ($status == 2) {
+                            echo '<button class="btn_order">Đã nhận phòng</button>';
+                            echo '<button class="btn_pay">Chờ xác nhận thanh toán</button>';
+                            // echo '<button class="btn_pay">Chờ thanh toán</button>';
+                        } else if ($status == 3) {
+                            echo '<button class="btn_pay">Đã Thanh Toán</button>';
+                            echo '<button class="btn_pay">Chờ trả phòng</button>';
+                        } 
+                        else if($status == 6){
+                            echo '<button class="btn_pay">Đã xác nhận đặt phòng</button>';
+                            echo '<button class="btn_pay">Chờ xác nhận nhận phòng</button>';
+                            // echo '<button class="btn_pay">Chờ thanh toán</button>';
+                        }else if ($status == 5) {
+                            echo '<button class="btn_pay">Đã Trả  Phòng</button>';
+                            if ($book["ttBl"] == 0) {
+                                echo '<button class="btn_ratings" data-id= ' . $book["id_Phong"] . ' data-bookid=' . $book["id"] . '>Đánh giá</button>';
+                            }
+            
+                        } else if ($status == 7) {
+                            echo '<button class="btn_pay">Đã nhận phòng</button>';
+                            echo '<button class="btn_pay">Chờ thanh toán</button>';
+                        }else {
+                            echo ' <button  class="btn_cancel-confirm"> Đã Hủy</button>';
+                        
                     } ?>
                 </div>
             <?php endforeach ?>
