@@ -206,7 +206,7 @@
                                 <div class="room_vip-description">
                                     <p><?php echo $mota_chung ?> </p>
                                 </div>
-                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $id ?>" method="post">
+                                <form class="room_buy-form" action="?act=phongchitiet&id=<?php echo $value["id"] ?>" method="post">
                                     <input type="submit" name="buy" value="Đặt Phòng">
                                 </form>
                             </article>

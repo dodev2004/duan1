@@ -257,7 +257,7 @@
 
                       // Set Options
                       const options = {
-                        title: 'Thống kê phương thức thanh toán theo đơn hàng trên tổng số <?php echo $tongbl["tong"] ?>',
+                        title: 'Thống kê  đánh giá trải nghiệm khác hàng tổng số <?php echo $tongbl["tong"] ?>',
                         is3D: true
                       };
 

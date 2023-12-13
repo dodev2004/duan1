@@ -25,15 +25,15 @@
                     <section class="admin-colum_left">
                         <section class="column-left_content">
                             <h3 class="admin-name">
-                                WellCome Dasbord
+                                Wellcome dashboard
                             </h3>
                             <section class="admin-personal">
                                 <section class="admin-personal_img">
                                     <img src="./img/th.jfif" alt="">
                                 </section>
                                 <section class="admin-personal_detail">
-                                    <p class="detail_name">
-
+                                    <p style="margin: 0;" class="detail_name">
+                                        <?php echo $_SESSION["user"]["user_name"] ?>
                                     </p>
                                     <p class="detail_locator">Quản trị trang web</p>
                                 </section>
