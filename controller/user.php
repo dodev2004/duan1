@@ -209,6 +209,7 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             
                     $bill = book_select_by_id($id);
                     $room = db_phong_select_by_id($bill["id_Phong"]);
+                    
                 }
             }
 
@@ -255,7 +256,13 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             }
             include "../view/user/quanlyphongdat.php";
             break;
-
+        case "baiviet" :
+            $id = $_GET['id'];
+            $baiviet = baiviet_selelect_by_id($id);
+            $title = json_encode($baiviet["title"]);
+            $meta_description = json_encode($baiviet["meta_description"]);
+            include "../view/user/baiviet.php";
+            break;
         case 'dangxuat':
             dangxuat();
             echo "<script language=javascript>

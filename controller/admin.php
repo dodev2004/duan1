@@ -170,6 +170,7 @@ if (isset($_GET["act"]) || isset($_GET["page"])) {
                                     }
                                 }
                             }
+                          
                             db_phong_insert_dichvu_phong($room_service, $id);
                             db_phong_delete_dv($rm, $id);
                         }

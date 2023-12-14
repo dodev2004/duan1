@@ -18,6 +18,18 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.content_new > p >img{
+  margin: 0 auto;
+  display: flex;
+}
+.content_new-timer{
+  margin: 12px 0;
+  color: #0d2c2879;
+  font-size: 14px;
+  display: flex;
+  column-gap: 12px;
+  
+}
 .item_tag_info {
   display: flex;
   align-items: center;

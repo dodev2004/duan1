@@ -265,9 +265,9 @@
                     <?php foreach($baiviet as $value): ?>
                     <div class="col">
                         <article>
-                            <a class="news_avatar" href=""><img src="../public/image/avatar/<?php echo $value["avatar"] ?>" alt=""></a>
+                            <a class="news_avatar" href="?act=baiviet&id=<?php echo $value["id_baiViet"] ?>"><img src="../public/image/avatar/<?php echo $value["avatar"] ?>" alt=""></a>
                             <section class="news_content">
-                                <a href="" class="news_content-title">
+                                <a href="?act=baiviet&id=<?php echo $value["id_baiViet"] ?>" class="news_content-title">
                                     <h3><?php echo $value["tieude_baiviet"] ?></h3>
                                 </a>
                                 <span class="news_content-description">
@@ -277,7 +277,7 @@
                                     <span class="news_content-author">By Bean hotel</span>
                                     <span class="news_cotent-creatednews"><?php echo $value["created_time"] ?></span>
                                 </section>
-                                <a href=""><button class="new_content-readmore">Đọc thêm</button></a>
+                                <a href="?act=baiviet&id=<?php echo $value["id_baiViet"] ?>"><button class="new_content-readmore">Đọc thêm</button></a>
                             </section>
                         </article>
                     </div>

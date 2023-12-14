@@ -175,18 +175,23 @@
         }
     }
 // rating
-const rating = document.querySelector(".btn_ratings");
-if(rating){
+const ratings = document.querySelectorAll(".btn_ratings");
+if(ratings.length > 0) {
+    
     const rate = document.querySelector(".rate");
     const id_Phong = document.querySelector(".rate_content>form>input[name=id_Phong]");
     const id_book = document.querySelector(".rate_content>form>input[name=id_book]");
    const cancle = document.querySelector(".rate_content>form>.rate_title>i");
+   ratings.forEach(function (rating) {
     rating.onclick = function(){
         event.preventDefault();
         id_Phong.value = this.dataset.id;
         id_book.value = this.dataset.bookid;
         rate.classList.add("active");
     }
+   })
+   
+   
     cancle.onclick = function(){
         rate.classList.remove("active");
     }
