@@ -49,7 +49,12 @@
                             echo '<button class="btn_pay">Chờ thanh toán</button>';
                         }else {
                             echo ' <button  class="btn_cancel-confirm"> Đã Hủy</button>';
+<<<<<<< HEAD
                         } ?>
+=======
+                        
+                    } ?>
+>>>>>>> e58b2795f783468c2f94564f6ba90a28943022bc
                 </div>
             <?php endforeach ?>
             <!-- <div class="room__item">

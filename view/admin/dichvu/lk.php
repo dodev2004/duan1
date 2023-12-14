@@ -1,5 +1,5 @@
 <section class="admin-column_right">
-                        <h2 class="admin-column_right--title">Tiện nghi</h2>                        <span class="admin-column_right--linked"><b>Phòng</b> - Danh sách phòng</span>
+                        <h2 class="admin-column_right--title">Tiện nghi</h2>                        <span class="admin-column_right--linked"><b>Tiện nghi</b> - Danh sách tiện nghi</span>
                         <div class="table table-category">
                             <?php if(checkPrivileges("act=them&page=tiennghi")){ ?>
                             

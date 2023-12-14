@@ -209,7 +209,13 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
             
                     $bill = book_select_by_id($id);
                     $room = db_phong_select_by_id($bill["id_Phong"]);
-                    
+
+                    echo "<script language=javascript>
+                    window.onload = function(){
+                      sessionStorage.setItem('user','true');
+                     
+                    }
+                    </script>";
                 }
             }
 
@@ -270,6 +276,9 @@ if (isset($_GET["act"])  && $_GET["act"] != "") {
                 window.location.href = 'user.php'</script>";
             // include "../view/user/dangnhap.php";
 
+            break;
+        case 'myviethotel':
+            include "../view/user/myviethotel.php";
             break;
         default:
     }

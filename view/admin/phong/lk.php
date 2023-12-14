@@ -21,7 +21,7 @@
                             }
                             ?> value="<?php echo $lp["id_LoaiPhong"] ?>"><?php echo $lp["ten_LoaiPhong"] ?></option>
                 <?php endforeach ?>
-                <input style="display: inline; border-radius:4px; margin-left:5px" type="submit" value="seach" name="seach">
+                <input style="display: inline; border-radius:4px; margin-left:5px" type="submit" value="seach" name="seach1">
             </select>
             <section class="tk_sp">Có <span><?php echo $count ?></span> sản phẩm trong trang số
                 <?php echo $_GET["currentPage"] ?></section>

@@ -77,13 +77,13 @@ $data = array(
     'requestType' => $requestType,
     'signature' => $signature,
 
-    'idphong' => $idphong,
-    'name' => $name,
-    'sdt' => $sdt,
-    'checkin' => $checkin,
-    'checkout' => $checkout,
-    'slNguoiLon' => $slNguoiLon,
-    'sltreEm' => $sltreEm
+    // 'idphong' => $idphong,
+    // 'name' => $name,
+    // 'sdt' => $sdt,
+    // 'checkin' => $checkin,
+    // 'checkout' => $checkout,
+    // 'slNguoiLon' => $slNguoiLon,
+    // 'sltreEm' => $sltreEm
 );
 // var_dump($data);
 // die();
