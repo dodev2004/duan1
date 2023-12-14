@@ -97,7 +97,7 @@
                             <tr>
                                 <td>Số điện thoại:</td>
                                 <td>
-                                    <?php echo isset($bill["sdt"]) ? $bill["sdt"] : "" ?>
+                                    0<?php echo isset($bill["sdt"]) ? $bill["sdt"] : "" ?>
                                 </td>
                             </tr>
                         </table>
